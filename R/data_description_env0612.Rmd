@@ -84,10 +84,10 @@ set.seed(313)
 ```{r cc_summary_stats}
 
 
-surveys <-  read_csv(here::here("rawdata/climate_index_env.csv"),
+surveys <-  read_csv(here::here("data-raw/climate_index_env.csv"),
                     col_types = "ccccccc") 
 
-dcpo_input_raw_cc <- read_csv(here::here("rawdata/dcpo_input_raw_env.csv")) %>%
+dcpo_input_raw_cc <- read_csv(here::here("data-raw/dcpo_input_raw_env.csv")) %>%
   select(-1)
 
 with_min_coverage <- function(x, min_cov) {
@@ -433,7 +433,7 @@ n_cc_data_poorest <- {data_cc_poorest %>%
 
 
 ```{r inputdata}
-dcpo_input_raw_env <- read_csv(here::here("rawdata/dcpo_input_raw_env.csv")) %>%
+dcpo_input_raw_env <- read_csv(here::here("data-raw/dcpo_input_raw_env.csv")) %>%
   select(-1) %>%
   filter(!str_detect(item, "_300|_100"))
 
