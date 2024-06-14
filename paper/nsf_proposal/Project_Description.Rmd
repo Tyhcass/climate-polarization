@@ -1,0 +1,84 @@
+---
+title: | 
+  | Public Opinion Regarding Climate Change:
+  | Measuring Public Concern and Polarization
+  |
+  | Project Description
+date: "\\vspace{-5em}"
+csl: american-political-science-association.csl
+output: 
+  pdf_document:
+   includes:
+    in_header: style/preamble.tex
+   extra_dependencies: ["float"]
+   template: null
+   keep_tex: no
+   number_sections: true
+  # word_document:
+  #  toc: false
+  #  number_sections: true
+documentclass: style/nsf2
+bibliography: references.bib
+biblio-style: apalike
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+This first paragraph demonstrates the importance of understanding how public opinion about climate change may affect politics and policy.
+
+The second paragraph discusses the problems with available data: sparse and incomparable, as always, but on this topic particularly sparse (extra-fragmented)
+
+The third paragraph describes how we will overcome these problems: latent variable estimation, and with more data, stronger priors in data-poor countries, combining years or employing stronger priors about change over time, treating items as similar (rather than simply as alike or different) by nesting them in hierarchical models should help in a couple of different ways, and using a variety of approaches to estimate polarization.
+
+In summary, the proposed work will build crucial research infrastructure for cross-national work on climate change as well as for work on cross-national public opinion.
+
+# Background
+At first, we focus on mean attitudes.
+We need to talk about the standard challenges of sparsity and comparability, along with DCPO solutions and successes (public gender egalitarianism, macrointerest, etc.).
+Here is where we review the country-year coverage of climate-change questions in existing surveys and in the literature, including plots like the first two figures in \texttt{dcpo\_gayrights}. 
+
+We then can turn to the distinctive challenges in the climate change data (still focusing on mean attitutes).  First, the data are particularly fragmented among *many, many* different survey questions.  We can show rather than tell here, with plots of country-years per question across topics (climate change vs. PGE vs. macrointerest, for example).
+Second, an unusually large number of countries are data-poor.
+
+Moreover, with regard to climate-change opinion, researchers are particularly interested in _polarization_ in attitudes; existing latent-variable solutions have paid little attention to this.
+
+
+# The Proposed Research
+
+   
+
+
+<!-- \begin{wrapfigure}{R}{.25\textwidth}   -->
+<!-- ```{r new, echo=F, fig.width=2, fig.height=1.5,warning=F,message=F,out.width=".25\\textwidth"} -->
+<!-- nums<-rnorm(100,0,1) -->
+<!-- df<-data.frame(s=1:100,nums) -->
+<!-- library(ggplot2) -->
+<!-- ggplot(df, aes(x=nums))+ -->
+<!--   geom_histogram()+ -->
+<!--   theme_classic(base_size=9) -->
+<!-- ``` -->
+
+<!-- \end{wrapfigure} -->
+
+
+
+
+
+\newpage
+
+## References
+
+\indent
+\setlength{\parindent}{-.5in}
+\setlength{\leftskip}{0.5in}
+
+
+
+
+
+
+
+
