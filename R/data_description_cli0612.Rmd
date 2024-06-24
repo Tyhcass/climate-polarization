@@ -1623,6 +1623,5 @@ dcpo_input_plot %>%
         strip.placement = "outside") +
   facet_wrap(~forcats::fct_reorder(continent, mean_cc_rank, .desc = TRUE),
              ncol = 1,
-             scales = "free") +
-  plot_annotation(caption = "Starred countries are OECD democracies, the sample employed in the analysis of macrointerest presented in the main text.")
+             scales = "free")
 ```

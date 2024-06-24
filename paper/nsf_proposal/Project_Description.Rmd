@@ -20,6 +20,14 @@ output:
 documentclass: style/nsf2
 bibliography: references.bib
 biblio-style: apalike
+header-includes:
+      - \renewcommand{\topfraction}{.85} # Adjust LaTeX placement rules per 
+      - \renewcommand{\bottomfraction}{.7} # https://bookdown.org/yihui/rmarkdown-cookbook/figure-placement.html
+      - \renewcommand{\textfraction}{.15}
+      - \renewcommand{\floatpagefraction}{.66}
+      - \setcounter{topnumber}{3}
+      - \setcounter{bottomnumber}{3}
+      - \setcounter{totalnumber}{4}
 ---
 
 ```{r setup, include=FALSE}
@@ -54,62 +62,9 @@ In summary, the proposed work will build crucial research infrastructure for cro
 # Background
 At first, we focus on mean attitudes.
 We need to talk about the standard challenges of sparsity and comparability, along with DCPO solutions and successes (public gender egalitarianism, macrointerest, etc.).
-Here is where we review the country-year coverage of climate-change questions in existing surveys and in the literature, including plots like the first two figures in \texttt{dcpo\_gayrights}:
+Here is where we review the country-year coverage of climate-change questions in existing surveys and in the literature, including plots like the second figure in \texttt{dcpo\_gayrights}:
 
-```{r proj-kt-plot, fig.cap="Countries and Mean Years Observed in Survey Datasets \\label{proj_kt_plot}", fig.height=4, fig.pos='h', cache=FALSE, eval=FALSE}
-dcpo_input_raw <- read_csv(here::here("data-raw", "dcpo_input_raw_cc.csv"),
-                                  col_types = "cdcddcd")
-
-proj_kt <- dcpo_input_raw %>% 
-  filter(r == 1) %>% 
-  select(country, year, survey, item) %>% 
-  mutate(proj = str_remove_all(survey, "\\d+") %>% 
-           str_remove_all("_[^,]+") %>% 
-           str_replace_all("\\b([^,]+), \\1", "\\1") %>% 
-           str_replace_all("\\b([^,]+), \\1", "\\1")) %>% 
-  separate(proj, into = paste0("proj", 1:5), fill = "right") %>% 
-  pivot_longer(cols = starts_with("proj"), values_to = "project") %>% 
-  filter(!is.na(project) & !project == "") %>% 
-  select(country, year, project, item) %>% 
-  distinct() %>% 
-  group_by(project, item) %>% 
-  mutate(cy = n_distinct(country, year)) %>% 
-  group_by(project) %>% 
-  arrange(-cy) %>% 
-  filter(cy == max(cy)) %>% 
-  summarize(cy = n_distinct(country, year),
-            k = n_distinct(country),
-            t = cy/k) %>% 
-  group_by(k, t) %>% 
-  mutate(to_jitter = n() > 1) %>% 
-  ungroup() %>% 
-  mutate(proj_name = toupper(project) %>% 
-           str_replace("USGSS", "U.S. GSS") %>% 
-           str_replace("USPEW", "Pew Politics") %>% 
-           str_replace("PEWREL", "Pew Religion") %>% 
-           str_replace("^PEW$", "Pew Global") %>% 
-           str_replace("AMB", "AmB") %>% 
-           str_replace("PGSS", "Polish GSS"))
-
-proj_kt_plot <- ggplot(proj_kt, aes(y = t, x = k)) +
-  geom_point(data = proj_kt %>% filter(!to_jitter),
-             alpha = .3) +
-  geom_point(data = proj_kt %>% filter(to_jitter),
-             alpha = .3,
-             position = position_jitter(width = .25, height = .25)) +
-  ggrepel::geom_text_repel(data = subset(proj_kt, cy > 100 | t > 8 | k > 45),
-                            aes(label = proj_name),
-                            nudge_x = 5) +
-  theme_bw() +
-  scale_x_continuous(breaks=seq(0, 100, 25)) +
-  labs(x = "Countries Observed",
-       y = "Mean Years Observed Per Country Observed",
-       title = "Survey Projects with Questions on\nSupport for Gay Rights")
-
-proj_kt_plot + plot_annotation(caption = str_wrap("Notes: The number of countries and mean years observed are plotted only for the most frequently asked single question on attitudes toward homosexuality in each survey project.", width = 114))
-```
-
-```{r pocc-plot, fig.cap="Countries and Mean Years Observed in Prominent Research\\label{pocc_plot}", fig.height=5.5, fig.width=7.5, fig.pos='h', cache=FALSE}
+```{r pocc-plot, fig.cap="Countries and Mean Years Observed in Prominent Research\\label{pocc_plot}", fig.height=4.5, fig.width=7.5, fig.pos='h', cache=FALSE}
 
 cited <- tribble(~citation, ~text_x, ~text_y,
                  "Clements and Field 2014", 8.8, 42,
@@ -120,7 +75,11 @@ cited <- tribble(~citation, ~text_x, ~text_y,
                  "Redman 2018", 65.5, 2.9,
                  "Hooghe and Meeusen 2013", 37.6, 4.24)
 
-pocc <- read_csv(here("data-raw", "savedrecs.csv")) %>% 
+pocc <- read_csv(here("data-raw", "savedrecs.csv"),
+                 show_col_types = FALSE) %>% 
+  bind_rows(read_csv(here("data-raw", "savedrecs_gs.csv"),
+                     show_col_types = FALSE) %>% 
+              select(-`End Page`)) %>% 
   janitor::clean_names() %>% 
   mutate(year = publication_year,
          hits = times_cited_all_databases,
@@ -132,19 +91,7 @@ pocc <- read_csv(here("data-raw", "savedrecs.csv")) %>%
                    .)} %>% 
            str_replace(", ([A-Z][a-z]+)$", ", and \\1") %>% 
            str_replace("^([A-Z][a-z]+(?:-[A-Z][a-z]+)?), and ([A-Z][a-z]+)$", "\\1 and \\2"),
-         citation = paste(last_names, year) %>% 
-           ifelse(. == "Andersen and Fetner 2008" &
-                    !str_detect(source_title, "AMERICAN"),
-                  "Andersen and Fetner 2008a",
-                  .) %>% 
-           ifelse(. == "Lax and Phillips 2009" &
-                    !str_detect(source_title, "JOURNAL"),
-                  "Lax and Phillips 2009a",
-                  .) %>% 
-           ifelse(. == "Brewer 2003" &
-                    !str_detect(source_title, "OPINION"),
-                  "Brewer 2003a",
-                  .),
+         citation = paste(last_names, year),
          cy = k*t) %>% 
   group_by(k, t) %>% 
   mutate(to_jitter = n() > 1) %>% 
@@ -188,22 +135,26 @@ pocc_plot <- ggplot(pocc, aes(x = k,
     theme(legend.justification = c(.99,.99), 
           legend.position = c(.98,.98),
           legend.box.background = element_rect(color = "grey",
-                                               fill="white")) +
+                                               fill="white"),
+          legend.box="horizontal") +
     scale_size(name = "Citations") +
+  coord_cartesian(xlim = c(0, 125), ylim = c(0, 20)) +
     labs(x = "Countries Observed",
          y = "Mean Years Observed Per Country Observed",
          title = "Prominent Articles on\nPublic Opinion on Climate Change") +
   annotate(geom = "rect", 
            xmin = 0, xmax = 5, 
-           ymin = 0, ymax = 4,
+           ymin = 0, ymax = 5,
            color = "black", 
            fill = NA,
            linewidth = .25 ) +
-  geom_segment(aes(x = 0, y = 4, xend = 18, yend = 36.5),
+  geom_segment(aes(x = 0, y = 5, xend = 19.4, yend = 19.4),
                linetype = "dashed",
+               color = "gray",
                linewidth = .25) +
-  geom_segment(aes(x = 5, y = 0, xend = 66.5, yend = 8.5),
+  geom_segment(aes(x = 5, y = 0, xend = 70, yend = 4.5),
                linetype = "dashed",
+               color = "gray",
                linewidth = .25)
 
 set.seed(324)
@@ -231,24 +182,27 @@ zoom_plot <- ggplot(pocc, aes(x = k,
           plot.background = element_rect(colour = "black",
                                          fill = "white",
                                          linewidth =.5)) +
-    coord_cartesian(xlim = c(0, 5), ylim = c(0, 4)) +
+    coord_cartesian(xlim = c(0, 5), ylim = c(0, 5)) +
     labs(x = NULL,
          y = NULL)
 
 pocc_plot + 
     inset_element(zoom_plot, 15/80, 10/40, 44/80, 37/40) +
-    plot_annotation(caption = str_wrap("Notes: Citation counts as reported by the Web of Science on June 15, 2024.  See the online appendix for details on the contruction of this sample of prominent articles.", 
+    plot_annotation(caption = str_wrap("Note: Citation counts as reported by the Web of Science on June 15, 2024.", 
                                        width = 114))
 ```
 
-Using the Web of Science, we assembled a sample of fifty highly-cited published articles on public opinion toward climate change.^[
+Using the Web of Science and Google Scholar, we assembled a sample of prominent published articles on public opinion toward climate change.^[
 Web of Science topic searches return articles in which the search terms appear in the title or abstract.
 We executed the following search: `TS=("public opinion" AND ("climate change" OR "global warming" OR "greenhouse effect"))`.
-The fifty most-cited empirical research articles returned were retained as our sample.]
+The fifty most-cited empirical research articles returned were retained.
+Google Scholar, [according to its about page](https://scholar.google.com/intl/en/scholar/about.html), "aims to rank documents the way researchers do, weighing the full text of each document, where it was published, who it was written by, as well as how often and how recently it has been cited in other scholarly literature."
+We searched `"public opinion" "climate change"` and identified the first fifty articles returned.
+Then we added the Web of Science records for the Google Scholar results (to ensure consistency of citation counts) to our original Web of Science sample and dropped all duplicates, yielding a total of `r nrow(pocc)` different articles.]
 These articles had publication dates as early as `r summary(pocc$year)[[1]]` and as late as `r summary(pocc$year)[[6]]` (median: `r summary(pocc$year)[[3]]`) and were cited in the Web of Science from `r summary(pocc$hits)[[1]]` to `r summary(pocc$hits)[[6]]` times (median: `r summary(pocc$hits)[[3]]`).
 We then examined these articles to find the number of countries and years investigated in each.
 As the zoomed portion of the plot emphasizes, many of these articles might be described as using case-study or small-_n_ research designs.
-Just over a third consider only a single year in a single country; together with works that study one country in just two years they comprise nearly half of our sample.
+Just over a third consider only a single year in a single country; together with works that study four and fewer countries and years (inset) they comprise nearly half of this sample.
 
 
 We then can turn to the distinctive challenges in the climate change data (still focusing on mean attitutes).  First, the data are particularly fragmented among *many, many* different survey questions.  We can show rather than tell here, with plots of country-years per question across topics (climate change vs. PGE vs. macrointerest, for example).
@@ -259,7 +213,7 @@ Moreover, with regard to climate-change opinion, researchers are particularly in
 
 # The Proposed Research
 
-The proposed research comprises four principal activities: (1) expanding the survey source data, (2) improving the multiple-imputation routine by assessing and incorporating new tech- niques to ensure its estimates are comparable, (3) developing and testing a range of methods for generating polarization estimates, and (4) disseminating the resulting estimates to researchers, educators, students, and policymakers worldwide through conference presentations, a symposium, scholarly publications, and a web interface.
+The proposed research comprises four principal activities: (1) expanding the survey source data, (2) improving the multiple-imputation routine by assessing and incorporating new techniques to ensure its estimates are comparable, (3) developing and testing a range of methods for generating polarization estimates, and (4) disseminating the resulting estimates to researchers, educators, students, and policymakers worldwide through conference presentations, a symposium, scholarly publications, and a web interface.
   
 
 
