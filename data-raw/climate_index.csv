@@ -1,0 +1,1274 @@
+survey,item,variable,values,question_text,response_categories,agreed,categories,notes
+abk2016_us,gen_clicon_4,ccc_1,c(4:1),"In your view, how serious of a problem is global climate change?",Very serious 1 Somewhat serious  Not too serious    Not a problem 4,NA,NA,experiment
+abk2016_us,gen_clicon_4,ccc_2,c(4:1),When do you think global climate change will harm people?,It is harming people around the world now1 It will harm people in the next few years 2   It will not harm people for many years 3   It will never harm people 4,NA,NA,NA
+abk2016_us,gen_clicon_4,ccc_3,c(4:1),"How concerned are you, if at all, that global climate change will harm you personally at some point in your lifetime?",Very concerned 1  Somewhat concerned    Not too concerned Not at all concerned 4,NA,NA,NA
+abk2016_us,climate_chg_3,ccknow_1,"c(2,3,1)",Climate change knowledge - Earth's temperature increasing,Yes  1    No 2Don't know enough to say    3,NA,NA,NA
+abk2016_us,climate_chg_3,ccknow_3,"c(2,3,1)",Climate change knowledge - stop burning fossil fuels today stops global warming,True     1  False 2 Don't know enough to say 3,NA,NA,NA
+abk2016_us,gen_clicon_5,ccint_1,c(1:5),Climate change interest - attention on climate change issue and discussion,Never  1   Rarely  Sometimes      Often Very often 5,NA,NA,conjoint experiment????
+abk2016_us,env_knowledge_4,ccint_3,c(4:1),Climate change interest - environmental issues,Very well informed1  Fairly well informed Fairly badly informed   Very badly informed 4,NA,NA,NA
+abk2016_de,gen_clicon_4,ccc_1,c(4:1),"In your view, how serious of a problem is global climate change?",Very serious 1 Somewhat serious  Not too serious    Not a problem 4,NA,NA,NA
+abk2016_de,gen_clicon_4,ccc_2,c(4:1),When do you think global climate change will harm people?,It is harming people around the world now1 It will harm people in the next few years 2   It will not harm people for many years 3   It will never harm people 4,NA,NA,NA
+abk2016_de,gen_clicon_4,ccc_3,c(4:1),"How concerned are you, if at all, that global climate change will harm you personally at some point in your lifetime?",Very concerned 1  Somewhat concerned    Not too concerned Not at all concerned 4,NA,NA,NA
+abk2016_de,climate_chg_3,ccknow_1,"c(2,3,1)",Climate change knowledge - Earth's temperature increasing,Yes  1    No 2Don't know enough to say    3,NA,NA,NA
+abk2016_de,climate_chg_3,ccknow_3,"c(2,3,1)",Climate change knowledge - stop burning fossil fuels today stops global warming,True     1  False 2 Don't know enough to say 3,NA,NA,NA
+abk2016_de,gen_clicon_5,ccint_1,c(1:5),Climate change interest - attention on climate change issue and discussion,Never  1   Rarely  Sometimes      Often Very often 5,NA,NA,NA
+abk2016_de,env_knowledge_4,ccint_3,c(4:1),Climate change interest - environmental issues,Very well informed1  Fairly well informed Fairly badly informed   Very badly informed 4,NA,NA,NA
+ess8,spe_indchge_11,eneffap,c(0:10),How likely to buy most energy efficient home appliance,Not at all likely 0 extremely likely 10,NA,NA,NA
+ess8,spe_indchge_6,rdcenr,c(1:6),"There are some things that can be done to reduce energy use, such as switching off appliances that are not being used, walking for short journeys, or only using the heating or air conditioning when really needed. In your daily life, how often do you do things to reduce your energy use?",Never 1    Hardly ever    2     Sometimes 3                   Often 4    Very often 5   Always 6  Cannot reduce energy use 55,NA,NA,Cannot reduce energy use 55 ??? Num = 233
+ess8,sup_govaction_5,elgcoal,c(1:5),"The highlighted box at the top of this card shows a number of energy sources that can be used to generate electricity. Please take a moment to look over them. How much of the electricity used in [country] should be generated
+from each energy source? First, how much of the electricity used in [country] should be generated from coal?",1A very large amount.5  None at all 55I have not heard of this energy source before,NA,NA,?  More --> not concern?   less doesn't mean not concern
+ess8,sup_govaction_5,elgngas,c(1:5),How much electricity in [country] should be generated from natural gas,1A very large amount.5  None at all 55I have not heard of this energy source before,NA,NA,?  More --> not concern?   less doesn't mean not concern
+ess8,sup_govaction_5,elghydr,c(5:1),How much electricity in [country] should be generated from hydroelectric power,1A very large amount.5  None at all 55I have not heard of this energy source before,NA,NA,?  More --> not concern?   less doesn't mean not concern
+ess8,sup_govaction_5,elgnuc,c(5:1),How much electricity in [country] should be generated from nuclear power,1A very large amount.5  None at all 55I have not heard of this energy source before,NA,NA,?  More --> not concern?   less doesn't mean not concern
+ess8,sup_govaction_5,elgsun,c(5:1),How much electricity in [country] should be generated from solar power,1A very large amount.5  None at all 55I have not heard of this energy source before,NA,NA,?  More --> not concern?   less doesn't mean not concern
+ess8,sup_govaction_5,elgwind,c(5:1),How much electricity in [country] should be generated from wind power,1A very large amount.5  None at all 55I have not heard of this energy source before,NA,NA,?  More --> not concern?   less doesn't mean not concern
+ess8,sup_govaction_5,elgbio,c(5:1),How much electricity in [country] should be generated from biomass energy,1A very large amount.5  None at all 55I have not heard of this energy source before,NA,NA,?  More --> not concern?   less doesn't mean not concern
+ess8,gen_clicon_5,wrntdis,c(1:5),"How worried, energy supply interrupted by natural disasters or extreme weather",Not at all worried   1 Not very worried   Somewhat worried       Very worried  Extremely worried 5,NA,NA,NA
+ess8,climate_chg_4,clmchng,c(4:1),You may have heard the idea that the world's climate is changing due to increases in temperature over the past 100 years. What is your personal opinion on this? Do you think the world's climate is changing?,Definitely changing   1    Probably changing   Probably not changing Definitely not changing  4,NA,NA,NA
+ess8,climate_tax_5,inctxff,c(5:1),"To what extent are you in favour or against the following policies in [country]
+to reduce climate change? Increasing taxes on fossil fuels, such as oil, gas and
+coal.",Strongly in favour      1      Somewhat in favour Neither in favour nor against              Somewhat against              Strongly against 5,NA,NA,NA
+ess8,sup_govaction_5,sbsrnen,c(5:1),To what extent are you in favour or against the following policies in [country] to reduce climate change? Using public money to subsidise renewable energy such as wind and solar power.,Strongly in favour      1      Somewhat in favour Neither in favour nor against              Somewhat against              Strongly against 5,NA,NA,NA
+ess8,sup_govaction_5,banhhap,c(5:1),To what extent are you in favour or against the following policies in [country] to reduce climate change? A law banning the sale of the least energy efficient household appliances.,Strongly in favour      1      Somewhat in favour Neither in favour nor against              Somewhat against              Strongly against 5,NA,NA,NA
+ess_combo,gen_evncon_6,impenv,c(6:1),Important to care for nature and environment,Very much like me  1          Like me   Somewhat like me   A little like me        Not like me Not like me at all   6         Refusal         Don't know          No answer,NA,NA,NA
+ess10_c,gen_evncon_6,impenv,c(6:1),Important to care for nature and environment,Very much like me  1          Like me   Somewhat like me   A little like me        Not like me Not like me at all   6         Refusal         Don't know          No answer,NA,NA,NA
+ess10_c,climate_chg_6,ccnthum,"C(55,1, 2, 3, 4, 5)","Climate change caused by natural processes, human activity, or both",Entirely by natural processes                     1      Mainly by natural processes 2 About equally by natural processes and human 3   Mainly by human activity        4                    Entirely by human activity    5         I don't think climate change is happening     55       Refusal      NA                                      Don't know     NA   No answer  NA,NA,NA,NA
+ess10_c,gen_clicon_5,wrclmch,C(1:5),How worried about climate change,"Not at all worried 1  Not very worried  2 Somewhat worried      3 Very worried 4 Extremely worried  5   Not applicable    NA        Refusal      NA   Don't know  NA        No answer NA 
+",NA,NA,NA
+eib2021,gen_clicon_2,q1r3,c(2:1),"Climate change - In your opinion, what are the three biggest challenges that citizens in your country are currently facing?",1 cliamte change 2 no to climate change,NA,NA,NA
+eib2021,gen_clicon_2,q3,c(1:4),Do you feel that climate change is having an impact on your everyday life?,"""No, not at all"" 1    ""No, not really""    2""Yes, somewhat""   3  ""Yes, very much so""4",NA,NA,NA
+eib2021,ind_change_4,q5,"c(4, 3, 1, 2)","Irrespective of the COVID-19 crisis, regarding your own behaviour and climate change, would you say…:","[1] ""You are making limited efforts to reduce your contribution to climate change""     [2] ""You are making radical lifestyle changes to reduce your contribution to climate change""[3] ""You are trying to reduce your impact on climate change, but you are unable to do so""   [4] ""You don’t feel it’s necessary to reduce your impact on climate change""",NA,NA,NA
+eib2021,sup_govaction_2,q9_new,c(0:1),Q9: Which of the following statements do you most agree with? The most significant way to stop or drastically limit climate change is through…,"""Government regulation""  1, others 0",NA,NA,"[1] ""A radical change in our habits (consumption, transport, etc.)""                                              
+[2] ""Government regulation""                                                                                      
+[3] ""Massive channelling of public and private investment into climate-friendly projects""        [4] ""Technical and technological improvements (e.g. innovation, digitalisation, development of renewable energy)"""
+eib2021,gen_clicon_2,q12_new,c(0:1),"Q12: In your opinion, what would be the main benefit for your country in reducing its reliance on fossil fuels (e.g. oil, natural gas, coal)?","""You don’t think your country should reduce its fossil fuel consumption – the country needs fossil fuels""     0, others 1",NA,NA,"[1] ""Because the world’s reserve of fossil fuels (e.g. oil, gas) will soon be depleted, we need to be prepared to use alter""  [2] ""It would allow my country to become independent in terms of energy and avoid relying on other countries for energy needs""3] ""Less fossil fuel consumption, which is the main cause of climate change""  [4] ""To reduce local pollution, especially in cities (e.g. by relying on electric cars and renewable energy)""   5] ""You don’t think your country should reduce its fossil fuel consumption – the country needs fossil fuels"""
+eib2021,priority_concern_2,q13,c(1:2),"Q13: Faced with the economic crisis caused by the COVID-19 pandemic, what should be the priority of your national government?","[1] ""Boost the economy by any means in order to return to economic growth as soon as possible""                                
+[2] ""Reorient the economy, ensuring that the economic recovery clearly takes into account the needs of climate action and pro""",NA,NA,NA
+eib2021,climate_indbeh_2,q14,c(1:2),"Q14: The COVID-19 crisis showed that citizens were willing to accept strong government measures to combat the epidemic, such as mandatory masking, lockdown, travel bans, etc. Would you be in favour of stricter government measures, forcing citizens to chan","""No"" 1 ""Yes""2",NA,NA,NA
+eib2021,sup_govaction_2,q18r1,c(2:1),"Q18r1: Mandatory indication of the carbon footprint of all products and services we buy - More specifically, concerning consumption, which two actions should be prioritised to combat climate change?","[1] ""Mandatory indication of the carbon footprint of all products and services we buy""       
+[2] ""NO TO: Mandatory indication of the carbon footprint of all products and services we buy""",NA,NA,NA
+eib2021,climate_tax_2,q18r2,c(2:1),"A carbon tax on non-sustainable products - More specifically, concerning consumption, which two actions should be prioritised to combat climate change","[1] ""A carbon tax on non-sustainable products""        2""NO TO: A carbon tax on non-sustainable products""",NA,NA,NA
+eib2021,sup_govaction_2,q18r3,c(2:1),"Better recycling systems (e.g. glass, paper and metal) - More specifically, concerning consumption, which two actions should be prioritised to combat climate change?""","[1] ""Better recycling systems (e.g. glass, paper and metal)""     2   ""NO TO: Better recycling systems (e.g. glass, paper and metal)""",NA,NA,NA
+eib2021,sup_govaction_2,q18r4,c(2:1),"Education for primary and secondary school children about sustainable consumption - More specifically, concerning consumption, which two actions should be prioritised to combat climate change?""","[1] ""Education for primary and secondary school children about sustainable consumption""       [2] ""NO TO: Education for primary and secondary school children about sustainable consumption""",NA,NA,NA
+eib2021,sup_govaction_2,q18r5,c(2:1),"Ban on the products and services that emit the most greenhouse gases - More specifically, concerning consumption, which two actions should be prioritised to combat climate change?""","[1] ""Ban on the products and services that emit the most greenhouse gases""        ""NO TO: Ban on the products and services that emit the most greenhouse gases""",NA,NA,NA
+eib2021,climate_tax_2,q19r1,c(2:1),"Q19r1: A high carbon tax on all flights - More specifically, concerning transport, which three actions should be prioritised to combat climate change?`
+","1] ""A high carbon tax on all flights""      2  ""NO TO: A high carbon tax on all flights""",NA,NA,NA
+eib2021,sup_govaction_2,q19r2,c(2:1),"""Q19r2: A ban on short-distance flights - More specifically, concerning transport, which three actions should be prioritised to combat climate change?""                                                                                                          
+","[1] ""A ban on short-distance flights""        ""NO TO: A ban on short-distance flights""",NA,NA,NA
+eib2021,sup_govaction_2,q19r3,c(2:1),"""Q19r3: Introduce lower speed limits on roads and highways - More specifically, concerning transport, which three actions should be prioritised to combat climate change?""                                                                                       
+","[1] ""Introduce lower speed limits on roads and highways""        ""NO TO: Introduce lower speed limits on roads and highways""",NA,NA,NA
+eib2021,sup_govaction_2,q19r4,c(2:1),"""Q19r4: Further develop public transport - More specifically, concerning transport, which three actions should be prioritised to combat climate change?""                                                                                                         
+","[1] ""Further develop public transport""        ""NO TO: Further develop public transport""",NA,NA,NA
+eib2021,climate_tax_2,q19r5,c(2:1),"""Q19r5: Heavily tax highly polluting cars - More specifically, concerning transport, which three actions should be prioritised to combat climate change?""                                                                                                        
+","[1] ""Heavily tax highly polluting cars""        ""NO TO: Heavily tax highly polluting cars""",NA,NA,NA
+eib2021,sup_govaction_2,q19r6,c(1:2),"""Q19r6: Subsidise the use of electric cars - More specifically, concerning transport, which three actions should be prioritised to combat climate change?""                                                                                                       
+","1 NO TO: Subsidise the use of electric cars 2 ""Subsidise the use of electric cars""",NA,NA,NA
+eib2021,sup_govaction_2,q19r8,c(2:1),"""Q19r8: Ban transport by air of manufactured products and food - More specifically, concerning transport, which three actions should be prioritised to combat climate change?""","[1] ""Ban transport by air of manufactured products and food""        ""NO TO: Ban transport by air of manufactured products and food""",NA,NA,NA
+eib2022,gen_clicon_2,q1r3,c(2:1),"In your opinion, what are the three biggest challenges that people in your country are currently facing? Climate change",Climate change 1 NO TO: Climate change 2,NA,NA,NA
+eib2022,gen_clicon_2,q2,c(1:2),Do you think climate change and its consequences are the biggest challenges for humanity in the 21st century?,no 1 yes 2,NA,NA,NA
+eib2022,gen_clicon_4,q3,c(1:4),Do you feel that climate change has an impact on your everyday life?,"No, not at all 1 No, not really 2 Yes, somewhat 3 Yes, very much so 4",NA,NA,NA
+eib2022,climate_indbeh_2,q8,c(1:2),"The COVID-19 crisis has showed that government measures to combat the pandemic, such as mandatory masks, lockdowns, travel restrictions, etc., together with vaccination, have been successful in containing the spread of the virus. Would you be in favour of stricter government measures imposing changes in people’s behaviour to tackle climate change?",no 1 yes 2,NA,NA,NA
+eib2022,sup_govaction_4,q9r1,"c(1,3, 4,2)","Are you in favour of the following solutions to combat climate change? a.	Imposing a warranty of a minimum of 5 years on any electric or electronic product, thus encouraging companies to produce items that last longer","""Completely against""   1 ""Completely in 2 favour"" ""Somewhat against""  3   ""Somewhat in favour""4",NA,NA,NA
+eib2022,climate_tax_4,q9r2,"c(1,3, 4,2)","Are you in favour of the following solutions to combat climate change? b.	A tax on products and services that contribute most to global warming","""Completely against""   1 ""Completely in 2 favour"" ""Somewhat against""  3   ""Somewhat in favour""4",NA,NA,NA
+eib2022,sup_govaction_4,q9r3,"c(1,3, 4,2)","c.Replacing short-distance flights by fast, low-polluting trains in collaboration with neighbouring countries","""Completely against""   1 ""Completely in 2 favour"" ""Somewhat against""  3   ""Somewhat in favour""4",NA,NA,NA
+eib2022,sup_govaction_4,q9r4,"c(1,3, 4,2)","d.	Strengthening education and increasing children’s awareness of sustainable consumption","""Completely against""   1 ""Completely in 2 favour"" ""Somewhat against""  3   ""Somewhat in favour""4",NA,NA,NA
+pew2021,climate_concern_4,CLIMATE_CONCERN,c(4:1),"How concerned are you, if at all, that global climate change will harm you personally at
+some point in your lifetime? Are you very concerned, somewhat concerned, not too concerned or not at all concerned?",Very concerned   1    Somewhat concerned        Not too concerned     Not at all concerned 4,NA,NA,NA
+pew2021,gen_indchge_4,CLIMATE_BEHAVIOR,c(4:1),"How much, if anything, would you be willing to change about how you live and work to help reduce the effects of global climate change? Would you be willing to make a lot of changes, some changes, only a few changes or no changes at all?",A lot of changes  1           Some changes       Only a few changes        No changes at all 4,NA,NA,NA
+pew2021,intcomm_coop_4,climate_intlcommunity,c(4:1),"How confident are you that actions taken by the international community will significantly reduce the effects of global climate change – very confident, somewhat confident, not too confident, or not at all confident?",Very confident   1    Somewhat confident        Not too confident     Not at all confident    4,NA,NA,NA
+pipa2007,gen_clicon_3,q3.7,c(3:1),"Below is a list of possible threats to the vital interest of [survey country] in the next 10 years. For each one, please select whether you see this as a critical threat, an important but not critical threat, or not an important threat at all...Global Warming",Critical Threat 1 Important but not Critical 2              Not Important           3,NA,NA,NA
+pipa2007,gen_clicon_3,q262,c(1:3),"There is a controversy over what the countries of the world, including [survey country], should do about the problem of global warming. Here are three statements. Please tell me which statement comes closest to your own point of view.""","Until sure GW a problem, should not take steps              1        Deal w-global warming gradually by taking low cost steps           2 
+GW is a serious problem - immediate steps even if it involves significant costs                  3",NA,NA,NA
+pipa2009,gen_clicon_4,q1,c(4:1),"Q1. In your view, is climate change, also called global warming, a serious problem?""",serious problem  1   Smwht serious   Not too serious     Not a problem        4,NA,NA,NA
+pipa2009,gen_clicon_3,q2,"c(2,3,1)","As you may know, when coal, [petrol/gasoline], or other fossil fuels are burned for energy, this releases gases that stay in the atmosphere and trap heat, making the world hotter on average.  If our country does not do things differently in the future, do you think that the amount of greenhouse gases that [country] produces will:",Go up  2     Go down 2Stay the same           3,NA,NA,NA
+pipa2009,climate_eco_4,q3,c(4:1),"Dealing with the problem of climate change should be given priority, even if it causes slower economic growth and some loss of jobs.",Agree strongly  1     Agree smwht    Disagree smwht Disagree strongly      4,NA,NA,NA
+pipa2009,air_health_4,q4a,c(1:4),"If climate change is left unchecked worldwide, how much do you think climate change, will affect each of the following in our country: The types of food we produce",Not at all 1 Not very much          Some         A lot       4,NA,NA,NA
+pipa2009,gh_env_4,q4b,c(1:4),The types of plants and animals that can live here,Not at all 1 Not very much          Some         A lot       4,NA,NA,NA
+pipa2009,gh_env_4,q4c,c(1:4),Rainfall and available water resources,Not at all 1 Not very much          Some         A lot       4,NA,NA,NA
+pipa2009,air_health_4,q4d,c(1:4),The price of food and other essential goods,Not at all 1 Not very much          Some         A lot       4,NA,NA,NA
+pipa2009,gh_env_4,q4e,c(1:4),"The likelihood of natural disasters, like droughts or floods",Not at all 1 Not very much          Some         A lot       4,NA,NA,NA
+pipa2009,gh_env_4,q4f,c(1:4),Our coastline,Not at all 1 Not very much          Some         A lot       4,NA,NA,NA
+pipa2009,air_health_4,q4g,c(1:4),People’s need to move their homes to different locations,Not at all 1 Not very much          Some         A lot       4,NA,NA,NA
+pipa2009,gen_clicon_6,q7,c(6:1),When do you think climate change will start to substantially harm people in [country]?,People are being harmed now        1   In 10 years                 In 25 years     In 50 years  In 100 years           Never                6,NA,NA,NA
+pipa2009,gen_clicon_3,q8,"c(1,3,2)","To deal with the problem of climate change, do you think your government is doing:",Too much    1     Not enough 2 About right amount            3,NA,NA,NA
+pipa2009,gen_clicon_2,q9,c(2:1),Do you think our country does or does not have a responsibility to take steps to deal with climate change?,Does 1Doesn't 2,NA,NA,NA
+pipa2009,intcomm_coop_2,q11,c(2:1),"As you may know, [country] and other countries from around the world will be meeting in December in Copenhagen to develop a new agreement to take steps against climate change by limiting greenhouse gas emissions. If the other countries come to an agreement, do you think [country] should or should not be willing to commit to limiting its greenhouse gas emissions as part of such an agreement",Should be willing 1Shouldn't be willing                  2,NA,NA,NA
+pipa2009,intcomm_coop_2,q12,c(2:1),"If other countries don't come to an agreement, would our country have a responsibility to take steps against climate change?""",Would have a responsibility 1 Wouldn't have a responsibility                 2,NA,NA,NA
+pipa2009,sup_govaction_2,q13,c(2:1),"Do you think it will be necessary or will not be necessary to increase the cost of energy, to encourage individuals and businesses to conserve more or to use alternative forms of energy?",Will be necessary 1Will not be necessary  2,NA,NA,NA
+pipa2009,climate_indtax_2,q14,c(2:1),Imagine that taking steps against climate change would increase costs to the average person for energy and other products by [local currency amount] per month?  Would you be willing or not willing to pay this cost as part of taking steps against climate change?,Would be willing 1  Wouldn't be willing                2,NA,NA,NA
+pipa2009,sup_govaction_4,q15a,c(4:1),"Would you favor or oppose [country] taking each of the following steps to help deal with climate change? :Preserving or expanding forested areas, even if this means less land for agriculture or construction",Favor strongly1     Favor smwht    Oppose smwht Oppose strongly              4,NA,NA,NA
+pipa2009,sup_govaction_4,q15b,c(4:1),"Limiting the rate of constructing coal-fired power plants, even if this increases the cost of energy",Favor strongly1     Favor smwht    Oppose smwht Oppose strongly              4,NA,NA,NA
+pipa2009,sup_govaction_4,q15c,c(4:1),"Gradually increasing the requirements for fuel efficiency in automobiles, even if this raises the cost of cars and bus fares",Favor strongly1     Favor smwht    Oppose smwht Oppose strongly              4,NA,NA,NA
+pipa2009,sup_govaction_4,q15d,c(4:1),"Gradually reducing government subsidies that favor private transportation, even if this raises its cost",Favor strongly1     Favor smwht    Oppose smwht Oppose strongly              4,NA,NA,NA
+pipa200907,climate_pri_11,cc2,c(0:10),"Using the same scale, how high a priority do you think the government SHOULD place on addressing climate change?",0 meaning “not a priority at all” and 10 meaning a “very high priority”.,Dataset is sav. The format is weird. Need to be clean,NA,NA
+ca2019,sup_cp_2,support_cp,c(0:1),indicator for carbon pricing support,"0, 1",NA,NA,NA
+cacombo,climate_trade_2,captrade_bin,c(0:1),indicator for emissions trading support,NA,NA,NA,NA
+cacombo,climate_tax_2,carbon tax support,c(0:1),indicator for carbon tax support,NA,NA,NA,NA
+swiss2019,climate_chg_2,climscep,c(0:1),if respondent believes climate change is human-caused,"0,1",NA,climate knowledge,NA
+autnes2020_w13,gen_clicon_11,w13_q21,c(0:10),"Generally speaking, how concerned are you about the climate change currently under discussion?",not at all concerned   0    very concerned     10,NA,NA,NA
+autnes2020_w13,climate_eco_5,w13_q22x4,c(1:5),We worry too much about climate change and too little about jobs and the economy.,completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2020_w13,climate_pri_5,w13_q24x3,c(1:5),There are more important things in life than climate change.,completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2020_w13,gen_clicon_5,w13_q24x4,c(1:5),Many assertions about climate change are exaggerated.,completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2020_w13,gen_indchge_5,w13_q24x2,c(1:5),"To stop climate change, I am not prepared to change my lifestyle.",completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,concern-->action???,NA,NA
+autnes2020_w13,gen_indchge_5,w13_q24x5,c(1:5),"As long as others don't change their behaviour, I don't have to change my behaviour regarding climate change",completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2020_w13,gen_indchge_5,w13_q24x6,c(5:1),"By changing my lifestyle (e.g. eating less meat, not travelling by plane, restricting car traffic) I can help to improve the climate.",completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2020_w13,climate_tax_5,w13_q22x1,c(5:1),BUSINESSES SHOULD PAY CO2 TAX,completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree     5,NA,NA,NA
+autnes2020_w13,climate_tax_5,w13_q22x6,c(1:5),Economic progress in Austria will slow down if CO2 taxes are introduced in Austria.,completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree     5,knowledge or attitude?,no attidue.,NA
+autnes2020_w13,intcomm_coop_5,w13_q22x7,c(5:1),"Rich countries like Austria must make a greater contribution to mitigating climate
+change than poorer countries can.",completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree     5,NA,NA,NA
+autnes2020_w13,climate_indbeh_5,w13_q22x8,c(5:1),"
+To combat climate change, individual car traffic must be restricted.",completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree     5,NA,NA,NA
+autnes2020_w13,sup_govaction_11,w13_q23,c(0:10),"Should politics leave it up to citizens or the business community to decide how to protect the climate, even if it means that the right thing is not always done for the climate? Or should politicians pass laws that force citizens or business to protect the climate, even if this interferes with their freedom of choice?","0 = Politics should leave it to the citizens or the economy itself,
+how they protect the climate
+10 = Politicians should enact laws that allow citizens and businesses to forces to protect the climate. ..10",NA,NA,NA
+autnes2020_w13,climate_indtax_5,w13_q24x1,c(5:1),it is acceptable to me to pay higher taxes to stop climate change.,NA,NA,NA,NA
+autnes2020_w13,climate_chg_5,w13_q22x3,c(1:5),Agriculture is one of the biggest climate sinners.,completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2020_w13,climate_eco_5,w13_q22x5,c(5:1),Economic growth always harms the climate.,completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2019_w12,climate_tax_6,w12_q40x4,c(6:1),What do you think should be done in the following policy areas?,"CO2-tax on fossile energy 1 No CO2-tax on fossile energy 6
+",NA,NA,NA
+autnes2019_w11,gen_evncon_5,w11_q42x8,c(5:1),"The environment has to be protected at all costs, even if this gets expensive for each individual.",NA,NA,NA,NA
+autnes2019_w10,climate_chg_11,w10_q22x2,c(0:10),Climate change is caused by human behavior.,highly unlikely 0     very likely      10,NA,NA,NA
+autnes2019_w9,climate_chg_11,w9_q30x2,c(0:10),Climate change is caused by human behavior.,highly unlikely 0     very likely      10,each wave has its own weight. No to separate data,NA,NA
+autnes2019_w9,climate_chg_5,w9_q60x2,c(5:1),Climate change is mainly man-made.,completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2019_w9,climate_chg_5,w9_q60x3,c(1:5),Evidence for man-made climate change is insufficient.,completely agree  1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2019_w9,climate_chg_5,w9_q60x4,c(1:5),I am not sure if climate change actually happens.,completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2019_w9,gen_clicon_5,w9_q60x1,c(1:5),Now a few questions on climate change and envirnomental protection. To what extent do you agree with the following statements? Climate change and its consequences is often portrayed inordinately.,completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2019_w8,envimp_eco_11,w8_q39x1,c(10:0),"ENVIRONMENTAL PROTECTION AT THE EXPENSE OF ECONOMIC GROWTH""",Protection of the environment    0   Support economic growth      10,NA,NA,NA
+autnes2019_w7,gen_evncon_5,w7_q22x8,c(5:1),"The environment has to be protected at all costs, even if this gets expensive for each individual.",completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2017_w4,gen_evncon_5,w4_q50x8,c(5:1),"The environment has to be protected at all costs, even if this gets expensive for each individual.",completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+autnes2017_w1,gen_evncon_5,w1_q44x8,c(5:1),"The environment has to be protected at all costs, even if this gets expensive for each individual.",completely agree       1 somewhat agree partly agree/disagree     somewhat disagree   completely disagree      5,NA,NA,NA
+eib2022,gen_evncon_2,q1r10,c(2:1),"In your opinion, what are the three biggest challenges that people in your country are currently facing? Environmental degradation",Environmental degradation 1 NO TO: Environmental degradation 2,NA,NA,NA
+pipa2007,env_concern_3,q5.10,c(3:1),"Below is a list of possible foreign policy goals that [survey country] might have. For each one please select whether you think that it should be a very important foreign policy goal of [survey country], a somewhat important foreign policy goal, or not an important goal at all... Improving the global environment",Very Important   1Somewhat Important Not Important at All 3,NA,NA,NA
+evs_combo,envact_income_4,b001,c(4:1),Would give part of my income for the envi- ronment,Strongly agree     1          Agree            Disagree   Strongly disagree 4,NA,NA,NA
+evs_combo,envact_buy_4,b004,c(4:1),Would buy things at a 20% higher price if it helped to protect environment,Strongly agree     1          Agree            Disagree   Strongly disagree 4,NA,NA,NA
+evs_combo,envimp_unemp_4,b006,c(1:4),"Combatting unemployment, we have to accept environmental problems",Strongly agree     1          Agree            Disagree   Strongly disagree 4,NA,NA,NA
+evs_combo,gen_evncon_4,b007,c(1:4),Protecting environment and fighting pollution is less urgent than suggested,Strongly agree     1          Agree            Disagree   Strongly disagree 4,NA,NA,NA
+evs_combo,envimp_eco_2,b008,c(2:1),Protecting environment vs. Economic growth,Protecting environment     1 Economy growth and creating jobs    2     Other answer   3,NA,NA,NA
+evs_combo,gen_evncon_4,b024,c(4:1),Environment: We are approaching the limit of the number of people the earth can support,Strongly agree     1          Agree            Disagree   Strongly disagree 4,NA,NA,NA
+evs_combo,gen_evncon_4,b025,c(4:1),Environment:  When humans interfere with nature it oȇen produces disastrous consequences,Strongly agree     1          Agree            Disagree   Strongly disagree 4,NA,NA,NA
+evs_combo,gen_evncon_4,b026,c(1:4),Environment:  Human ingenuity will insure that the earth remains fit to live i,Strongly agree     1          Agree            Disagree   Strongly disagree 4,NA,NA,NA
+evs_combo,gen_evncon_4,b027,c(1:4),Environment: nature is strong enough to cope with impacts of industry,Strongly agree     1          Agree            Disagree   Strongly disagree 4,NA,NA,NA
+evs_combo,gen_evncon_4,b028,c(1:4),Environment: humans were meant to rule over nature,Strongly agree     1          Agree            Disagree   Strongly disagree 4,NA,NA,NA
+evs_combo,gen_evncon_4,b029,c(4:1),Environment: if things continue we will experi- ence a catastrophe,Strongly agree     1          Agree            Disagree   Strongly disagree 4,NA,NA,NA
+evs_combo,envact_taxex_4,b002,c(4:1),Increase in taxes if used to prevent environ- mental pollution,Strongly agree     1          Agree            Disagree   Strongly disagree 4,NA,NA,NA
+evs_combo,envact_govaction_4,b003,c(4:1),Government should reduce environmental pollution,Strongly agree     1          Agree            Disagree   Strongly disagree 4,NA,NA,NA
+evs2017,envimp_ind_5,v200,c(1:5),It is just too difficult for someone like me to do much about the environment,agree strongly       1        disagree strongly    5,NA,NA,NA
+evs2017,envact_income_5,v199,c(5:1),How much do you agree or disagree with this statement? I would give part of my income if I were certain that the money would be used to prevent environmental pollution,agree strongly       1        disagree strongly    5,NA,NA,NA
+evs2017,gen_evncon_5,v201,c(1:5),environment: there are more important things to do,agree strongly       1        disagree strongly    5,NA,NA,NA
+evs2017,gen_evncon_5,v202,c(1:5),There is no point in doing what I can for the environment unless others do the same,agree strongly       1        disagree strongly    5,NA,NA,NA
+evs2017,gen_evncon_5,v203,c(1:5),Many of the claims about environmental threats are exaggerated,agree strongly       1        disagree strongly    5,NA,NA,NA
+evs2017,envimp_eco_2,v204,c(2:1),protecting environment vs. economic growth,"1 protecting the environment priority, even if slower economic growth and loss of jobs
+2 economic growth and creating jobs priority, even if environment suffers",NA,NA,NA
+asianb4,envimp_eco_2,q154,c(2:1),Which of these statements comes closer to your view?,"Protecting the environment should be given priority  1
+Economic growth and creating jobs should be the top priority                      2",NA,NA,NA
+asianb5_australia,envimp_eco_2,q154,c(2:1),Which of these statements comes closer to your view?,Protecting the environment should be given priority  1 Economic growth and creating jobs should be the top priority                      2,NA,NA,NA
+kgss,gen_evncon_5,grncon,c(1:5),General concerns for the environment,Not at all concerned 1 Very concerned 5,NA,NA,NA
+kgss,gen_clicon_2,entrbus,c(0:1),"Here is a list of some different environmental problems. Which problem, if any, do you think is the most
+important for Korea as a whole? Climage chagne",Need to rescale if want to use it.,NA,NA,NA
+kgss,gen_clicon_2,enprbfam,c(0:1),"Here is a list of some different environmental problems. Which problem, if any, affects you and your
+family the most? Cliamate change",NA,NA,NA,NA
+kgss,gh_env_5,TEMPGEN,c(5:1),Threats to environment: A rise in the world temperature caused by climate change,Extremely dangerous  1 Not dangerous at all 5,NA,NA,NA
+kgss,climate_chg_4,ATMOSHOL,c(1:4),Assessing the truth level of ‘Climate change is caused by a hole in the earth’s atmosphere',Definitely true      1 Probably true   Probably not true Definitely not true 4,NA,NA,NA
+kgss,climate_chg_4,COALCAUZ,c(4:1),"For each statement below, just tick the box that comes closest to your opinion of how true it is... ‘Every time we use coal or oil or gas, we contribute to climate change",Definitely true      1 Probably true   Probably not true Definitely not true 4,NA,NA,NA
+kgss,gen_clicon_7,CAPA2,c(7:1),"Please indicate the extent to which you think Korean society is coping well with each of the possible
+risks listed below... Natural Risk... Radical Climate Change (Rise in the World’s Temperature)",Coping not well at all 1 Coping extremely well 7,NA,NA,NA
+kgss,gen_clicon_7,EXPOS2,c(7:1),"Lastly, please indicate the extent to which you think Korean society is exposed to each of the possible risks listed below... Natural Risk... Radical Climate Change (Rise in the World’s Temperature)",Totally exposed  1 Not exposed at all 7,NA,NA,NA
+kgss,gen_clicon_7,VULNERAB2,c(7:1),"Please indicate the extent to which you think Korean society is vulnerable to each of the possible risks
+listed below... Natural Risk... Radical Climate Change (Rise in the World’s Temperature)",Totally vulnerable1 Not vulnerable at all 7,NA,NA,NA
+kgss,gen_clicon_7,HAZA2,c(7:1),"Please indicate the extent to which you think each of the possible risks listed below is likely to occur to
+yourself... Natural Risk... Radical Climate Change (Rise in the World’s Temperature)",Extremely likely 1Not likely at all 7,NA,NA,NA
+kgss,gen_evncon_5,CARSGEN,c(5:1),Threats to environment: air pollution caused by cars,Extremely dangerous 1Not dangerous at all5,NA,NA,NA
+kgss,gen_evncon_5,INDUSGEN,c(5:1),Threats to environment: Air pollution caused by industry,Extremely dangerous 1Not dangerous at all5,NA,NA,NA
+kgss,gen_evncon_4,AIRPOL,c(4:1),Seriousness of air pollution in the local residence,Very severe 1  Somewhat severe     Not so severe Not severe at all 4,NA,NA,NA
+kgss,spe_indchge_4,DRIVLESS,c(4:1),R's special effort to cut back on driving a car for environmental reasons,Always   1  Often Sometimes     Never 4,NA,NA,NA
+kgss,spe_indchge_4,REDCEHME,c(4:1),R's special effort to reduce the energy or fuel you use at home for environmental reasons,Always   1  Often Sometimes     Never 4,NA,NA,NA
+kgss,gen_evncon_5,SCIGRN,c(1:5),Agree or disagree: Modern science will solve our environmental problems with little change to our way of life,Agree strongly 1Disagree strongly 5,NA,NA,NA
+kgss,envimp_unemp_5,GRNECON,c(1:5),Agree or disagree: We worry too much about the future of the environment and not enough about prices and jobs today,Agree strongly 1Disagree strongly 5,NA,NA,NA
+kgss,gen_evncon_5,GRNPROG,c(1:5),Agree or disagree: People worry too much about human progress harming the environment,Agree strongly 1Disagree strongly 5,NA,NA,NA
+kgss,gen_evncon_5,POPGRWTH,c(5:1),Opinions: The earth simply cannot continue to support population growth at its present rate,Agree strongly 1Disagree strongly 5,NA,NA,NA
+kgss,evn_indchange_5,GRNPRICE,c(5:1),Willingness to pay higher prices to protect the environment,Very willing 1Very unwilling5,NA,NA,NA
+kgss,evn_indchange_5,GRNTAXES,c(5:1),Willingness to pay higher taxes to protect the environment,Very willing 1Very unwilling5,NA,NA,NA
+kgss,evn_indchange_5,GRNSOL,c(5:1),Willingness to accept cuts in the standard of living to protect the environment,Very willing 1Very unwilling5,NA,NA,NA
+kgss,envact_govspend_3,NATENVIR,c(3:1),"are we spending too much, too little, or about the right amount on Improving and protecting the environment",Too much 1About right  Too little 3,NA,NA,NA
+kgss,envact_govspend_5,GOVSPD1,c(5:1),"Please show whether you would like to see more or less government spending in each area. Remember that if you say ""much more"", it might require a tax increase to pay for it... The environment",Spend much more 1 Spend much less 5,NA,NA,NA
+kgss,envact_strpolicy_4,GOVRES10,c(4:1),"On the whole, do you think it should or should not be the government's responsibility to... impose strict laws to make industry do less damage to the environment",Definitely should be 1Definitely should not be4,NA,NA,NA
+kgss,evn_indchange_5,TOODIFME,c(1:5),"It is just too difficult for someone like me to do much about the environment""",Agree strongly  1     Disagree strongly      5,NA,NA,NA
+kgss,evn_indchange_4,RECYCLE,c(4:1),R's special effort to sort glass or tins or plastic or newspapers and so on for recycling,Always  1   Often Sometimes     Never 4,NA,NA,NA
+kgss,evn_indchange_4,CHEMFREE,c(4:1),R's special effort to buy fruit and vegetables grown without pesticides or chemicals,Always  1   Often Sometimes     Never 4,NA,NA,NA
+kgss,evn_indchange_4,H2OLESS,c(4:1),R's special effort to choose to save or re-use water for environmental reasons,Always  1   Often Sometimes     Never 4,NA,NA,NA
+kgss,evn_indchange_4,NOBUYGRN,c(4:1),R's special effort to avoid buying certain products for environmental reasons,Always  1   Often Sometimes     Never 4,NA,NA,NA
+kgss,evn_indchange_2,GRNGROUP,c(2:1),Whether R is a member of any group that aims to preserve or protect the environment,Yes 1 No 2,NA,NA,NA
+kgss,evn_indchange_2,GRNSIGN,c(2:1),Experience of signing a petition about an environmental issue within the last five years,"Yes, I have 1 No, I have not 2",NA,NA,NA
+kgss,evn_indchange_2,GRNMONEY,c(2:1),Experience of giving money to an environmental group within the last five years,"Yes, I have 1 No, I have not 2",NA,NA,NA
+kgss,evn_indchange_2,GRNDEMO,c(2:1),Experience of taking part in a protest or demonstration about an environmental issue within the last five years,"Yes, I have 1 No, I have not 2",NA,NA,NA
+kgss,evn_indchange_4,LOCPAR1,c(4:1),Frequency of participating in a group discussion about environmental issues,Never 1    Several times About every month  About every week 4,NA,NA,NA
+kgss,knw_cause_5,knwcause,c(1:5),Level of knowledge in the causes of environmental problems,Know nothing at all 1 Know a great deal 5,NA,NA,NA
+kgss,knw_solution_5,knowsol,c(1:5),Level of knowledge in the solutions of environmental problems,Know nothing at all 1 Know a great deal 5,NA,NA,NA
+kgss,knw_cause_5,HARMSGRN,c(1:5),Agree or disagree: Almost everything we do in modern life harms the environment,Agree strongly 1 Disagree strongly 5,NA,environmental knowledge,I think this statement is false.
+kgss,knw_cause_5,GRWTHARM,c(1:5),Opinions: Economic growth always harms the environment,Agree strongly 1 Disagree strongly 5,NA,environmental knowledge,NA
+kgss,knw_cause_5,HELPHARM,c(1:5),Agree or disagree: I find it hard to know whether the way I live is helpful or harmful to the environment,Agree strongly 1 Disagree strongly 5,NA,NA,NA
+kgss,evn_indchange_5,IHLPGRN,c(5:1),"Agree or disagree: I do what is right for the environment, even when it costs more money or takes more time",Agree strongly 1 Disagree strongly 5,NA,NA,NA
+kgss,envimp_5,IMPGRN,c(1:5),Agree or disagree: There are more important things to do in life than protect the environment,Agree strongly 1 Disagree strongly 5,NA,NA,NA
+kgss,evn_indchange_5,OTHSSAME,c(1:5),Agree or disagree: There is no point in doing what I can for the environment unless others do the same,Agree strongly 1 Disagree strongly 5,NA,NA,NA
+kgss,gen_evncon_5,GRNEXAGG,c(1:5),Agree or disagree: Many of the claims about environmental threats are exaggerated,Agree strongly 1 Disagree strongly 5,NA,NA,NA
+kgss,envimp_life_5,GRNEFFME,c(5:1),Agree or disagree: Environmental problems have a direct effect on my everyday life,Agree strongly 1 Disagree strongly 5,NA,NA,NA
+kgss,gen_evncon_5,CHEMGEN,c(5:1),Threats to environment: Pesticides and chemicals used in farming,Extremely dangerous 1Not dangerous at all5,NA,NA,NA
+kgss,gen_evncon_5,WATERGEN,c(5:1),"Threats to environment: Pollution of Korea's rivers, lakes and streams",Extremely dangerous 1Not dangerous at all5,even not related to air,NA,NA
+kgss,gen_evncon_5,ECONGRN,c(5:1),Agree or disagree: Economic progress in Korea will slow down unless we look after the environment better,Agree strongly 1 Disagree strongly 5,NA,NA,NA
+kgss,gen_evncon_7,VULNERAB26,c(7:1),"Please indicate the extent to which you think Korean society is vulnerable to each of the possible risks listed below... Environmental Risk... Environmental Contamination (Water, Air, Noise, etc.)",Totally vulnerable 1 Not vulnerable at all 7,NA,NA,NA
+kgss,gen_evncon_7,VULNERAB27,c(7:1),Please indicate the extent to which you think Korean society is vulnerable to each of the possible risks listed below... Environmental Risk... Shortage and Exhaustion of Natural Resources,Totally vulnerable 1 Not vulnerable at all 7,NA,NA,NA
+kgss,gen_evncon_7,EXPOS26,c(7:1),"Lastly, please indicate the extent to which you think Korean society is exposed to each of the possible risks listed below... Environmental Risk... Environmental Contamination (",Totally exposed 1 Not exposed at all 7,NA,NA,NA
+kgss,gen_evncon_7,EXPOS27,c(7:1),"Lastly, please indicate the extent to which you think Korean society is exposed to each of the possible risks listed below... Environmental Risk... Shortage and Exhaustion of Natural Resources (",Totally exposed 1 Not exposed at all 7,NA,NA,NA
+allbus,spe_evncon_4,he03,c(4:1),"How serious an effect on our environment (1988, 1992: in general) do you think each of these things has? :Industrial waste in rivers and the sea","1 Very serious
+2 Rather serious
+3 Not very serious
+4 Not at all serious",NA,NA,NA
+allbus,spe_evncon_4,he05,c(4:1),How serious an effect on our environment:Industrial exhaust emissions,"1 Very serious
+2 Rather serious
+3 Not very serious
+4 Not at all serious",NA,NA,NA
+allbus,spe_evncon_4,he06,c(4:1),How serious an effect on our environment:Noise and exhaust emissions from traffic,"1 Very serious
+2 Rather serious
+3 Not very serious
+4 Not at all serious",NA,NA,NA
+allbus,envact_strpolicy_5,pa11,c(5:1),What do you think of the following statements? Stronger measures should be taken to protect the environment.,"1 Completely Agree
+2 Tend to agree
+3 Neither ... nor ...
+4 Tend not to agree
+5 Do not agree at all",NA,NA,NA
+asiab2004,gen_evncon_2,q24_5,c(0:1),"Which, if any, of the following issues cause you great worry? Please choose all issues that cause you serious worry.:Environmental destruction/pollution/problems relating to natural resources",1. worry 0. not mentioned,NA,NA,NA
+asiab2003,gen_evncon_2,q19_5,c(0:1),"Which, if any, of the following issues cause you great worry? Please choose all issues that cause you serious worry.:Environmental destruction/pollution/problems relating to natural resources",1. worry 0. not mentioned,NA,NA,NA
+asiab2006,envimp_life_2,q9_25,c(0:1),"Of the following lifestyle aspects or life circumstances, please select five that are important to you. (5MA): Safe and clean environment",1 important 0.no mentioned,NA,NA,NA
+asiab2006,gen_evncon_2,q25_5,c(0:1),"Which, if any, of the following issues cause you great worry? Please choose all issues that cause you serious worry.:Environmental destruction/pollution/problems relating to natural resources",1. worry 0. not mentioned,NA,NA,NA
+asiab2005,gen_evncon_2,q25_5,c(0:1),"Which, if any, of the following issues cause you great worry? Please choose all issues that cause you serious worry.:Environmental destruction/pollution/problems relating to natural resources",1. worry 0. not mentioned,NA,NA,NA
+asiab2008,envimp_life_2,q10_25,c(0:1),"Of the following lifestyle aspects or life circumstances, please select five that are important to you. (5MA): Safe and clean environment",1 important 0.no mentioned,NA,NA,NA
+asiab2008,gen_evncon_2,q27_5,c(0:1),"Which, if any, of the following issues cause you great worry? Please choose all issues that cause you serious worry. (ROTATE card) (MA):Environmental destruction/pollution/problems relating to natural resources",1. worry 0. not mentioned,NA,NA,NA
+asiab2007,envimp_life_2,q10_25,c(0:1),"Of the following lifestyle aspects or life circumstances, please select five that are important to you. (5MA): Safe and clean environment",1 important 0.no mentioned,NA,NA,NA
+asiab2007,gen_evncon_2,q26_5,c(0:1),"Which, if any, of the following issues cause you great worry? Please choose all issues that cause you serious worry. (ROTATE card) (MA):Environmental destruction/pollution/problems relating to natural resources",1. worry 0. not mentioned,NA,NA,NA
+wvs_combo,envact_income_4,b001,c(4:1),Would give part of my income for the environment,Strongly agree    1           Agree  2 Disagree  3 Strongly disagree 4,NA,NA,NA
+wvs_combo,envact_buy_4,b004,c(4:1),Would buy things at a 20% higher price if it helped to protect environment,Strongly agree    1           Agree  2 Disagree  3 Strongly disagree 4,NA,NA,NA
+wvs_combo,envimp_unemp_4,b006,c(1:4),"Combatting unemployment, we have to accept environmental problems",Strongly agree    1           Agree  2 Disagree  3 Strongly disagree 4,NA,NA,NA
+wvs_combo,gen_evncon_4,b007,c(1:4),Protecting environment and fighting pollution is less urgent than suggested,Strongly agree    1           Agree  2 Disagree  3 Strongly disagree 4,NA,NA,NA
+wvs_combo,envimp_eco_3,b008,"c(2,3,1)","Here are two statements people sometimes make when discussing the environment and economic growth. Which of them comes closer to your own point of view? A. Protecting the environment should be given priority, even if it causes slower economic growth and some loss of jobs B. Economic growth and creating jobs should be the top priority, even if the environment suffers to some extent",Protecting environment 1 Economy growth and creating jobs   2  Other answer        3,NA,NA,NA
+wvs_combo,gh_env_4,b021,c(4:1),"Now let’s consider environmental problems in the world as a whole. Please, tell me how serious you consider each of the following to be for the world as a whole. Is it very serious, somewhat serious, not very serious or not serious at all? : Global warming or the greenhouse effect.",Very serious    1 Somewhat serious 2  Not very serious 3 Not serious at all   4,NA,NA,NA
+wvs_combo,env_seriplant_4,b022,c(4:1),Environmental problems in the world: Loss of plant or animal species or biodiversity.,Very serious    1 Somewhat serious 2  Not very serious 3 Not serious at all   4,NA,NA,NA
+wvs_combo,env_seririver_4,b023,c(4:1),"Environmental problems in the world: Pollution of rivers, lakes and oceans.",Very serious    1 Somewhat serious 2  Not very serious 3 Not serious at all   4,NA,NA,NA
+wvs_combo,envact_product_2,b011,c(0:1）,Have you chosen household products that you think are better for the environment?,Not asked-4   No answer-2 DonÂ´t know  -1  Have not  0 Have done    1,NA,NA,NA
+wvs_combo,envact_recycle_2,b012,c(0:1）,"Have you decided for environmental reasons to reuse or recycle something
+rather than throw it away?",Not asked-4   No answer-2 DonÂ´t know  -1  Have not  0 Have done    1,NA,NA,NA
+wvs_combo,envact_water_2,b013,c(0:1）,Have you tried to reduce water consumption for environmental reasons?,Not asked-4   No answer-2 DonÂ´t know  -1  Have not  0 Have done    1,NA,NA,NA
+wvs_combo,envact_petition_2,b014,c(0:1）,Have you attended a meeting or signed a letter or petition aimed at protecting the environment?,Not asked-4   No answer-2 DonÂ´t know  -1  Have not  0 Have done    1,NA,NA,NA
+wvs_combo,envact_envorg_2,b015,c(0:1）,Have you contributed to an environmental organization?,Not asked-4   No answer-2 DonÂ´t know  -1  Have not  0 Have done    1,NA,NA,NA
+wvs_combo,envact_envorg_2,b030,c(2:1),Past two years: given money to ecological organization,Yes     1          No 2,NA,NA,NA
+wvs_combo,envact_petition_2,b031,c(2:1),Past two years: participated in demonstration for environment,Yes         1      No 2,NA,NA,NA
+wvs_combo,envact_taxex_4,b002,c(4:1),Increase in taxes if used to prevent environmental pollution,Strongly agree    1           Agree  2 Disagree  3 Strongly disagree 4,NA,NA,NA
+wvs_combo,envact_govaction_4,b003,c(4:1),Government should reduce environmental pollution,Strongly agree    1           Agree  2 Disagree  3 Strongly disagree 4,NA,NA,NA
+asiab2004,envact_govspend_5,q28a,c(5:1),Listed below are various areas of government spending. Please indicate whether you would like to see more or less government spending in each area. Please bear in mind that more spendin g may require a tax increase.,1 spend much more 5 spend much less,NA,NA,NA
+asiab2003,envact_govspend_5,q23_a,c(5:1),"Listed below are various areas of government spending. Please indicate whether you would
+like to see more or less government spending in each area. Please bear in mind that more spendin g may require a tax increase.",1 spend much more 5 spend much less,NA,NA,NA
+asiab2006,envact_govspend_5,q32a,c(5:1),"Listed below are various areas of government spending. Please indicate whether you would
+like to see more or less government spending in each area. Please bear in mind that more spendin g may require a tax increase.",1 spend much more 5 spend much less,NA,NA,NA
+asiab2005,envact_govspend_5,q29a,c(5:1),Listed below are various areas of government spending. Please indicate whether you would like to see more or less government spending in each area. Please bear in mind that more spendin g may require a tax increase.,1 spend much more 5 spend much less,NA,NA,NA
+asiab2008,envact_govspend_5,q34a,c(5:1),Listed below are various areas of government spending. Please indicate whether you would like to see more or less government spending in each area. Please bear in mind that more spendin g may require a tax increase.,1 spend much more 5 spend much less,NA,NA,NA
+asiab2007,envact_govspend_5,q33a,c(5:1),Listed below are various areas of government spending. Please indicate whether you would like to see more or less government spending in each area. Please bear in mind that more spendin g may require a tax increase.,1 spend much more 5 spend much less,NA,NA,NA
+eb973_c,climate_pri_2,qa4_new,c(0:1),Which of the following topics would you like to see addressed in priority by the European Parliament? Firstly and Second ? Action against climate change,0 not mention climate change 1 mention climate change,NA,with handcoded variable,NA
+eb973,climate_pri_2,qc8_6,c(0:1),"In light of the current situation, which of the following areas should the EU prioritise for 2022? : ENVIRONMENTAL ISSUES/CLIMATE CHANGE",Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb973,climate_pri_4,qc9_3,c(4:1),Please tell how important or not important each of the following is:3 Making Europe the world's first climate-neutral continent by 2050,Very important   1  Fairly important   Not very important Not at all important  4,NA,NA,NA
+eb973,climate_chg_4,qc12_2,c(4:1),To what extent do you agree or disagree with each of the following statements?:TACKLING CLIMATE CHANGE - HELP HEALTH & WELL-BEING,Totally agree 1   Tend to agree Tend to disagree Totally disagree 4,NA,NA,NA
+eb973,climate_eco_4,qc12_3,c(1:4),TACKLING CLIMATE CHANGE - CAN HARM ECONOMY,Totally agree 1   Tend to agree Tend to disagree Totally disagree 4,NA,NA,NA
+eb973,climate_chg_4,qc12_4,c(4:1),TACKLING CLIMATE CHANGE - CAN REDUCE FUTURE ECO DAMAGE COSTS,Totally agree 1   Tend to agree Tend to disagree Totally disagree 4,NA,NA,NA
+eb972,sup_govaction_3,qb9,"c(3,1, 2)",Do you believe that the existing EU air quality standards are adequate or not?,"Yes, they are adequate and do not need to be changed      1   No, they should be strengthened  2    No, they should be weakened    3",NA,NA,NA
+eb972,gh_env_4,qb3_4,c(4:1),"IR RELATED PROBLEM SERIOUS Acidification (known as acid rain, affecting forests etc.) and eutrophication (increase of organic matter in an ecosystem, such as excessive growth of algae causing fish die-offs in rivers or lakes)",A very serious problem1 Not a serious problem at all 4,NA,NA,NA
+eb972,air_health_4,qb3_1,c(4:1),RESPIRATORY DISEASES,A very serious problem1 Not a serious problem at all 4,NA,NA,NA
+eb972,air_health_4,qb3_2,c(4:1),CARDIO-VASCULAR DISEASES,A very serious problem1 Not a serious problem at all 4,NA,NA,NA
+eb972,air_health_4,qb3_3,c(4:1),ASTHMA,A very serious problem1 Not a serious problem at all 4,NA,NA,NA
+eb963,gen_clicon_2,qa3_13,c(0:1),What do you think are the two most important issues facing (OUR COUNTRY) at the moment? THE ENVIRONMENT & CLIMATE CHANGE,Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb963,gen_clicon_2,qa4_13,c(0:1),What do you think are the two most important issues facing (personal) at the moment?THE ENVIRONMENT & CLIMATE CHANGE,Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb962_c,gen_clicon_2,qa4_c,c(0:1),Which of the following topics would you like to see addressed in priority by the European Parliament?THE ENVIRONMENT & CLIMATE CHANGE,Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb953,gen_clicon_2,qa3a_14,c(0:1),What do you think are the two most important issues facing (OUR COUNTRY) at the moment? THE ENVIRONMENT & CLIMATE CHANGE,Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb953,gen_clicon_2,qa4a_13,c(0:1),What do you think are the two most important issues facing (personal) at the moment?THE ENVIRONMENT & CLIMATE CHANGE,Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb953,gen_clicon_2,qa5_11,c(0:1),What do you think are the two most important issues facing (EU) at the moment?THE ENVIRONMENT & CLIMATE CHANGE,Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb952,gen_clicon_3,qa2_6,c(3:1),"In everyday life, we have to deal with many different issues, where we feel more or less interested. For each of the following, please indicate whether you are…THE ENVIRONMENT & CLIMATE CHANGE",Very interested  1  Moderately interested    Not at all interested 3,NA,NA,NA
+eb952,climate_chg_2,qa20_9,c(2:1),Climate change is for the most part caused by natural cycles rather than human activities,True     1     False (CORRECT) 2,NA,NA,NA
+eb951_c,gen_clicon_2,qa9_c,c(0:1),Which of the following topics would you like to see addressed in priority by the European Parliament? THE ENVIRONMENT & CLIMATE CHANGE (First two),Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb951_c,gen_clicon_2,qb1_c,c(0:1),Which of the following do you consider to be the single most serious problem facing the world as a whole? (First two),Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb951_c,gen_clicon_10,qb2,c(1:10),how serious a problem do you think climate change is at this moment?,1 Not at all a serious problem 10 An extremely serious problem,NA,NA,NA
+eb951_c,sup_govaction_3,qb7,"c(3,1, 2)","Do you think that the (NATIONALITY) government is doing enough, not enough or too much to tackle climate change?",1 Enough               Not enough                 Too much 3,NA,NA,NA
+eb951_c,sup_govaction_4,qb10,c(4:1),"To what extent do you agree or disagree with the following statement: We should reduce greenhouse gas emissions to a minimum while offsetting the remaining emissions, for instance by increasing forested areas, to make the EU economy climate-neutral by 2050.",Totally agree   1  Totally disagree 4,NA,NA,NA
+eb943,gen_clicon_2,qa3a_14,c(0:1),What do you think are the two most important issues facing (OUR COUNTRY) at the moment? THE ENVIRONMENT & CLIMATE CHANGE,Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb943,gen_clicon_2,qa4a_13,c(0:1),What do you think are the two most important issues facing (personal) at the moment?THE ENVIRONMENT & CLIMATE CHANGE,Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb943,gen_clicon_2,qa5_11,c(0:1),What do you think are the two most important issues facing (EU) at the moment?THE ENVIRONMENT & CLIMATE CHANGE,Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb942_c,gen_clicon_2,qb2_c,c(0:1),"In your opinion, which elements are the most important for the EU's economic and social development?(top 2)",Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb941,gen_clicon_2,qa11_8,c(0:1),which of the following do you think are the main challenges for the EU?,Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb941,gen_clicon_2,qa12_2,c(0:1),Which of the following do you think are the main global challenges for the future of the EU?,Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+eb941,gen_clicon_2,qa16_1,c(0:1),Which two of the following should be prioritised in order to face major global challenges?,Not Selected 0. Working on environmental issues and climate change 1,NA,NA,NA
+tt2009,gen_clicon_4,q22_1,c(4:1),To what extent are you concerned about: climate chang,Very concerned 1 not at all 4,NA,NA,NA
+tt2009,climate_eco_2,q28,c(2:1),Some people say that we should do everything possible to fight climate chan,We should fight climate change even if it slows economic gro  1We should maximize economic growth even if it hurts efforts 2,NA,NA,NA
+tt2009,gen_indchge_4,q26_2,c(4:1),The personal actions that we take to fight climate change can make a difference,Agree strongly1    Agree somewhat Disagree somewhat Disagree strongly 4,NA,NA,NA
+tt2005,gen_clicon_3,var032,c(3:1),"I am going to read you a list of possible international threats to Europe/US in the next 10
+years. Please tell me if you think each one on the list is an extremely important threat, an important
+threat, or not an important threat at all. d) the effects of global warming",1 extremely important threat 3 not important threat,NA,NA,NA
+tt2005,gen_clicon_4,var039,c(4:1),"And in the next 10 years, how likely are you to be personally affected by the following threat? d) How likely are you to be personally affected by the effects of global warming",#1 very likely 4 not likely at all,NA,NA,NA
+tt2006,gen_clicon_3,var042,c(3:1),"I am going to read you a list of possible international threats to Europe/US in the next 10
+years. Please tell me if you think each one on the list is an extremely important threat, an important
+threat, or not an important threat at all. f) the effects of global warming",1 extremely important threat 3 not important threat,NA,NA,NA
+tt2006,gen_clicon_4,var051,c(4:1),Some people say that we should do everything possible to fight climate chan,1 Very important threat 4 Not an important threat at all,NA,NA,NA
+tt2007,gen_clicon_4,q8_7,c(4:1),"in the next 10 years, please tell me how likely you are to be personally affected by each of the following threats: The effects of
+global warming",Very likely  1 Somewhat likely    Not too likely Not likely at all4,NA,NA,NA
+tt2008,gen_clicon_2,q9ab06,c(0:1),Which among these should be the top priority for the next American president and European leaders? - climate change,0 not mention 1 mentioned,NA,NA,NA
+tt2008,gen_clicon_4,q15_5,c(4:1),"And in the next 10 years, please tell me how likely you are to be personally affected by each of the following threats. - The effects of global warming",1 very likely  4 Not likely,NA,NA,NA
+tt2010_c,gen_clicon_2,q7_c,c(0:1),Which among the following task should be the top priority for the American president and European leaders?,0 not mentioned 1 mentioned,NA,NA,NA
+lits_wave2,climate_indtax_2,q306c,c(2:1),"Would you be willing to give part of your income or pay more taxes, if you were sure that the extra money was used to…",Yes       1      No 2,NA,NA,NA
+lits_wave2,gen_clicon_2,q401ad,c(0:1),"In your opinion, which of the following do you consider to be a very serious problem currently facing the world: climate change",Climate change 0    D. Climate change 1,NA,NA,NA
+lits_wave2,gen_indchge_2,q402,c(2:1),"Have you personally taken actions aimed at helping to fight climate chang""",Yes 1 no 2 Never heard of climate change 3,NA,NA,NA
+lits_wave2,gen_clicon_5,q404,c(1:5),How concerned are you about climate change?,1 means that you are not at all concerned and 5 means you are extremely concerned,NA,NA,NA
+lits_wave2,gen_clicon_3,q406,c(1:3),"As a result of climate change, do you think people in our country will be","On balance, better-off  1    Not affected much 2 On balance, worse-off 3",NA,NA,NA
+lits_wave2,gen_clicon_5,q407b,c(5:1),To what extent do you agree with the following statements:The seriousness of climate change has been exaggerated,Strongly disagree 1  Strongly agree5,NA,NA,NA
+lits_wave2,climate_chg_5,q407c,c(1:5),Emission of CO2 has a major impact on climate change,Strongly disagree 1  Strongly agree5,NA,NA,NA
+lits_wave3,climate_indtax_2,q407c,c(2:1),"Would you be willing to give part of your income or pay more taxes, if you were sure that the extra money was used to…",Yes       1      No 2,NA,NA,NA
+issp1993,climate_chg_4,v36,c(1:4),Greenhouse effect is caused hole in earth atmosp,Definitely true  1   Probably true Probably not true Definitely untrue 4,NA,NA,NA
+issp1993,ghtem_serious_4,v52,c(4:1),"Do you think taht a rise in the world's tempature caused by the ""gh"" is",Extrem danger enviroment  1  Very dangerous       Somewhat dangerous       Not very dangerous 4,NA,NA,NA
+issp1993,ghtem_serious_2,v53,c(4:1),"Do you think taht a rise in the world's tempature caused by the ""gh"" is",Extrem danger you-family 1  Very dangerous       Somewhat dangerous       Not very dangerous 4,NA,NA,NA
+issp1993,ghtem_serious_4,v72,c(4:1),"within the next 20 years or so, a rise in the world's tempature caused by the gh wil be one of the most serious problesm",definitely true 1   Probably true    Prob not true Definit not true 4,NA,NA,NA
+issp1993,envact_buy_5,v24,c(5:1),how willing would you be to pay much higher prices in order to protect the env,Very willing1   Fairly willing      Neither nor Fairly unwilling   Very unwilling 5,NA,NA,NA
+issp1993,envact_taxex_5,v25,c(5:1),how willing would you be to pay much higher taxes in order to protect the vin,Very willing1   Fairly willing      Neither nor Fairly unwilling   Very unwilling 5,NA,NA,NA
+nsee_combo,gen_clicon_4,gw_scioverstate,c(4:1),Scientists overstating evidence about global warming for their own interests,Strongly agree  1  Somewhat agree Somewhat disagree Strongly disagree  4,NA,NA,NA
+nsee_combo,gen_clicon_5,gw_threat,c(1:5),"""How much of a threat do you believe climate change to be""",Not at all a threat   1   A small threat   A moderate threat    A serious threat   An extreme threat    5,NA,NA,NA
+nsee_combo,gen_clicon_4,ccvsgw_concern,c(4:1),How concerned are you about the issue of climate change,Very concerned    1   Somewhat concerned        Not too concerned     Not concerned at all 4,NA,NA,NA
+nsee_combo,climate_chg_2,cdr_knowledge,c(2:1),Have you ever heard about carbon dioxide removal,Yes          1             No 2,NA,NA,NA
+eb431,gen_clicon_4,v139,c(4:1),the destruction of the ozone layer,1Very worried   Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
+eb431,gen_evncon_3,v134,c(3:1),Many people are concerned about protecting the environment and fighting pollution. Which do you agree with?,"#1 An immediate and urgent problem   More a problem for the future Not really a problem  3
+",NA,NA,NA
+eb431,gh_env_2,v164,c(0:1),"If I mention serious damage to the environment, what do you think of ? Please choose the first four things that come to mind from this list.Air pollution from cars",0 Not mentioned     1 Mentioned,NA,NA,NA
+eb431,gh_env_2,v170,c(0:1),Acid rain,0 Not mentioned     1 Mentioned,NA,NA,NA
+eb431,gh_env_2,v171,c(0:1),"Global pollution such as the progressive disappearance of tropical forests, the destruction of the ozone layer, the greenhouse effec",0 Not mentioned     1 Mentioned,NA,NA,NA
+eb431,envimp_eco_3,v182,c(1:3),I am going to read you three opinions which you sometimes hear about environmental problems. Which one comes closest toyour own ?,Economic development should get higher priority 1 #2 Economic development must be ensured but the environment protected at the same time 3 Concerns about the environment should get higher priority than economic development,NA,NA,NA
+eb431,envact_govspend_2,v236,c(2:1),"Here are some ways in which governments can deal with environmental matters. Would you support the following proposals, or not ? Spending more money on educating the public about important environmental",#Yes1  No2,NA,NA,NA
+eb431,envact_strpolicy_2,v237,c(2:1),Implementing tougher legislation to control companies which pollute the environment,#Yes1  No2,NA,NA,NA
+eb431,envact_strpolicy_2,v238,c(2:1),Allocating greater resources to the enforcement of existing legislation,#Yes1  No2,NA,NA,NA
+eb431,envact_taxex_2,v241,c(2:1),Applying special taxes on goods and processes which harm the environment,#Yes1  No2,NA,NA,NA
+eb431,envact_taxex_4,v253,c(4:1),"A possible means of slowing down the damaging effects of human lifestyle on the environment would be to introduce environmental taxes, ""eco-taxes"". These taxes would, for example, make environmentally-friendly goods less expensive,and environmentally-harmful goods more expensive. Please tell me whether you agree strongly, agree somewhat, disagree  somewhat or disagree strongly with this idea ?",#1 Agree strongly    Agree somewhat Disagree somewhat 4 Disagree strongly,NA,NA,NA
+eb431,envact_taxex_4,v256,c(4:1),"It has been proposed to increase taxes on product packaging that pollutes the environment, and decrease taxes on environmentally-friendly packs. Please tell me whether you agree strongly, agree somewhat, disagree somewhat or disagree strongly with this idea ?",#1 Agree strongly    Agree somewhat Disagree somewhat 4 Disagree strongly,NA,NA,NA
+eb431,envact_taxex_4,v257,c(4:1),"Imagine that in (OUR COUNTRY) it was proposed to cut income taxes or social security contributions. But an equivalent amount of taxes would be put on goods and processes which damage the environment such as ozone-destroying chemicals, wastes, transport, carbon dioxide (CO2), energy and pesticides. Please tell me whether you agree strongly, agree  somewhat, disagree somewhat or disagree strongly with this idea ?",#1 Agree strongly    Agree somewhat Disagree somewhat 4 Disagree strongly,NA,NA,NA
+eb391,gh_env_3_3,v44,c(3:1),"Can you tell me if it is a very serious problem, quite serious or not very serious ?THE  GREENHOUSE (GLOBAL WARMING)",1 VERY SERIOUS        QUITE SERIOUS     NOT VERY SERIOUS 3,NA,NA,NA
+eb391,gen_evncon_3,v45,c(3:1),ACID RAIN,1 VERY SERIOUS        QUITE SERIOUS     NOT VERY SERIOUS 3,NA,NA,NA
+eb391,gen_evncon_3,v46,c(3:1),DESTRUCTION OF  OZONE  LAYER,1 VERY SERIOUS        QUITE SERIOUS     NOT VERY SERIOUS 3,NA,NA,NA
+eb391,climate_chg_2,v47,c(0:1),Which of the following do you think could cause the problem of …the global warming:  SOLID FUEL,0 Not mentioned     1 Mentioned,NA,NA,NA
+eb391,climate_chg_2,v48,c(0:1),OIL AS A FUEL,0 Not mentioned     1 Mentioned,NA,NA,NA
+eb391,climate_chg_2,v49,c(0:1),NATURAL GAS,0 Not mentioned     1 Mentioned,NA,NA,NA
+eb391,climate_chg_2,v50,c(1:0),NUCLEAR ENERGY,0 Not mentioned     1 Mentioned,NA,NA,NA
+eb391,climate_chg_2,v51,c(1:0),RENEWABLE ENERGY,0 Not mentioned     1 Mentioned,NA,NA,NA
+eb391,climate_chg_2,v52,c(0:1),"FOREST DESTRUCT""",0 Not mentioned     1 Mentioned,NA,NA,NA
+eb391,climate_chg_2,v53,c(0:1),CHEMICAL PRODUCT,0 Not mentioned     1 Mentioned,NA,NA,NA
+eb391,climate_chg_2,v54,c(0:1),RAISE LIVESTOCK,0 Not mentioned     1 Mentioned,NA,NA,NA
+eb391,climate_chg_2,v55,c(0:1),POPULATN GROWTH,0 Not mentioned     1 Mentioned,NA,NA,NA
+eb391,climate_chg_2,v56,c(0:1),ENERGY TECHNLGY,0 Not mentioned     1 Mentioned,NA,NA,NA
+eb391,climate_chg_2,v57,c(0:1),MORE CAR TRAFFC,0 Not mentioned     1 Mentioned,NA,NA,NA
+eb391,climate_chg_2,v58,c(1:0),DK,0 Not mentioned     1 Mentioned,NA,NA,NA
+eb370,gen_evncon_3,v449,"c(3, 2, 1)","some people are concerned about environmental protection and the fight against pollution. In your opinion, is it?",1An immediate and urgent problem   More a problem for the future Not really a problem  3,NA,NA,NA
+eb370,env_seriplant_4,v450,c(4:1),"at present, are you very worried, somewhat worried, not very worried, or not at all worried about the following : EXTINCT SPECIES",1Very worried   Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
+eb370,env_seriplant_4,v452,c(4:1),"at present, are you very worried, somewhat worried, not very worried, or not at all worried about the following : the disappearance of tropical forests",1Very worried   Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
+eb370,gen_clicon_4,v453,c(4:1),global warming,1Very worried   Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
+eb370,gen_clicon_2,v566,c(2:1),"In June 1992, the United Nations Conference for the Environment and Development will be held in Rio de Janeiro, Brazil.In your opinion, should this conference concern itself with the following problems, or not ? Global warming",1YES SHOULD 2NO SHOULD NOT,NA,NA,NA
+eb370,gen_evncon_2,v496,c(0:1),"If I mention serious damage to the environment, what do you think of ?#ACID RAIN",0 no 1 mentioned,NA,NA,NA
+eb370,gen_evncon_2,v497,c(0:1),DAMAGE GLOBAL POLLUTION,0 no 1 mentioned,NA,NA,NA
+eb370,gen_clicon_2,v490,c(0:1),Air pollution from cars,0 no 1 mentioned,NA,NA,NA
+issp2000,climate_chg_4,v31,c(1:4),Statements closest to opinion: The greenhouse effect is caused by a hole in the earth’s atmosphere.,"1. Definitely true
+ 2. Probably true
+ 3. Probably not true
+ 4. Definitely not true
+ 5. RCH: true",NA,NA,NA
+issp2000,climate_chg_4,v32,c(4:1),"Statements closest to opinion: Every time we use coal or oil or gas, we contribute to the greenhouse effect.","1. Definitely true
+ 2. Probably true
+ 3. Probably not true
+ 4. Definitely not true
+ 5. RCH: true",NA,NA,NA
+issp2000,ghtem_serious_5,v38,c(5:1),"In general, do you think that a rise in the world’s temperature caused by the ’greenhouse effect’ is ...","1. Extremely dangerous for the environment
+ 2. Very dangerous
+ 3. Somewhat dangerous
+ 4. Not very dangerous
+ 5. Not dangerous at all for the environment?",NA,NA,NA
+issp2010,gen_clicon_5,v43,c(5:1),"In general, do you think that a rise in the world's temperature caused by climate change is","1 Extremely dangerous for the environment
+2 Very dangerous
+3 Somewhat dangerous
+4 Not very dangerous
+5 Not dangerous at all for the environment",NA,NA,NA
+issp2010,climate_chg_4,v65,c(1:4),Climate change is caused by a hole in atmosphere,"1 Definitely true
+2 Probably true
+3 Probably not true
+4 Definitely not true",NA,NA,NA
+issp2010,climate_chg_4,v66,c(4:1),Climate change by use of coal or oil or gas,"1 Definitely true
+2 Probably true
+3 Probably not true
+4 Definitely not true",NA,NA,NA
+issp2020,climate_chg_4,v17,c(1:4),There has been a lot of discussion about the world’s climate and the idea it has been changing in recent decades.,1The world’s climate has not been changing; 2 The world’s climate has been changing mostly due to natural processes; 3The world’s climate has been changing about equally due to natural processes and human activity; 4 The world’s climate has been changing mostly due to human activity; 5Can't choose,NA,NA,NA
+issp2020,climate_chg_11,v18,c(10:0),"On a scale from 0 to 10, how bad or good do you think the impacts of climate change will be for the world as a whole?",0 extremely bad; 10 extrenmely good,NA,NA,NA
+issp2020,climate_chg_11,v19,c(10:0),"On a scale from 0 to 10, how bad or good do you think the impacts of climate change will be for [COUNTRY]?",0 extremely bad; 10 extrenmely good,NA,NA,NA
+issp2020,gen_clicon_5,v37,c(5:1),"In general, do you think that air pollution caused by cars is …","1 Extremely dangerous for the environment
+2 Very dangerous
+3 Somewhat dangerous
+4 Not very dangerous
+5 Not dangerous at all for the environment""",NA,NA,NA
+issp2020,gen_clicon_5,v41,c(5:1),do you think that a rise in the world’s temperature caused by climate change is …,"1 Extremely dangerous for the environment
+2 Very dangerous
+3 Somewhat dangerous
+4 Not very dangerous
+5 Not dangerous at all for the environment""",NA,NA,NA
+afrob7,gen_clicon_5,q71,c(5:1),"Q71: In your experience, would you say climate conditions for agricultural production in your area have gotten better, gotten worse, or stayed about the same over the last 10 years or haven’t you heard enough to say?",1Much worse 2Worse  3About the same  4Better  5Much better,NA,NA,NA
+afrob7,climate_chg_2,q73a,c(0:1),73A. Have you heard about climate change or haven’t you had the chance to hear about this yet?,0 no; 1 yes,NA,NA,NA
+afrob7,climate_chg_2,q74,c(2:1),"which of the following do you think is the main cause of climate change, or haven't you heard enough to say?","1 Human Activity, like burning fuel and other activities that pollute the atmosphere;  2 Natural processes",NA,NA,NA
+afrob7,gen_clicon_4,q76,c(0:3),"[If yes, to Q73A:] Do you think that climate change needs to be stopped? [If yes] How much do you think that ordinary Batswana can do to stop climate change?",1Ordinary Batswana can do nothing at all 2Ordinary Batswana can do a little bit 3Ordinary Batswana can do a lot 0 don't need to stop,NA,NA,NA
+arabb5,gen_clicon_4,q108_1,c(4:1),"How serious a problem do you think the following issues are: Is Climate change a very serious problem, a somewhat serious problem, not a very serious problem, not at all a serious problem?","1A very serious problem
+2A somewhat serious problem 3Not a very serious problem 4Not at all a serious problem",NA,NA,NA
+arabb5,gen_clicon_4,q108_2,c(4:1),"How serious a problem do you think the following issues are: Is Air quality a very serious problem, a somewhat serious problem, not a very serious problem, not at all a serious problem?","1A very serious problem
+2A somewhat serious problem 3Not a very serious problem 4Not at all a serious problem",NA,NA,NA
+lb2007,climate_chg_4,p42n,c(4:1),"Knowledge of global warming
+","1.- A lot
+2.- Somewhat
+3.- A little
+4.- Not at all
+-2-.- No answer -4-.- Not asked",NA,NA,NA
+lb2007,gen_clicon_4,p43na,c(4:1),"How much global warming affects the country
+","1.- A lot
+2.- Somewhat
+3.- A little
+4.- Not at all
+-1-.- Don't know
+-2-.- No answer -4-.- Not Asked",NA,NA,NA
+lb2007,gen_clicon_4,p43nb,c(4:1),"How much does global warming affect you and your family?
+","1.- A lot
+Somewhat
+3.- A little
+Not at all
+-2-.- No answer -4-.- Not Asked",NA,NA,NA
+lb2010,climate_chg_4,p47tmia,c(4:1),"How much have you heard or read about global warming or “climate change”—the idea that the Earth’s temperature is rising? A lot, some, a little, or none?","A lot.....................................1 Some......................................2
+A little..................................3 None......................................4___",NA,NA,NA
+lb2010,gen_clicon_4,p48st_a,c(4:1),"How much do you think climate change affects (country) - a lot, some affect, a little or no affect?",A lot............ 1 Some effect ..... 2 Little .......... 3 No effect ....... 4,NA,NA,NA
+lb2010,gen_clicon_4,p48m_iab,c(4:1),"And how much do you think it affects you and your family -- a lot, some affect, a little or no affect??",A lot............ 1 Some effect ..... 2 Little .......... 3 No effect ....... 4,NA,NA,NA
+lb2011,gen_clicon_4,p52st_a,c(4:1),"How much do you think climate change affects (country) - a lot, somewhat, a little or not at all?",Much                   Some               A little                Nothing,NA,NA,NA
+lb2011,gen_clicon_4,p52st_b,c(4:1),nd how much do you think it affects you? And how much do you think it affects y,Much                   Some               A little                Nothing,NA,NA,NA
+lb2017,gen_clicon_2,p51stma,c(0:1),which are the most importan for the development of your country? Enviroment and climate change,1: yes; 0: no,NA,NA,NA
+lb2017,climate_chg_4,p53nd,c(1:4),do you agree with this statement: There is no such thing as a problem of Climate Change,1: strongly agree; 2: agree; 3: disagree; 4: strongly disagree,NA,NA,NA
+lb2017,gen_clicon_4,p59n,c(1:4),With which of the following statements do you agree most? Climate change..,"Is an urgent problem we need to address today .... 1
+It is not yet an urgent problem,
+but it will be in the future ..................... 2
+Is an urgent problem, but there is little we can
+do, too late to act .............................. 3
+It will never be necessary to address it ........ 4",NA,NA,NA
+lb2017,climate_eco_2,p60n,c(2:1),With which of the following statements do you agree most?,"One must give priority to the fight against
+climate change without considering its negative
+impact in economic growth. ...................... 1
+One must give priority to economic growth
+without considering its negative
+impact in the fight agains climate change... ..... 2",NA,NA,NA
+lb2017,gen_clicon_2,p62na,c(0:1),do you think peoples daily lives will be most affected by climate change?,1: yes; 0: no,NA,NA,NA
+lb2017,gen_clicon_2,p62nc,c(0:1),do you think people's health will be most affected by climate change?,1: yes; 0: no,NA,NA,NA
+lb2017,gen_indchge_2,p63c,c(0:1),who should fight againts climate change? All citizens,1: yes; 0: no,NA,NA,NA
+lb2017,sup_govaction_2,p63e,c(0:1),who should fight againts climate change? Governments,1: yes; 0: no,NA,NA,NA
+lb2017,intcomm_coop_2,p63f,c(0:1),who should fight againts climate change? International organizations,1: yes; 0: no,NA,NA,NA
+lb2017,gen_indchge_2,p63j,c(0:1),"who should fight againts climate change? Me , my family and my friends",1: yes; 0: no,NA,NA,NA
+lb2017,gen_indchge_2,p63k,c(0:1),who should fight againts climate change? Everybody,1: yes; 0: no,NA,NA,NA
+lb2017,gen_indchge_2,p63x,c(1:0),who should fight againts climate change? Nobody,1: yes; 0: no,NA,NA,NA
+pew2006,climate_chg_2,q42f_heard_globalwarm,c(0:1),Have you heard of the environmental problem of global warming or not?,1: yes; 0: no,NA,NA,NA
+pew2006,gen_clicon_4,q54,c(4:1),How much do you personally worry about global warming,"a great deal, a fair amount, 
+only a little, or not at all?",NA,NA,I don' find this variable in the dataset
+pew2008,gen_clicon_4,q8b,c(4:1),"Now I am going to read you a list of things that may be problems in our country. Please tell me if you think it is a very big problem, a moderately big problem, a small problem or not a problem at all: b. Air pollution","1 Very big problem
+2 Moderately big problem
+3 Small problem
+4 Not a problem at all",NA,NA,NA
+pew2008,gen_clicon_4,q33,c(4:1),"is global warming a very serious problem, somewhat serious, not too serious, or not a problem","1 Very serious
+2 Somewhat serious
+3 Not too serious
+4 Not a problem",NA,NA,NA
+pew2010,gen_clicon_4,q45,c(4:1),"is global climate change a very serious problem, somewhat serious, not too serious, or not a problem?","1 Very serious
+2 Somewhat serious
+3 Not too serious
+4 Not a problem",NA,NA,NA
+pew2010,climate_indtax_2,q46,c(2:1),Please tell me whether you agree or disagree with the following statement: People should be willing to pay higher prices in order to address global climate change?,"1          Agree
+2          Disagree",NA,NA,NA
+pew2013,gen_clicon_3,q11g,c(3:1),"Do you think that global climate change is a major threat, a minor threat or not a threat to India?","1 Major threat
+2 Minor threat
+3 Not a threat",NA,NA,NA
+pew2013,gen_clicon_4,q17a,c(4:1),"Air pollution: please tell me if you think it is a very big problem, a moderately big problem, a small problem or not a problem at all","1 Very big problem
+2 Moderately big problem
+3 Small problem
+4 Not a problem at all",NA,NA,NA
+pew2014_india,gen_clicon_3,q11g,c(3:1),"Do you think that global climate change is a major threat, a minor threat or not a threat to India?","1 Major threat
+2 Minor threat
+3 Not a threat",NA,NA,NA
+pew2015,gen_clicon_4,q13a,c(4:1),"Please tell me how concerned you are, if at all, about each of them – are you very concerned, somewhat concerned, not too concerned or not at all concerned? global climate change","1 Very concerned
+2 Somewhat concerned
+3 Not too concerned
+4 Not at all concerned",NA,NA,NA
+pew2015,gen_clicon_4,q32,c(4:1),"In your view, is global climate change a very serious problem, somewhat serious, not too serious or not a problem","1 Very serious
+2 Somewhat serious
+3 Not too serious
+4 Not a problem",NA,NA,NA
+pew2015,gen_indchge_2,q33,c(2:1),"To reduce the effects of global climate change, do you think people will have to make major changes in the way they live or can technology solve the problem without requiring major changes?","1 Have to make major changes
+2 Technology can solve the problem without major changes",NA,NA,NA
+pew2015,sup_govaction_2,q40,c(2:1),"Countries from around the world will meet in December in Paris to deal with global climate change. They will discuss an agreement to limit greenhouse gas emissions, such as from burning coal or [gas/petrol]. Do you support or oppose (survey country) limiting its greenhouse gas emissions as part of such an agreement?","1 Support
+2 Oppose",NA,NA,NA
+pew2015,gen_clicon_4,q41,c(4:1),"Do you think global climate change is harming people around the world now, will harm people in the next few years, will not harm people for many years or will never harm people?","1 Now
+2 In the next few years
+3 Not for many years
+4 Never",NA,NA,NA
+pew2015,gen_clicon_4,q42,c(4:1),"How concerned are you, if at all, that global climate change will harm you personally at some point in your lifetime? Are you very concerned, somewhat concerned, not too concerned or not at all concerned?","1 Very concerned
+2 Somewhat concerned
+3 Not too concerned
+4 Not at all concerned",NA,NA,NA
+pew2015,gen_clicon_4,q60h,c(4:1),"air pollution: Now I am going to read you a list of things that may be problems in our country.  As I read each one, please tell me if you think it is a very big problem, a moderately big problem, a small problem or not a problem at all.","1 Very big problem
+2 Moderately big problem
+3 Small problem
+4 Not a problem at all",NA,NA,NA
+pew2016,gen_clicon_4,q59c,c(4:1),"Now I am going to read you a list of things that may be problems in our country. As I read each one, please tell me if you think it is a very big problem, a moderately big problem, a small problem or not a problem at all: air pollution","1 Very big problem
+2 Moderately big problem
+3 Small problem 
+4 Not a problem at all",NA,NA,NA
+pew2016,gen_clicon_4,q60e,c(4:1),"Now I am going to read you a list of things that may be problems in our country. As I read each one, please tell me if you think it is a very big problem, a moderately big problem, a small problem or not a problem at all： air pollution","1 Very big problem
+2 Moderately big problem
+3 Small problem
+4 Not a problem at all",NA,NA,NA
+pew2016,gen_clicon_3,q61c,"c(2,3, 1)","please tell me if you think it will get better, get worse or stay the same in the next five years. air pollution","1 Better
+2 Worse
+3 Stay the same",NA,NA,NA
+pew2016,climate_eco_2,q62,c(2:1),"Which statement comes closer to your own views, even if neither is exactly right?","1 We should reduce air pollution even if it means slower economic growth
+2 Air pollution is the price we have to pay for continued economic growth",NA,NA,NA
+pew2016,gen_clicon_3,q22d,c(3:1),"I’d like your opinion about some possible international concerns for (survey country). Do you think that (INSERT) is a major threat, a minor threat or not a threat to (survey country)? What about (INSERT)? Global climate change","
+1 Major threat
+2 Minor threat
+3 Not a threat",NA,NA,NA
+pew2017,sup_govaction_2,q38a.,c(2:1),"As I read some proposed policies of President Donald Trump, please tell me if you approve or disapprove of each one. a. withdraw U.S. support for international climate change
+agreements","1 Approve
+2 Disapprove",NA,NA,NA
+pew2017,gen_clicon_3,q17d,c(3:1),"I’d like your opinion about some possible international concerns for (survey country). Do you think that ____ is a major threat, a minor threat or not a threat to (survey country)? d. global climate change","1 Major threat
+2 Minor threat
+3 Not a threat",NA,NA,NA
+pew2017,gen_clicon_4,q75d,c(4:1),"As I read each one, please tell me if you think it is a very big problem, a moderately big problem, a small problem or not a problem at all. d. air pollution","1 Very big problem
+2 Moderately big problem
+3 Small problem
+4 Not a problem at all",NA,NA,NA
+pew2016,gen_clicon_3,q76e,"c(2,3, 1)","As I read each of the following problems, please tell me if you think it will get better, get worse or stay the same in the next five years. e. air pollution","1 Better
+2 Worse
+3 Stay the same",NA,NA,NA
+pew2018,gen_clicon_3,q22d,c(3:1),"Do you think that [INSERT ITEM] is a major threat, a minor threat, or not a threat to (survey country)? What about [INSERT NEXT ITEM]? Global climate change","1 Major threat
+2 Minor threat
+3 Not a threat",NA,NA,NA
+pew2018,gen_clicon_4,q67k,c(4:1),"please tell me if you think it is a very big problem, a moderately big problem, a small problem, or not a problem at all. k. air pollution","1 Very big problem
+2 Moderately big problem
+3 Small problem
+4 Not a problem at all",NA,NA,NA
+pew2020,gen_clicon_3,Q13a,c(3:1),"I'd like your opinion about some possible international concerns for (survey country). Do you think that ___ is a major threat, a minor threat, or not a threat to (survey country)? a. Global climate change","""1 Major threat
+2 Minor threat
+3 Not a threat""",NA,NA,NA
+pew2020,intcomm_coop_2,Q12g,c(2:1),Please tell me whether you think the following statements apply to the United Nations or not. The United Nations... g. Promotes action on climate change,"1 Yes
+2 No",NA,NA,NA
+eb570,gen_clicon_2,v100,c(2:1),Global warming and climate change are serious issues which need immediate action,"1 Yes, it is the case
+2 No, it is not the case",NA,NA,NA
+eb570,climate_chg_2,v101,c(2:1),"The use of fossil fuels (coal, oil, gas, etc.) contributes significantly to global warming and climate change","1 Yes, it is the case
+2 No, it is not the case",NA,NA,NA
+eb570,climate_chg_2,v102,c(1:2),Nuclear power contributes significantly to global warming and climate change,"1 Yes, it is the case
+2 No, it is not the case",NA,NA,NA
+eb570,climate_chg_2,v103,c(2:1),Transport is largely responsible for global warming and climate change,"1 Yes, it is the case
+2 No, it is not the case",NA,NA,NA
+eb570,climate_chg_2,v150,c(1:0),Reduction of greenhouse gas emissions that contribute to global warming and climate change,0 Not mentioned 1 Mentioned,NA,NA,NA
+eb570,climate_chg_2,v115,c(1:2),"Nuclear energy is currently produced by fission or the splitting of heavy atoms. Another option being developed is nuclear fusion, which involves the merging of light atoms. Do you think that power stations using nuclear  fusion? Would contribute significantly to global warming",1 Yes 2 No,NA,NA,NA
+eb570,spe_indchge_2,v120,c(0:1),Which of the following would you like to know more about? How to use renewable energy sources such as solar power or wind at home,0 Not mentioned 1 Mentioned,NA,NA,NA
+eb580,gen_clicon_4,v568,c(4:1),"At present, are you very worried, fairly worried, not very worried or not at all worried about the following topics? Climate change","2 Very worried
+2 Fairly worried
+3 Not very worried
+4 Not at all worried
+5 DK",NA,NA,NA
+eb580,climate_chg_4,v592,c(4:1),"For each of these topics, can you tell me if you feel very well, fairly well, fairly badly or very badly informed? (SHOW CARD WITH SCALE) Climate change","1 Very well
+2 Fairly well
+3 Fairly badly
+4 Very badly
+5 DK",NA,NA,NA
+eb672,sup_govaction_4,v312,c(4:1),"More precisely, please tell me to what extent do you agree or disagree with the following statement about climate change: The European Union should urgently put new policies in place to reduce greenhouse gas emission by at least 20% by 2020.","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb692,gen_clicon_2,v542,c(0:1),Themes for next European elections in total. The fight against climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb692,gen_clicon_2,v695,c(0:1),Most serious problem currently facing the world as a whole in total (Split Ballot A & B) Global warming / Climate change,"10 Not mentioned
+1 Mentioned",NA,NA,NA
+eb692,gen_clicon_10,v707,c(1:10),Seriousness of global warming / climate change - perception in total (Split Ballot A & B),"""1 Box 1 - Not a serious problem at all
+2 Box2
+3 Box3
+4 Box4
+5 Box5
+6 Box6
+7 Box7
+8 Box8
+9 Box9
+10 Box 10 - An extremly serious problem
+11 DK""",NA,NA,NA
+eb692,climate_chg_4,v709,c(4:1),"Personally, do you think that you are well informed or not about The different causes of climate change?","1 Very well informed
+2 Fairly well informed
+3 Not very well informed
+4 Not at all informed
+5 DK",NA,NA,NA
+eb692,climate_chg_4,v710,c(4:1),"Personally, do you think that you are well informed or not about The different consequences of climate change","
+1 Very well informed
+2 Fairly well informed
+3 Not very well informed
+4 Not at all informed
+5 DK",NA,NA,NA
+eb692,climate_chg_4,v711,c(4:1),"Personally, do you think that you are well informed or not about Ways in which we can fight climate change","
+1 Very well informed
+2 Fairly well informed
+3 Not very well informed
+4 Not at all informed
+5 DK",NA,NA,NA
+eb692,sup_govaction_3,v712,c(1:3),"In your opinion, are each of the following currently doing too much, doing about the right amount, or not doing enough to fight climate change? The (NATIONALITY) government","1 Doing too much
+2 Doing about the right amount
+3 Not doing enough
+4 DK",NA,NA,NA
+eb692,sup_govaction_3,v713,c(1:3),"In your opinion, are each of the following currently doing too much, doing about the right amount, or not doing enough to fight climate change? The European Union","1 Doing too much
+2 Doing about the right amount
+3 Not doing enough
+4 DK",NA,NA,NA
+eb692,gen_clicon_3,v714,c(1:3),"In your opinion, are each of the following currently doing too much, doing about the right amount, or not doing enough to fight climate change? Corporations and industry","1 Doing too much
+2 Doing about the right amount
+3 Not doing enough
+4 DK",NA,NA,NA
+eb692,gen_indchge_3,v715,c(1:3),"In your opinion, are each of the following currently doing too much, doing about the right amount, or not doing enough to fight climate change? Citizens themselves","1 Doing too much
+2 Doing about the right amount
+3 Not doing enough
+4 DK",NA,NA,NA
+eb692,climate_chg_4,v720,c(1:4),"For each of the following statements, please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree Climate change is an unstoppable process, we cannot do anything about it","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb692,climate_chg_4,v721,c(1:4),"For each of the following statements, please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree The seriousness of climate change has been exaggerated","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb692,climate_chg_4,v722,c(1:4),"For each of the following statements, please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree Emission of CO2 (Carbon dioxide) has only a marginal impact on climate change","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb692,climate_chg_4,v723,c(4:1),"For each of the following statements, please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree Fighting climate change can have a positive impact on the European economy","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb692,climate_chg_4,v724,c(4:1),"For each of the following statements, please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree  Alternative fuels, such as ""bio fuels"", should be used to reduce greenhouse gas emissions","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb692,climate_indbeh_300,v756,c(1:300),"Personally, how much would you be prepared to pay more for energy produced from sources that emit less greenhouse gases in order to fight the climate change? In average, how much, in percent, would you be ready to pay more?","1-1%
+300-300 % 998-No 999-DK",NA,NA,"(CODE THE EXACT VALUE - PLEASE WRITE DOWN NNN - IF ""NO"", CODE ""998"" - IF ""DK"", PLEASE CODE ""999"")"
+eb692,sup_govaction_3,v758,c(1:3),"The European Union has the objective of reducing its greenhouse gas emissions by at least 20% by 2020 compared to 1990. Thinking about this objective, would you say that it is too ambitious, about right or too modest?","1 Too ambitious
+2 About right
+3 Too modest
+4 DK",NA,NA,NA
+eb692,sup_govaction_3,v759,c(1:3),"In order to limit the impact of climate change, the EU is also proposing an international agreement which would commit the major world economies to a target of 30% reduction of greenhouse gas emissions by 2020 compared to 1990. Thinking about this objective, would you say that it is too ambitious, about right or too modest?","1 Too ambitious
+2 About right
+3 Too modest",NA,NA,NA
+eb692,sup_govaction_3,v760,c(1:3),"The European Union has the objective of increasing the share of renewable energy to 20% by 2020. Thinking about this objective, would you say that it is too ambitious, about right or too modest?","1 Too ambitious
+2 About right
+3 Too modest
+4 DK",NA,NA,NA
+eb711,gen_clicon_2,v230,c(0:1),"European integration has been focusing on various issues in the last years. In your opinion, which aspects should be emphasized by the European institutions in the coming years, to strengthen the European Union in the future? The fight against climate change","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb711,gen_clicon_2,v377,c(0:1),"The European Parliament promotes the development of certain policies at European Union level. In your opinion, which of the following policies should be given priority? Combating climate change","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb711,gen_clicon_2,v469,c(0:1),Themes for next European elections in total The fight against climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb711,gen_clicon_2,v511,c(0:1),Most serious problem currently facing the world as a whole in total climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb711,gen_clicon_10,v522,c(1:10),"And how serious a problem do you think climate change is at this moment? Please use a scale from 1 to 10, '1' would mean that it is ""not at all a serious problem"" and '10' would mean that it is a problem extremely serious"".","1 Box 1 - Not at all a serious problem
+2 Box2
+3 Box3
+4 Box4
+5 Box5
+6 Box6
+7 Box7
+8 Box8
+9 Box9
+10 Box 10 - A problem extremely serious
+11 DK",NA,NA,NA
+eb711,climate_chg_4,v523,c(4:1),"Personally, do you think that you are well informed or not about...?The different causes of climate change","1 Very well informed
+2 Fairly well informed
+3 Not very well informed
+4 Not at all informed
+5 DK",NA,NA,NA
+eb711,climate_chg_4,v524,c(4:1),"Personally, do you think that you are well informed or not about...? The different consequences of climate change","1 Very well informed
+2 Fairly well informed
+3 Not very well informed
+4 Not at all informed
+5 DK",NA,NA,NA
+eb711,climate_chg_4,v525,c(4:1),"Personally, do you think that you are well informed or not about...? The different consequences of climate change","2 Very well informed
+2 Fairly well informed
+3 Not very well informed
+4 Not at all informed
+5 DK",NA,NA,NA
+eb711,climate_chg_4,v526,c(4:1),"Personally, do you think that you are well informed or not about...? Ways in which we can fight climate change","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb711,climate_chg_4,v527,c(1:4),"please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree...? Climate change is an unstoppable process, we cannot do anything about it","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb711,climate_chg_4,v528,c(1:4),"please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree...? Emission of CO2 (Carbon dioxide) has only a marginal impact on climate change","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb711,climate_chg_4,v529,c(4:1),"please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree....? Fighting climate change can have a positive impact on the European economy","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb711,climate_chg_4,v530,c(4:1),"please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree....? Alternative fuels, such as ""bio fuels"", should be used to reduce greenhouse gas emissions","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb721,gen_clicon_10,v385,c(1:10),"And how serious a problem do you think climate change is at this moment? Please use a scale from 1 to 10, '1' would mean that it is ""not at all a serious problem"" and '10' would mean that it is a problem extremely serious"".","1 Box 1 - Not at all a serious problem
+2 Box2
+3 Box3
+4 Box4
+5 Box5
+6 Box6
+7 Box7
+8 Box8
+9 Box9
+10 Box10 - A problem extremely serious
+11 DK",NA,NA,NA
+eb721,sup_govaction_3,v387,c(1:3),"In your opinion, is each of the following currently doing too much, doing about the right amount, or not doing enough to fight climate change?he (NATIONALITY) Government","1 Doing too much
+2 Doing about the right amount
+3 Not doing enough",NA,NA,NA
+eb721,sup_govaction_3,v388,c(1:3),"In your opinion, is each of the following currently doing too much, doing about the right amount, or not doing enough to fight climate change?The European Union","1 Doing too much
+2 Doing about the right amount
+3 Not doing enough",NA,NA,NA
+eb721,sup_govaction_3,v389,c(1:3),"In your opinion, is each of the following currently doing too much, doing about the right amount, or not doing enough to fight climate change? Regional and local authorities","1 Doing too much
+2 Doing about the right amount
+3 Not doing enough",NA,NA,NA
+eb721,gen_clicon_3,v390,c(1:3),"In your opinion, is each of the following currently doing too much, doing about the right amount, or not doing enough to fight climate change?Corporations and industry","1 Doing too much
+2 Doing about the right amount
+3 Not doing enough",NA,NA,NA
+eb721,gen_indchge_3,v391,c(1:3),"In your opinion, is each of the following currently doing too much, doing about the right amount, or not doing enough to fight climate change?Citizens themselves","1 Doing too much
+2 Doing about the right amount
+3 Not doing enough",NA,NA,NA
+eb721,climate_chg_4,v392,c(1:4),"For each of the following statements, please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree. Climate change is an unstoppable process, we cannot do anything about it","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb721,climate_chg_4,v393,c(1:4),"For each of the following statements, please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree. The seriousness of climate change has been exaggerated","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb721,climate_chg_4,v394,c(4:1),"For each of the following statements, please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree. Emissions of CO2 (Carbon dioxide) and other greenhouse gases have only a marginal impact on climate change","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb721,climate_chg_4,v395,c(4:1),"For each of the following statements, please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree. Emissions of CO2 (Carbon dioxide) have only a marginal impact on climate change","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb721,climate_chg_4,v396,c(4:1),"For each of the following statements, please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree. Fighting climate change can have a positive impact on the European economy","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb721,climate_chg_4,v397,c(4:1),"For each of the following statements, please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree.  Alternative fuels, such as ""bio fuels"", should be used to reduce greenhouse gas emissions","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb721,climate_chg_4,v398,c(4:1),"For each of the following statements, please tell me whether you totally agree, tend to agree, tend to disagree or totally disagree.  Alternative fuels should be used to reduce greenhouse gas emissions","1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb721,climate_indbeh_100,v415,c(1:100),"Personally, how much would you be prepared to pay more for energy produced from sources that emit less greenhouse gases in order to fight the climate change? In average, how much, in percent, would you be ready to pay more?","0 0%;
+100 100% ; 998 No ; 999 DK",NA,NA,NA
+eb721,climate_indbeh_8,v416,c(1:8),Willingles to pay more for climate friendly energy,"10%
+2 1-5%
+3 6-10%
+4 11-20%
+5 21-30%
+6 31-40%
+7 41-50%
+8 More than 50%
+9 No",NA,NA,NA
+eb734,gen_clicon_2,v331,c(0:1),"European integration has been focusing on various issues in the last years. In your opinion, which aspects should be emphasized by the European institutions in the coming years, to strengthen the European Union in the future? The fight against climate change",0 Not mentioned 1 Mentioned,NA,NA,NA
+eb742,gen_clicon_2,v170,c(0:1),What do you think are the two most important issues facing (OUR COUNTRY) at the moment? Climate change,0 Not mentioned 1 Mentioned,NA,NA,NA
+eb742,gen_clicon_2,v188,c(0:1),"And personally, what are the two most important issues you are facing at the moment? Climate change",0 Not mentioned 1 Mentioned,NA,NA,NA
+eb742,gen_clicon_2,v276,c(0:1),What do you think are the two most important issues facing the European Union at the moment? Climate change,0 Not mentioned 1 Mentioned,NA,NA,NA
+eb742,gen_clicon_2,v367,c(0:1),"European integration has been focusing on various issues in the last years. In your opinion, which aspects should be emphasized by the European institutions in the coming years, to strengthen the European Union in the future?  The fight against climate change",0 Not mentioned 1 Mentioned,NA,NA,NA
+eb742,gen_clicon_2,v447,c(0:1),"Refocus research on new challenges such as climate change, energy and resource efficiency","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb751,climate_chg_4,v368,c(4:1),"Personally, do you think that you are well informed or not about...?  The different causes of climate change","1 Very well informed
+2 Fairly well informed
+3 Not very well informed
+4 Not at all informed
+5 DK",NA,NA,NA
+eb751,climate_chg_4,v369,c(4:1),"Personally, do you think that you are well informed or not about...? The different consequences of climate change","1 Very well informed
+2 Fairly well informed
+3 Not very well informed
+4 Not at all informed
+5 DK",NA,NA,NA
+eb751,climate_chg_4,v370,c(4:1),"Personally, do you think that you are well informed or not about...?Ways in which we can fight climate change","1 Very well informed
+2 Fairly well informed
+3 Not very well informed
+4 Not at all informed
+5 DK",NA,NA,NA
+eb751,climate_chg_3,v393,c(3:1),KNOWLEDGE – WHAT IS CO2 – RECODED,"1 Correct answer
+2 Acceptable answers
+3 Wrong answers
+4 Other
+5 DK",NA,NA,NA
+eb751,climate_chg_2,v394,c(1:0),Which of the following statements do you think apply to carbon dioxide (CO2)? It is flammable,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb751,climate_chg_2,v395,c(1:0),Which of the following statements do you think apply to carbon dioxide (CO2)?It is safe to breathe,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb751,climate_chg_2,v396,c(0:1),Which of the following statements do you think apply to carbon dioxide (CO2)? It is unhealthy,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb751,climate_chg_2,v397,c(1:0),Which of the following statements do you think apply to carbon dioxide (CO2)?It is harmless,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb751,climate_chg_2,v399,c(0:1),Which of the following statements do you think apply to carbon dioxide (CO2)?  It is a water pollutant,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb751,climate_chg_2,v398,c(1:0),Which of the following statements do you think apply to carbon dioxide (CO2)?It is EXPLOSIVE,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb751,climate_chg_2,v402,c(1:0),Which of the following statements do you think apply to carbon dioxide (CO2)? DK,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb751,climate_chg_4,v408,c(4:1),What impact do you think CO2 emissions have on climate change? Do you think it has ...?,"1 A very high impact
+2 A fairly high impact
+3 A fairly low impact
+4 A very low impact
+5 None (SPONTANEOUS)
+6 DK",NA,NA,NA
+eb751,climate_chg_3,v413,c(3:1),"Have you ever heard of CO2 capture and storage, also known as carbon capture and storage or carbon capture and sequestration (CCS)?","1 Yes, know what it is
+2 Yes, but don't know what it is
+3 No
+4 DK",NA,NA,NA
+eb751,sup_govaction_4,v428,c(4:1),To what extent are you in favour of or opposed to the use of the following sources of energy in (OUR COUNTRY)? Solar energy,"1 Totally in favour
+2 Fairly in favour
+3 Fairly opposed
+4 Totally opposed
+5 DK",NA,NA,NA
+eb751,sup_govaction_4,v429,c(4:1),To what extent are you in favour of or opposed to the use of the following sources of energy in (OUR COUNTRY)? wind energy,"1 Totally in favour
+2 Fairly in favour
+3 Fairly opposed
+4 Totally opposed
+5 DK",NA,NA,NA
+eb751,sup_govaction_4,v430,c(4:1),To what extent are you in favour of or opposed to the use of the following sources of energy in (OUR COUNTRY)? Hydroelectric energy,"1 Totally in favour
+2 Fairly in favour
+3 Fairly opposed
+4 Totally opposed
+5 DK",NA,NA,NA
+eb751,sup_govaction_4,v431,c(4:1),To what extent are you in favour of or opposed to the use of the following sources of energy in (OUR COUNTRY)? Biomass energy,"1 Totally in favour
+2 Fairly in favour
+3 Fairly opposed
+4 Totally opposed
+5 DK",NA,NA,NA
+eb751,sup_govaction_4,v432,c(1:4),To what extent are you in favour of or opposed to the use of the following sources of energy in (OUR COUNTRY)? Coal,"1 Totally in favour
+2 Fairly in favour
+3 Fairly opposed
+4 Totally opposed
+5 DK",NA,NA,NA
+eb751,sup_govaction_4,v433,c(1:4),To what extent are you in favour of or opposed to the use of the following sources of energy in (OUR COUNTRY)? Natural Gas,"1 Totally in favour
+2 Fairly in favour
+3 Fairly opposed
+4 Totally opposed
+5 DK",NA,NA,NA
+eb751,sup_govaction_4,v434,c(4:1),To what extent are you in favour of or opposed to the use of the following sources of energy in (OUR COUNTRY)? Nuclear energy,"1 Totally in favour
+2 Fairly in favour
+3 Fairly opposed
+4 Totally opposed
+5 DK",NA,NA,NA
+eb751,sup_govaction_4,v435,c(4:1),"In your opinion, taking into account all you know about CCS or Carbon capture and storage, could you tell me whether you think it could be effective or not to fight climate change?","1 Very effective
+2 Fairly effective
+3 Not very effective
+4 Not at all effective
+5 DK",NA,NA,NA
+eb751,sup_govaction_2,v436,c(2:1),"If CCS or carbon capture and storage technology was used in your region, do you think that you would benefit from it or not?","1 Would benefit
+2 Would not benefit
+3 DK",NA,NA,NA
+eb751,sup_govaction_4,v484,c(1:4),"If a deep underground storage site for CO2 were to be located within 5km of your home, do you think that you would be...?","1 Very worried
+2 Fairly worried
+3 Not very worried
+4 Not at all worried
+5 DK",NA,NA,NA
+eb751,sup_govaction_2,v485,c(1:0),Why would you be worried? The transport of CO2 to the storage site might not be safe,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb753,gen_clicon_2,v190,c(0:1),What do you think are the two most important issues facing (OUR COUNTRY) at the moment?,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb753,gen_clicon_2,v208,c(0:1),"And personally, what are the two most important issues you are facing at the moment?","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb753,gen_clicon_2,v294,c(0:1),What do you think are the two most important issues facing the EU at the moment? Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb753,gen_clicon_2,v370,c(0:1),"European integration has been focusing on various issues in the last years. In your opinion, which aspects should be emphasized by the European institutions in the coming years, to strengthen the EU in the future? The fight against climate change",0 Not mentioned 1 Mentioned,NA,NA,NA
+eb753,gen_clicon_2,v399,c(0:1),"Refocus research on new challenges such as climate change, energy and resource efficiency. Summarize 394 and 395","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb753,sup_govaction_2,v437,c(0:1),"To make the most of the opportunities of the green economy (i.e. environmental technologies, recycling, renewable energy). This variable summarizes answers to this item in QB7A and QB7B (V430 and V433).","
+0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb753,sup_govaction_2,v573,c(0:1),And on which of the following would you like EU budget to be spent? Firstly? Any others?]Climate change and environmental protection,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb754,gen_clicon_2,v247,c(0:1),What do you think are the most important challenges to the security of (NATIONALITY) citizens at the moment?  Environmental issues / Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb754,gen_clicon_2,v263,c(0:1),And what do you think are the most important challenges to the security of EU citizens at the moment? Environmental issues / Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb754,gen_clicon_2,v546,c(0:1),Which of the following do you consider to be the single most serious problem facing the world as a whole? Any others? Climate change This variable summarizes answers to this item in QD1A and QD1B (V534 and V535).,"0 Not mentioned+G902:G908
+1 Mentioned""",NA,NA,NA
+eb754,gen_clicon_10,v557,c(1:10),"And how serious a problem do you think climate change is at this moment? Please use a scale from 1 to 10, where '1' would mean that it is ""not at all a serious problem"" and '10' would mean that it is “an extremely serious problem"".","1 1 Not at all a serious problem at all 22
+3 3
+4 4
+5 5
+6 6
+7 7
+8 8
+9 9
+10 10 An extremely serious problem",NA,NA,NA
+eb754,sup_govaction_2,v559,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change?national government",0 Not mentioned 1 Mentioned,NA,NA,NA
+eb754,sup_govaction_2,v560,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? EU",0 Not mentioned 1 Mentioned,NA,NA,NA
+eb754,sup_govaction_2,v561,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Regional and local authorities",0 Not mentioned 1 Mentioned,NA,NA,NA
+eb754,gen_clicon_2,v562,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Business and industry",0 Not mentioned 1 Mentioned,NA,NA,NA
+eb754,gen_indchge_2,v563,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? You personally",0 Not mentioned 1 Mentioned,NA,NA,NA
+eb754,gen_clicon_2,v564,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? All of them (SPONTANEOUS)",0 Not mentioned 1 Mentioned,NA,NA,NA
+eb754,climate_chg_4,v568,c(4:1),To what extent do you agree or disagree with each of the following statements? Fighting climate change and using energy more efficiently can boost the economy and jobs in the EU,"1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+",NA,NA,NA
+eb754,climate_tax_4,v569,c(4:1),To what extent do you agree or disagree with each of the following statements? Taxation should be based more on the way we use energy,"1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+",NA,NA,NA
+eb763,gen_clicon_2,qa6a2_15,c(0:1),What do you think are the two most important issues facing (OUR COUNTRY) at the moment?  Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb763,gen_clicon_2,qa7a2_15,c(0:1),"And personally, what are the two most important issues you are facing at the moment? Climate change","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb763,gen_clicon_2,qa8_13,c(0:1),What do you think are the two most important issues facing the EU at the moment?  Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb763,gen_clicon_2,qb3t_1,c(0:1),"Thinking about innovation, what do you think should be the EU's priority? Firstly? And then? Refocus research on new challenges such as climate change, energy and resource efficiency.qa6a2_15","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb773,gen_clicon_2,qa7a_13,c(0:1),"What do you think are the two most important issues facing (OUR COUNTRY) at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb773,gen_clicon_2,qa8a_12,c(0:1),"And personally, what are the two most important issues you are facing at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb773,sup_govaction_2,qd1_25,c(0:1),"Regarding the ""European Union"", please tell me what you expect from it. ENVIRONMENT: climate change / environmental issues","0 Not mentioned
+1 ENVIRONMENT: climate change / environmental issues",NA,NA,NA
+eb773,sup_govaction_2,qd1_26,c(0:1),Domain of expectations from the European Union:  energy (summarized),"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb773,gen_clicon_2,qa9_13,c(0:1),What do you think are the two most important issues facing the EU at the moment?  Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb773,gen_clicon_2,qa23_14,c(0:1),"European integration has been focusing on various issues in the last years. In your opinion, which aspects should be emphasized by the European institutions in the coming years, to strengthen the EU in the future? The fight against climate change","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb781,gen_clicon_2,qa5a_13,c(0:1),"What do you think are the two most important issues facing (OUR COUNTRY) at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb781,gen_clicon_2,qa6a_12,c(0:1),"And personally, what are the two most important issues you are facing at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb781,sup_govaction_2,qd1_25,c(0:1),"Regarding the ""European Union"", please tell me what you expect from it. ENVIRONMENT: climate change / environmental issues","0 Not mentioned
+1 ENVIRONMENT: climate change / environmental issues",NA,NA,NA
+eb781,sup_govaction_2,qd1_26,c(0:1),Domain of expectations from the European Union: nuclear / renewable energy,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb781,gen_clicon_2,qa7_13,c(0:1),What do you think are the two most important issues facing the EU at the moment? Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb793,gen_clicon_2,qa7a_12,c(0:1),"And personally, what are the two most important issues you are facing at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb793,gen_clicon_2,qa8_11,c(0:1),What do you think are the two most important issues facing the EU at the moment? The environment,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb793,sup_govaction_2,qd1_25,c(0:1),"Regarding the ""European Union"", please tell me what you expect from it. ENVIRONMENT: climate change / environmental issues","0 Not mentioned
+1 ENVIRONMENT: climate change / environmental issues",NA,NA,NA
+eb781,sup_govaction_2,qd1_26,c(0:1),Domain of expectations from the European Union:  renewable energy,"1 Not mentioned
+1 ENVIRONMENT: climate change / environmental issues",NA,NA,NA
+eb801,gen_clicon_2,qa4a_13,c(0:1),"What do you think are the two most important issues facing (OUR COUNTRY) at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb801,gen_clicon_2,qa5a_12,c(0:1),"And personally, what are the two most important issues you are facing at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb801,sup_govaction_2,qd1_25,c(0:1),"Regarding the ""European Union"", please tell me what you expect from it. ENVIRONMENT: climate change / environmental issues","0 Not mentioned
+1 ENVIRONMENT: climate change / environmental issues",NA,NA,NA
+eb801,sup_govaction_2,qd1_26,c(0:1),"Regarding the ""European Union"", please tell me what you expect from it. ENVIRONMENT: renewable energy","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb801,gen_clicon_2,qa6_13,c(0:1),What do you think are the two most important issues facing the EU at the moment? Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb802,climate_chg_4,qa4_1,c(4:1),To what extent do you agree or disagree with each of the following statements? Fighting climate change and using energy more efficiently can boost the economy and jobs in the EU,"1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb802,gen_clicon_2,qa1t_1,c(0:1),Which of the following do you consider to be the single most serious problem facing the world as a whole? Climate change. This variable summarizes answers to this item in qa1a and qa1b.,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb802,gen_clicon_10,qa2,c(1:10),"And how serious a problem do you think climate change is at this moment? Please use a scale from 1 to 10, with '1' meaning it is ""not at all a serious problem"" and '10' meaning it is ""an extremely serious problem"".","0 
+10",NA,NA,NA
+eb802,gen_clicon_2,qa3_1,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? National Governments","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb814,gen_clicon_2,qa4a_13,c(0:1),"What do you think are the two most important issues facing (OUR COUNTRY) at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb814,gen_clicon_2,qa5a_12,c(0:1),"And personally, what are the two most important issues you are facing at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb814,gen_clicon_2,qa6_13,c(0:1),What do you think are the two most important issues facing the EU at the moment? Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb823,gen_clicon_2,qa3a_13,c(0:1),"What do you think are the two most important issues facing (OUR COUNTRY) at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb823,gen_clicon_2,qa4a_12,c(0:1),"And personally, what are the two most important issues you are facing at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb823,gen_clicon_2,qa5_13,c(0:1),What do you think are the two most important issues facing the EU at the moment? Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb832,gen_clicon_4,qa6_4,c(4:1),"For each of the following, please tell me to what extent you agree or disagree that it could result in a threat to the internal security of the EU? Climate change and pollution","Totally
+agree 1 Total disagree 4",NA,NA,NA
+eb833,sup_govaction_2,qe3t_6,c(0:1),And on which of the following would you like EU budget to be spent? Firstly?] Climate change and environmental protection. This variable summarizes answers to this item in qe3a and qe3b.,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb833,gen_clicon_2,qa4a_12,c(0:1),"And personally, what are the two most important issues you are facing at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb833,gen_clicon_2,qa5_13,c(0:1),What do you think are the two most important issues facing the EU at the moment? Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb833,gen_clicon_2,qa3a_13,c(0:1),"What do you think are the two most important issues facing (OUR COUNTRY) at the moment?The environment, climate and energy issues",NA,NA,NA,NA
+eb834,gen_clicon_10,qa2,c(1:10),And how serious a problem do you think climate change is at this moment?,"
+1 Box 1 - Not at all a serious problem
+2 Box2
+3 Box3
+4 Box4
+5 Box5
+6 Box6
+7 Box7
+8 Box8
+9 Box9
+10 Box 10 - An extremely serious problem
+11 DK",NA,NA,NA
+eb834,sup_govaction_2,qa3_1,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? National Governments","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb834,sup_govaction_2,qa3_2,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change?The European Union","1 Not mentioned
+1 Mentioned",NA,NA,NA
+eb834,sup_govaction_2,qa3_3,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change?  Regional and local authorities","2 Not mentioned
+1 Mentioned",NA,NA,NA
+eb834,gen_clicon_2,qa3_4,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Business and industry","3 Not mentioned
+1 Mentioned",NA,NA,NA
+eb834,gen_indchge_2,qa3_5,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change?  You personally","4 Not mentioned
+1 Mentioned",NA,NA,NA
+eb834,gen_clicon_2,qa3_6,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Environmental groups","5 Not mentioned
+1 Mentioned",NA,NA,NA
+eb834,gen_clicon_2,qa3_7,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Other (SPONTANEOUS)","6 Not mentioned
+1 Mentioned",NA,NA,NA
+eb834,gen_clicon_2,qa3_8,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? All of them (SPONTANEOUS)","7 Not mentioned
+1 Mentioned",NA,NA,NA
+eb834,climate_chg_4,qa4_1,c(4:1),To what extent do you agree or disagree with each of the following statements? Fighting climate change and using energy more efficiently can boost the economy and jobs in the EU,"1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb834,intcomm_coop_4,qa4_2,c(4:1),To what extent do you agree or disagree with each of the following statements? Fighting climate change will only be effective if all countries of the world act together,"1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb834,gh_env_4,qb4_5,c(4:1),I will read some statements about why it might be important to halt the loss of biodiversity. Please tell me how much you agree or disagree with them. Looking after nature is essential in tackling climate change,"1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb834,gh_env_4,qb7_5,c(4:1),"In your opinion, to what extent is biodiversity threatened by each of the following?Climate change","1 Very much
+2 Quite a lot
+3 Not much
+4 Not at all",NA,NA,NA
+eb843,gen_clicon_2,qa3a_13,c(0:1),"What do you think are the two most important issues facing our country at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb843,gen_clicon_2,qa4a_12,c(0:1),"And personally, what are the two most important issues you are facing at the moment?The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb843,gen_clicon_2,qa5_13,c(0:1),What do you think are the two most important issues facing the EU at the moment? Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb852,gen_clicon_2,qa3a_13,c(0:1),"What do you think are the two most important issues facing (OUR COUNTRY) at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb852,gen_clicon_2,qa4a_12,c(0:1),"And personally, what are the two most important issues you are facing at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb852,gen_clicon_2,qa5_13,c(0:1),What do you think are the two most important issues facing the EU at the moment? Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb862,gen_clicon_2,qa3a_13,c(0:1),"What do you think are the two most important issues facing (OUR COUNTRY) at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb862,gen_clicon_2,qa4a_12,c(0:1),"And personally, what are the two most important issues you are facing at the moment? The environment, climate and energy issues","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb862,gen_clicon_2,qa5_13,c(0:1),What do you think are the two most important issues facing the EU at the moment? Climate change,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb802,gen_clicon_10,qa2,c(1:10),"And how serious a problem do you think climate change is at this moment? Please use a scale from 1 to 10, with '1' meaning it is ""not at all a serious problem"" and '10' meaning it is ""an extremely serious problem"".","1 Box 1 - Not at all a serious problem
+2 Box2
+3 Box3
+4 Box4
+5 Box5
+6 Box6
+7 Box7
+8 Box8
+9 Box9
+10 Box 10 - An extremely serious problem
+11 DK",NA,NA,NA
+eb802,sup_govaction_2,qa3_1,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? National Governments","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb802,sup_govaction_2,qa3_2,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? The European Union","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb802,sup_govaction_2,qa3_3,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Regional and local authorities","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb802,gen_clicon_2,qa3_4,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Business and industry","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb802,gen_indchge_2,qa3_5,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? You personally","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb802,gen_clicon_2,qa3_6,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Environmental groups","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb802,gen_clicon_2,qa3_7,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Other (SPONTANEOUS)","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb802,gen_clicon_2,qa3_8,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? All of them (SPONTANEOUS)","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb802,climate_chg_4,qa4_1,c(4:1),To what extent do you agree or disagree with each of the following statements?Fighting climate change and using energy more efficiently can boost the economy and jobs in the EU,"1 Totally agree
+2 Tend to agree
+3 Tend to disagree
+4 Totally disagree
+5 DK",NA,NA,NA
+eb871,gen_clicon_2,qc1t_1,c(0:1),Which of the following do you consider to be the single most serious problem facing the world as a whole? Climate change. A summarize variable qa1t_1. qa2t_1,"0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb871,gen_clicon_10,qc2,c(1:10),"And how serious a problem do you think climate change is at this moment? Please use a scale from 1 to 10, with ‘1’ meaning it is ‘not at all a serious problem’ and ‘10’ meaning it is ‘an extremely serious problem’.","1 Box1 - Not at all a serious problem
+2 Box2
+3 Box3
+4 Box4
+5 Box5
+6 Box6
+7 Box7
+8 Box8
+9 Box9
+10 Box 10 - An extremely serious problem
+11 DK",NA,NA,NA
+eb871,sup_govaction_2,qc3_1,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? National Governments","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb871,sup_govaction_2,qc3_2,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? The European Union","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb871,sup_govaction_2,qc3_3,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Regional and local authorities","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb871,gen_clicon_2,qc3_4,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Business and industry","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb871,gen_indchge_2,qc3_5,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? You personally","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb871,gen_clicon_2,qc3_6,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Environmental groups","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb871,gen_clicon_2,qc3_7,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? Other (SPONTANEOUS)","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb871,gen_clicon_2,qc3_8,c(0:1),"In your opinion, who within the EU is responsible for tackling climate change? All of them (SPONTANEOUS)","0 Not mentioned
+1 Mentioned",NA,NA,NA
+eb871,climate_chg_4,qc4_1,c(4:1),Fighting climate change and using energy more efficiently can boost the economy and jobs in the EU,"1 Totallyagree
+2 Tendtoagree
+3 Tendtodisagree 4 Totallydisagree 5 DK",NA,NA,NA
+eb871,sup_govaction_4,qc4_5,c(4:1),More public financial support should be given to the transition to clean energies even if it means subsidies to fossil fuels should be reduced,"4 Totallyagree
+2 Tendtoagree
+3 Tendtodisagree 4 Totallydisagree 5 DK",NA,NA,NA
+eb871,sup_govaction_4,qc7,c(4:1),"How important do you think it is that the (NATIONALITY) government sets targets to increase the amount of renewable energy used, such as wind or solar power, by 2030?","1 Very important
+2 Fairly important
+3 Not very important
+4 Not at all important
+5 DK",NA,NA,NA
+eb871,sup_govaction_4,qc8,c(4:1),How important do you think it is that the (NATIONALITY) government provides support for improving energy efficiency by 2030 (e.g. by encouraging people to insulate their home or buy electric cars)?,"1 Very important
+2 Fairly important
+3 Not very important
+4 Not at all important
+5 DK",NA,NA,NA
+nsee_combo,gh_env_4,gwimpacts_areas,c(4:1),concern of global warming impact: higher sea levels & flooding;,Very concerned    1   Somewhat concerned        Not too concerned     Not concerned at all 4,NA,NA,NA
+nsee_combo,air_health_4,gwimpacts_disease,c(4:1),concern of global warming impact: spread of disease;,Very concerned    1   Somewhat concerned        Not too concerned     Not concerned at all 4,NA,NA,NA
+nsee_combo,gh_env_4,gwimpacts_droughts,c(4:1),concern of global warming impact: longer & more severe drought;,Very concerned    1   Somewhat concerned        Not too concerned     Not concerned at all 4,NA,NA,NA
+nsee_combo,gh_env_4,gwimpacts_species,c(4:1),concern of global warming impact: loss of species; ;,Very concerned    1   Somewhat concerned        Not too concerned     Not concerned at all 4,NA,NA,NA
+nsee_combo,gh_env_4,gwimpacts_storms,c(4:1),concern of global warming impact: intensity of storms,Very concerned    1   Somewhat concerned        Not too concerned     Not concerned at all 4,NA,NA,NA
+nsee_combo,sup_govaction_4,intl_economicimpact:,c(1:4),"Overall, the U.S. economy would benefit from leaving the international climate treaty designed to reduce greenhouse gas emissions",Strongly agree 1   Somewhat agree Somewhat disagree Strongly disagree 4,NA,NA,NA
+nsee_combo,sup_govaction_4,intl_support_v1,c(4:1),support for international green house gas treaty,Strongly support 1Somewhat support  Somewhat oppose  Strongly oppose 4,NA,NA,NA
+nsee_combo,sup_govaction_5,intl_support_v2,c(5:1),support for international green house gas treaty,Strongly support      1     Somewhat support Neither support nor oppose            Somewhat oppose Strongly oppose 5,NA,NA,NA
+nsee_combo,climate_chg_2,science_co2vsmethane,c(1:2),Scientists believe carbon dioxide is a more potent green house,True  1 False 2,NA,NA,NA
+nsee_combo,climate_chg_2,science_flooding,c(2:1),Scientists believe human-caused global warming will result in flooding,True  1 False 2,NA,NA,NA
+nsee_combo,climate_chg_2,science_ozonehole,c(1:2),Scientists believe carbon dioxide is responsible for the hole in the ozone layer,True  1 False 2,NA,NA,NA
+eb883,gen_clicon_2,qa3a_13,c(0:1),What do you think are the two most important issues facing (OUR COUNTRY) at the moment? THE ENVIRONMENT & CLIMATE CHANGE,"Not mentioned 0 The environment, climate and energy issues  1",NA,NA,NA
+eb883,gen_clicon_2,qa4b_13,c(0:1),What do you think are the two most important issues facing (personal) at the moment?THE ENVIRONMENT & CLIMATE CHANGE,"Not mentioned 0 The environment, climate and energy issues  1",NA,NA,NA
+eb883,gen_clicon_2,qa5_13,c(0:1),What do you think are the two most important issues facing (EU) at the moment?THE ENVIRONMENT & CLIMATE CHANGE,"Not mentioned 0 The environment, climate and energy issues  1",NA,NA,NA
+eb902,climate_chg_4,qb1,c(4:1),Which of the following statements best describes your opinion?,Climate change is entirely due to human activity 1  Climate change is partly due to human activity 2  Climate change is not at all due to human activity 3 There is no climate change / I don't believe in climate change (SPONTANEOUS) 4,NA,NA,NA
+eb902,gh_env_4,qb2_1,c(4:1),Do you think that the following extreme weather events are due to climate change??HEAT/COLD WAVES,"Yes, definitely 1 Yes, to some extent      No, not really      No, not at all    4",NA,NA,NA
+eb902,gh_env_4,qb2_2,c(4:1),Droughts and wildfires,"Yes, definitely 1 Yes, to some extent      No, not really      No, not at all    4",NA,NA,NA
+eb902,gh_env_4,qb2_3,c(4:1),Floods,"Yes, definitely 1 Yes, to some extent      No, not really      No, not at all    4",NA,NA,NA
+eb902,gh_env_4,qb2_4,c(4:1),Hurricanes and heavy rainstorms,"Yes, definitely 1 Yes, to some extent      No, not really      No, not at all    4",NA,NA,NA
+eb902,gh_env_4,qb2_5,c(4:1),Earthquakes,"Yes, definitely 1 Yes, to some extent      No, not really      No, not at all    4",NA,NA,NA
+eb902,gh_env_4,qb2_6,c(4:1),Landslides,"Yes, definitely 1 Yes, to some extent      No, not really      No, not at all    4",NA,NA,NA
+eb902,sup_govaction_4,qb5_5,c(4:1),"To what extent do you agree or disagree with each of the following statements?More public financial
+support should be given to the transition to clean energies even if it means subsidies to fossil fuels should be reduced",Totally agree  1  Tend to agree Tend to disagree Totally disagree         4,NA,NA,NA
+eb913_c,gen_clicon_2,qb1_c,c(0:1),What do you think are the two most important issues facing (EU) at the moment?THE ENVIRONMENT & CLIMATE CHANGE,Not mentioned 0  climate change 1,NA,NA,NA
+eb913_c,sup_govaction_4,qb4_4,c(4:1),"To what extent do you agree or disagree with each of the following statements?More public financial
+support should be given to the transition to clean energies even if it means subsidies to fossil fuels should be reduced",1Totally agree    Tend to agree Tend to disagree 4Totally disagree,NA,NA,NA
+eb913_c,gen_indchge_2,qb5,c(2:1),Have you personally taken any action to fight climate change over the past six months?,#yes 1 no2,NA,NA,NA
+eb913_c,sup_govaction_4,qb7,c(4:1),"How important do you think it is that the (NATIONALITY) government sets ambitious targets to increase the amount of renewable energy used, such as wind or solar power, by 2030?",Very important   1  Fairly important   Not very important Not at all important   4,NA,NA,NA
+eb913_c,sup_govaction_4,qb8,c(4:1),How important do you think it is that the (NATIONALITY) government provides support for improving energy efficiency by 2030 (e.g. by encouraging people to insulate their home or buy electric cars)?,Very important   1  Fairly important   Not very important Not at all important   4,NA,NA,NA
+eb913_c,sup_govaction_4,qb9,c(4:1),"To what extent do you agree or disagree with the following statement: We should reduce greenhouse gas emissions to a minimum while offsetting the remaining emissions, for instance by increasing forested areas, to make the EU economy climate neutral by 2050.",Totally agree 1   Tend to agree Tend to disagree Totally disagree    4,NA,NA,NA
+eb914,sup_govaction_2,qb9,c(0:1),"In your opinion, which of the following energy issues should the European Union tackle as a priority over the next 10 years?",Not mentioned 0 Step up international efforts to reduce the impact of energy on climate change (Interviewer instruction: if ...         1,NA,NA,NA
+eb914,sup_govaction_4,qb2_2,c(4:1),"The EU must ensure access
+to clean energy, e.g. encourage a move away from fossil fuels towards
+energy sources with low greenhouse gas emissions",Totally agree    1Tend to agree Tend to disagree Totally disagree     4,NA,NA,NA
+eb904,gh_env_4,qa2_5,c(4:1),"will read some statements about why it might be important to halt the loss of biodiversity.
+#Please tell me how much you agree or disagree with them.
+#Looking after nature is essential in tackling climate change",1Totally agree    Tend to agree Tend to disagree Totally disagree4,NA,NA,NA
+eb924,gen_clicon_10,qa2_1,c(1:10),And how serious a problem do you think climate change is at this moment? In your country,1 Not at all a serious problem 10 An extremely serious problem,NA,NA,NA
+eb924,gen_clicon_10,qa2_2,c(1:10),And how serious a problem do you think climate change is at this moment?EU,1 Not at all a serious problem 10 An extremely serious problem,NA,NA,NA
+eb924,gen_clicon_2,qa3_8,c(0:1),"From the following list, please pick the four environmental issues which you consider the most important.",Not mentioned 0 Climate change 1,NA,NA,NA
+eb924,gen_evncon_4,qa1,c(4:1),How important is protecting the environment to you personally?,1 Very important     Fairly important   Not very important Not at all important 4,NA,NA,NA
+eb924,envact_gov_3,qa9_4,c(3:1),"In your opinion, is each of the following currently doing too much, about the right amount, or not enough to protect the environment?: national government",1Doing too much Doing about the right amount             Not doing enough 3,NA,NA,NA
+eb511_c,gen_evncon_2,venv,c(0:1),Here is a list of things that some people say they are afraid of. Please tell me which one worries you the most (top 5),0 not mentioned 1 mentioned damage to enviornment,NA,NA,NA
+eb511_c,gen_evncon_3,v43,"c(3, 2, 1)","some people are concerned about environmental protection and the fight against pollution. In your opinion, is it?",1An immediate and urgent problem   More a problem for the future Not really a problem  3,NA,NA,NA
+eb511_c,env_seriplant_4,v44,c(4:1),"at present, are you very worried, somewhat worried, not very worried, or not at all worried about the following : EXTINCT SPECIES",1Very worried   Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
+eb511_c,env_seriplant_4,v46,c(4:1),"at present, are you very worried, somewhat worried, not very worried, or not at all worried about the following : the disappearance of tropical forests",1Very worried   Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
+eb511_c,gen_clicon_4,v47,c(4:1),global warming,1Very worried   Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
+eb511_c,gen_clicon_4,v48,c(4:1),"pollution of the air, water, ground",1Very worried   Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
+eb511_c,gen_clicon_4,v49,c(4:1),the destruction of the ozone layer,1Very worried   Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
+eb511_c,env_seriplant_3,v53,"c(2, 3, 1)","for each of these, would you say that you are more worried or less worried than 5 years ago: disappearce of certain species",More worried 1 Less worried 2 Neither more nor less worried (SPONTANEOUS) 3,NA,NA,NA
+eb511_c,env_seriplant_3,v55,"c(2, 3, 1)",the disappearance of tropical forests,More worried 1 Less worried 2 Neither more nor less worried (SPONTANEOUS) 3,NA,NA,NA
+eb511_c,gen_clicon_3,v56,"c(2, 3, 1)",global warming,More worried 1 Less worried 2 Neither more nor less worried (SPONTANEOUS) 3,NA,NA,NA
+eb511_c,env_serairpoll_3,v57,"c(2, 3, 1)","pollution of the air, water, ground",More worried 1 Less worried 2 Neither more nor less worried (SPONTANEOUS) 3,NA,NA,NA
+eb511_c,gen_clicon_3,v58,"c(2, 3, 1)",the destruction of the ozone layer,More worried 1 Less worried 2 Neither more nor less worried (SPONTANEOUS) 3,NA,NA,NA
+eb511_c,env_serairpoll_3,v86,c(1:3),to what extent do you believe that the following could affect your health in the future : air quality,Not at all 1  A little      A lot  3,NA,NA,NA
+eb511_c,gen_clicon_3,v93,c(1:3),to what extent do you believe that the following could affect your health in the future : CLIMATE CHANGE,Not at all 1  A little      A lot  3,NA,NA,NA
+eb511_c,env_serairpoll_4,v75,c(4:1),"thinking about (your country), are you very worried, somewhat worried, not very worried or not at all worrid about the following? Air pollution",Very worried  1 Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
+eb802_c,gen_clicon_2,qa1_c,c(0:1),Which of the following do you consider to be the most serious problem facing the world as a whole? Top 4 : climate change,not mentioned 0. mentioned 1,NA,NA,NA
+eb802_c,gen_clicon_11,qa2,c(0:10),"And how serious a problem do you think climate change is at this moment? Please use a scale from 1 to 10, with '1' meaning it is ""not at all  a serious problem"" and '10' meaning it is ""an extremely serious problem"".",Not at all a serious problem 1 #An extremely serious problem  10,NA,NA,NA
+eb802_c,sup_govaction_4,qa7,c(4:1),"How important do you think it is that the (OUR NATIONALITY) government sets targets to increase the amount of renewable energyused, such as wind or solar power, by 2030?",Very important 1    Fairly important   Not very important Not at all important 4,NA,NA,NA
+eb802_c,sup_govaction_4,qa8,c(4:1),"How important do you think it is that the (OUR NATIONALITY) government provides support for improving energy efficiency (for example, by encouraging people to insulate their home or purchase low  energy light bulbs) by 2030?",Very important 1    Fairly important   Not very important Not at all important 4,NA,NA,NA
+eb834,gen_clicon_2,qa1t_1,c(0:1),hich of the following do you consider to be the single most serious problem facing the world as a whole?  CLIMATE CHANGE (SUM),NA,NA,NA,NA
+eb834,gen_clicon_10,qa2,c(1:10),"And how serious a problem do you think climate change is at this moment? Please use a scale from 1 to 10, with '1' meaning it is ""not at all a serious problem"" and '10' meaning it is ""an extremely serious problem"".","1 not at all a serious problem, 10 an extremely serious problem""",NA,NA,NA
+eb834,gh_env_4,qb4_5,c(4:1),I will read some statements about why it might be important to halt the loss of biodiversity. Please tell me how much you agree or disagree with them.  Looking after nature is essential in tackling climate change,Totally agree1    Tend to agree Tend to disagree Totally disagree 4,NA,NA,NA
+eb834,gh_env_4,qb7_5,c(4:1),"In your opinion, to what extent is biodiversity threatened by each of the following? Climate change",Very much 1 Quite a lot    Not much  Not at all 4,NA,NA,NA
+eb852_c,gen_evncon_2,qa3_c,c(0:1),What do you think are the two most important issues facing (OUR COUNTRY) at the moment? IMPORTANT ISSUES CNTRY: THE ENVIRONMENT (include TCC),0 not mentioned 1 mentioned  enviornment,NA,NA,NA
+eb852_c,gen_evncon_2,qa4_c,c(0:1),"And personally, what are the two most important issues you are facing at the moment?(include TCC)",0 not mentioned 1 mentioned environment,NA,NA,NA
+eb852_c,gen_evncon_2,qa5_11,c(0:1),What do you think are the two most important issues facing the EU at the moment? THE ENVIRONMENT,Not mentioned  0   Mentioned 1,NA,NA,NA
+eb852_c,gen_clicon_2,qa5_13,c(0:1),What do you think are the two most important issues facing the EU at the moment? CLIMATE CHANGE,Not mentioned  0   Mentioned 1,NA,NA,NA
+eb852_c,gen_evncon_2,qb3_4,c(0:1),"In your opinion, which two of the following objectives should be given top priority in a European energy union? Enviornment",Not mentioned  0   Mentioned 1,NA,NA,NA
+eb852_c,climate_pri_2,qb3_6,c(0:1),"In your opinion, which two of the following objectives should be given top priority in a European energy union? Global warming",Not mentioned  0   Mentioned 1,NA,NA,NA
+eb682_c,gen_evncon_2,qa3_c,c(0:1),What do you think are the two most important issues facing (OUR COUNTRY) at the moment? IMPORTANT ISSUES CNTRY: THE ENVIRONMENT (include TCC),0 not mentioned 1 mentioned  enviornment,NA,NA,NA
+eb682_c,gen_evncon_2,qa4_c,c(0:1),"And personally, what are the two most important issues you are facing at the moment?(include TCC)",0 not mentioned 1 mentioned environment,NA,NA,NA
+eb682_c,gen_evncon_2,qa5_11,c(0:1),What do you think are the two most important issues facing the EU at the moment? THE ENVIRONMENT,Not mentioned  0   Mentioned 1,NA,NA,NA
+eb682_c,gen_clicon_2,qa5_13,c(0:1),What do you think are the two most important issues facing the EU at the moment? CLIMATE CHANGE,Not mentioned  0   Mentioned 1,NA,NA,NA
+eb682_c,gen_evncon_2,qb3_4,c(0:1),"In your opinion, which two of the following objectives should be given top priority in a European energy union? Enviornment",Not mentioned  0   Mentioned 1,NA,NA,NA
+eb682_c,climate_pri_2,qb3_6,c(0:1),"In your opinion, which two of the following objectives should be given top priority in a European energy union? Global warming",Not mentioned  0   Mentioned 1,NA,NA,NA
+eb621,gen_clicon_2,v271,c(0:1),"From the following list, please list the five main environmental issues that you are worried about? Climate change",Not mentioned  0   Mentioned 1,NA,NA,NA
+eb621,gh_env_2,v279,c(0:1),"From the following list, please list the five main environmental issues that you are worried about? Air pollution",Not mentioned  0   Mentioned 1,NA,NA,NA
+eb621,envact_govaction_2,v104,c(0:1),the draft European Constitution provides that one million citizens of the European Union can request the adoption of a European law. This is known as « the citizen’s right of initiative ». In which of the following fields would you like to use this right in priority?,Not mentioned  0   Mentioned 1,NA,NA,NA
+eb621,gen_evncon_4,v120,c(1:4),How would you judge the current situation in each of the following domains?The situation of the environment,1 Very good Rather good  Rather bad    Very bad 4,NA,NA,NA
+eb621,gen_evncon_5,v132,"c(4, 3, 5, 2, 1)","According to you, in five years, will the situation in each of the following domains be better or less good than it is now?ENVIRONMENT CTRY",1Much better      Somewhat better   Somewhat less good Definitely less good 4  Identical 5(SPONT.),NA,NA,NA
+eb621,envimp_eco_2,v146,c(2:1),To which of the following two opinions do you feel the closest to? Environmental protection ...?,1Priority over competitiveness of econ. No priority over competitiveness of econ. 2,NA,NA,NA
+eb621,gen_evncon_4,v307,c(4:1),"In your opinion, to what extent do the following factors influence your ""quality of life""? Enviornment",1 Very much Quite a lot    Not much  Not at all    4,NA,NA,NA
+eb621,envimp_eco_2,v310,c(2:1),"In your opinion, should policy makers consider the environment to be just as important as economic and social policies?",yes 1 no 2,NA,NA,NA
+eb621,envimp_eco_4,v311,c(4:1),"In your opinion, should policy makers take into account environmental concerns when deciding policy in other areas such as the #economy and employment?",1Very much Quite a lot  4  Not much  Not at all,NA,NA,NA
+eb621,envact_indgen_4,v312,c(4:1),"Would you say that, you personally make an effort to protect the environment?",1 Often Sometimes    Rarely     Never4,NA,NA,NA
+eb621,gen_evncon_2,v325,c(1:0),"From the following list, which are your three main sources of information about the environment?No interest",Not mentioned 0    Mentioned 1,NA,NA,NA
+eb570,gen_clicon_2,v100,c(2:1),"for each of the following, please tell me if it is the case, or not?  global warming and climate change are serious issues which need immediate action","1 Yes, it is the case 2 No, it is not the case",NA,NA,NA
+eb570,climate_chg_2,v101,c(2:1),"for each of the following, please tell me if it is the case, or not? the use of fossil fuels contributes significantly to global warming and cliamte change","1 Yes, it is the case 2 No, it is not the case",NA,NA,NA
+eb570,climate_chg_2,v102,c(1:2),"for each of the following, please tell me if it is the case, or not?nuclear power contribute significantly to global warming and climate change","1 Yes, it is the case 2 No, it is not the case",NA,NA,NA
+eb570,climate_chg_2,v103,c(2:1),"for each of the following, please tell me if it is the case, or not?transport is largely responsbile for global warming and climate change","1 Yes, it is the case 2 No, it is not the case",NA,NA,NA
+eb570,climate_chg_2,v104,c(2:1),"for each of the following, please tell me if it is the case, or not?the use of fossil fuels adversely affects air quality","1 Yes, it is the case 2 No, it is not the case",NA,NA,NA
+eb570,climate_chg_2,v105,c(2:1),"for each of the following, please tell me if it is the case, or not?the use of natural gas contribute to enviornmental problems, but less than oil","1 Yes, it is the case 2 No, it is not the case",NA,NA,NA
+eb570,climate_chg_2,v115,c(1:2),"nuclear enery is currently produced by fission ro the splitting of heavy atoms. Another option
+#being developed is nulcear fusion, which invovles the merging of light atoms. Do you think that power stations using nuclear fusion would contribute significantly to global warming",#1Yes 2No,NA,NA,NA
+eb431,env_seriplant_4,v135,c(4:1),"at present, are you very worried, somewhat worried, not very worried, or not at all worried about the following : EXTINCT SPECIES",1Very worried   Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
+eb431,env_seriplant_4,v137,c(4:1),"at present, are you very worried, somewhat worried, not very worried, or not at all worried about the following : the disappearance of tropical forests",1Very worried   Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
+eb431,gen_clicon_4,v138,c(4:1),global warming,1Very worried   Somewhat worried   Not very worried Not at all worried 4,NA,NA,NA
