@@ -75,7 +75,7 @@ cited <- tribble(~citation, ~text_x, ~text_y,
                  "Redman 2018", 65.5, 2.9,
                  "Hooghe and Meeusen 2013", 37.6, 4.24)
 
-pocc <- read_csv(here("data-raw", "savedrecs.csv"),
+pocc <- read_csv(here::here("data-raw", "savedrecs.csv"),
                  show_col_types = FALSE) %>% 
   bind_rows(read_csv(here("data-raw", "savedrecs_gs.csv"),
                      show_col_types = FALSE) %>% 
