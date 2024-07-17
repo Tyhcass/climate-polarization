@@ -17,7 +17,7 @@ output:
   # word_document:
   #  toc: false
   #  number_sections: true
-documentclass: style/nsf2
+documentclass: nsf2
 bibliography: references.bib
 biblio-style: apalike
 header-includes:
