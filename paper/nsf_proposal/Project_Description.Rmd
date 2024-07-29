@@ -8,15 +8,12 @@ date: "\\vspace{-5em}"
 csl: american-political-science-association.csl
 output: 
   pdf_document:
-   includes:
-    in_header: style/preamble.tex
-   extra_dependencies: ["float"]
-   template: null
-   keep_tex: no
-   number_sections: true
-  # word_document:
-  #  toc: false
-  #  number_sections: true
+    includes:
+     in_header: style/preamble.tex
+    extra_dependencies: ["float"]
+    template: null
+    keep_tex: no
+    number_sections: true
 documentclass: nsf2
 bibliography: references.bib
 biblio-style: apalike
@@ -122,13 +119,24 @@ For instance, women in wealthier countries in the Americas and Europe are more l
 
 However, despite the evident polarization in climate change opinion, there is a lack of studies measuring the polarization in climate change attitudes and its effect on policy outputs and outcomes.
 
-The lack of extensive data on cross-sectional time series public opinion regarding climate change greatly impedes research in the fields of opinion and climate policy.
-Our project aims to expand both the geographic and temporal dimensions, and to add to the current literature on public opinion and policy outcomes related to climate change policies.
+It is well documented that comparative public opinion studies have been hampered by the lack of comprehensive data, not to mention public polarization data.
+The scarcity of comparative data at the aggregate level is due to data sparseness and fragmentation, with many countries and years lacking data, and existing data often being incomparable due to differences in items and interpretations.
+However, an emerging group of scholars has been dedicated to developing models to measure comparative public opinion across countries over time [@claassen2019estimating; @caughey2019policy; @mcgann2019parallel; @kolczynska2024modeling; @solt2020modeling].
+Among these, the Dynamic Comparative Public Opinion model (DCPO) [@solt2020modeling] has been widely used to measure comparative public opinion and has successfully created comparative data for gender egalitarianism [@woo2023public], macrointerest [@humacrointerest], and tolerance of homosexuality [@woo2023measuring].
 
-
-At first, we focus on mean attitudes.
-We need to talk about the standard challenges of sparsity and comparability, along with DCPO solutions and successes (public gender egalitarianism, macrointerest, etc.).
-Here is where we review the country-year coverage of climate-change questions in existing surveys and in the literature, including plots like the second figure in \texttt{dcpo\_gayrights}:
+Regarding climate change public opinion, we first explored the country-year coverage of climate-change questions in existing surveys and the literature.
+Figure\nobreakspace{}\ref{pocc-plot} shows how the available data have influenced scholarship on the topic.
+Using the Web of Science and Google Scholar, we assembled a sample of prominent published articles on public opinion toward climate change.^[
+Web of Science topic searches return articles in which the search terms appear in the title or abstract.
+We executed the following search: `TS=("public opinion" AND ("climate change" OR "global warming" OR "greenhouse effect"))`.
+The fifty most-cited empirical research articles returned were retained.
+Google Scholar, [according to its about page](https://scholar.google.com/intl/en/scholar/about.html), "aims to rank documents the way researchers do, weighing the full text of each document, where it was published, who it was written by, as well as how often and how recently it has been cited in other scholarly literature."
+We searched `"public opinion" "climate change"` and identified the first fifty articles returned.
+Then we added the Web of Science records for the Google Scholar results (to ensure consistency of citation counts) to our original Web of Science sample and dropped all duplicates, yielding a total of `r nrow(pocc)` different articles.]
+These articles had publication dates as early as `r summary(pocc$year)[[1]]` and as late as `r summary(pocc$year)[[6]]` (median: `r summary(pocc$year)[[3]]`) and were cited in the Web of Science from `r summary(pocc$hits)[[1]]` to `r summary(pocc$hits)[[6]]` times (median: `r summary(pocc$hits)[[3]]`).
+We then examined these articles to find the number of countries and years investigated in each.
+As the zoomed portion of the plot pocc-plot emphasizes, many of these articles might be described as using case-study or small-_n_ research designs.
+Just over a third consider only a single year in a single country; together with works that study four and fewer countries and years (inset) they comprise nearly half of this sample.
 
 ```{r pocc-plot, fig.cap="Countries and Mean Years Observed in Prominent Research\\label{pocc_plot}", fig.height=4.5, fig.width=7.5, fig.pos='h', cache=FALSE}
 
@@ -258,32 +266,20 @@ pocc_plot +
                                        width = 114))
 ```
 
-Using the Web of Science and Google Scholar, we assembled a sample of prominent published articles on public opinion toward climate change.^[
-Web of Science topic searches return articles in which the search terms appear in the title or abstract.
-We executed the following search: `TS=("public opinion" AND ("climate change" OR "global warming" OR "greenhouse effect"))`.
-The fifty most-cited empirical research articles returned were retained.
-Google Scholar, [according to its about page](https://scholar.google.com/intl/en/scholar/about.html), "aims to rank documents the way researchers do, weighing the full text of each document, where it was published, who it was written by, as well as how often and how recently it has been cited in other scholarly literature."
-We searched `"public opinion" "climate change"` and identified the first fifty articles returned.
-Then we added the Web of Science records for the Google Scholar results (to ensure consistency of citation counts) to our original Web of Science sample and dropped all duplicates, yielding a total of `r nrow(pocc)` different articles.]
-These articles had publication dates as early as `r summary(pocc$year)[[1]]` and as late as `r summary(pocc$year)[[6]]` (median: `r summary(pocc$year)[[3]]`) and were cited in the Web of Science from `r summary(pocc$hits)[[1]]` to `r summary(pocc$hits)[[6]]` times (median: `r summary(pocc$hits)[[3]]`).
-We then examined these articles to find the number of countries and years investigated in each.
-As the zoomed portion of the plot emphasizes, many of these articles might be described as using case-study or small-_n_ research designs.
-Just over a third consider only a single year in a single country; together with works that study four and fewer countries and years (inset) they comprise nearly half of this sample.
-
-
-We then can turn to the distinctive challenges in the climate change data (still focusing on mean attitutes).  First, the data are particularly fragmented among *many, many* different survey questions.  We can show rather than tell here, with plots of country-years per question across topics (climate change vs. PGE vs. macrointerest, for example).
+In addition, climate change data presents distinctive challenges.
+First, the data are particularly fragmented among many different survey questions due to the rapid changes in the salience of the climate change topic and specific subtopics, from climate knowledge to policy preference.
 Second, an unusually large number of countries are data-poor.
+<!-- plots of country-years per question across topics (climate change vs. PGE vs. macrointerest, for example).-->
+Moreover, regarding climate-change opinion, researchers are particularly interested in _polarization_ in attitudes, but existing latent-variable solutions have paid little attention to this.
 
-Moreover, with regard to climate-change opinion, researchers are particularly interested in _polarization_ in attitudes; existing latent-variable solutions have paid little attention to this.
-
+The lack of extensive cross-sectional time series data on public opinion and polarization regarding climate change significantly impedes research in the fields of opinion and climate policy.
+Our project aims to expand both the geographic and temporal dimensions and contribute to the literature on public opinion, polarization, and policy outcomes related to climate change policies.
 
 # The Proposed Research
 
-The proposed research comprises four principal activities: (1) expanding the survey source data, (2) improving the multiple-imputation routine by assessing and incorporating new techniques to ensure its estimates are comparable, (3) developing and testing a range of methods for generating polarization estimates, and (4) disseminating the resulting estimates to researchers, educators, students, and policymakers worldwide through conference presentations, a symposium, scholarly publications, and a web interface.
+The proposed research comprises four principal activities: (1) expanding the survey source data, (2) generating estimates for public opinion on climate change, (3) developing and testing a range of methods for generating polarization estimates, and (4) disseminating the resulting estimates to researchers, educators, students, and policymakers worldwide through conference presentations, scholarly publications, open-source software, and a web interface.
 
-Comparative public opinion data at the aggregate level are known for their sparseness and fragmentation, with many countries and years lacking data and existing data often being incomparable due to differences in items and interpretations.
-However, a growing body of scholarship has been developing latent variable models to address these issues using cross-national survey data [@claassen2019estimating; @caughey2019policy; @mcgann2019parallel;@kolczynska2024modeling; @solt2020modeling]. 
-Among these, the Dynamic Comparative Public Opinion model (DCPO) [@solt2020modeling] has been widely used in measuring comparative public opinion from gender egalitarianism [@woo2023public], macrointerest [@humacrointerest], to tolerance of homosexuality [@woo2023measuring].
+We will rely on the Dynamic Comparative Public Opinion model (DCPO) [@solt2020modeling] to measure public opinion since it has been widely used in measuring comparative public opinion and successfully generated comparative datasets in gender egalitarianism [@woo2023public], macrointerest [@humacrointerest], and tolerance of homosexuality [@woo2023measuring].
 
 The DCPO model is a population-level two-parameter ordinal logistic item response theory (IRT) model.
 It interprets an individual's response to a certain question as a function of the mean latent public attitude of a population at a country-year level, the difficulty of giving a certain answer to the question, and the degree to which the question measures the latent attitude.
@@ -300,18 +296,97 @@ Our primary focus has been on cross-national surveys, including the World Values
 Expanding the dataset to include more country-specific surveys will enhance the geographical and temporal scope of the raw data but will require a significant commitment of time and resources due to language barriers and difficulties in accessing data.
 Additionally, the severe sparsity of identical questions across different survey projects necessitates further development of the DCPO model to address these inconsistencies.
 
-*Improving the multiple-imputation routine.*
+In addition to expanding survey datasets, we will expand survey items to include both climate-related items and environment-related items.
+Both general questions about environmental concern and protection and specific questions about environmental policy preferences will be identified and incorporated into our source data.
+We will also identify demographic and political information of respondents in survey datasets, including but not limited to gender, religion, residence location, and ideology.
+These demographics will allow us to estimate public opinion between subpopulations, which we will illustrate in the polarization estimates section. 
+
+*Generating estimates for public opinion on climate change.*
+To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model as presented in @solt2020modeling.
+Compared to other models, such as @mcgann2019parallel and @kolczynska2024modeling, which require dense survey data or ancillary data on population characteristics, DCPO is specifically designed to address issues of incomparability and sparsity in comparative opinion data over time with fewer data requirements.
+
+DCPO handles incomparability with two key parameters: _difficulty_ and _dispersion_. 
+Difficulty indicates the level of climate change attitude represented by a given response.
+For instance, answering "very concerned" to the question "To what extent are you concerned about climate change?" shows more supportive attitude than answering "somewhat concerned," "little concerned," or "not at all."
+Similarly, giving "very high priority" to the question "How high a priority do you think the government SHOULD place on addressing climate change?" indicates more support than merely expressing concern.
+
+Dispersion measures the degree to which a question can capture the latent attitude towards climate change.
+A smaller dispersion suggests that changes in question responses can better reflect changes in supportive attitudes.
+For example, compared to the question about the degree of agreement with "Climate change is caused by human behavior," the response to "Would you be willing to give part of your income or pay more taxes if you were sure that the extra money was used to handle climate change?" can better map onto the change in climate attitude.
+
+To address the sparsity of source data, which includes inconsistencies in the time series of each country due to unobserved country-years or limited observed items, DCPO uses local-level dynamic linear models.
+These models estimate public opinion by taking the previous year's estimate and adding a random shock.
+This approach smooths the estimates over time and allows for estimation even in years with little or no survey data, albeit at the expense of greater measurement uncertainty[^Scholars have developed and tested approaches to incorporate measurement uncertainty [@TaiEtAl2022a]].
+
+To facilitate data collection, measurement, and broader open data science, DCPO has developed two open-source R packages: DCPO and DCPOtools.
+DCPOtools, designed by @SoltEtAl2019, automates the process of collecting the necessary survey items from datasets and performs data wrangling computationally.
+This increases the efficiency and transparency of data processing, avoids data entry errors, and facilitates reproducibility.
+DCPO is the package written in Stan for running DCPO models and estimating latent public opinion from cross-national survey data collected through DCPOtools.
+Together, these tools enable scholars to translate survey data into estimates of public opinion.
 
 *Developing and testing a range of methods for generating polarization estimates.*
-  
+<!-- a summary about polarization estimates-->
+To generate polarization estimates, we will revise and expand the DCPO model and relevant packages to identify and aggregate subpopulation opinions.
+Although existing studies usually focus on partisan polarization, polarization exists across different subgroups.
+We will estimate polarization between ideological left and ideological right, female and male, urban and rural, and religious and secular.
+
+To this end, we will first revise DCPOtools to automatically collect and process ancillary data on population characteristics based on our expanded source data.
+Secondly, we will develop the DCPO model and package to estimate public opinion within subpopulation groups and then the cleavage of opinion between subpopulation groups.
+
+<!--Need more infor here.  maybe encounter more DN or missing data for certain groups.   -->
+
 *Disseminating the resulting estimates.*
 
+We will achieve broad dissemination through conference presentations, scholarly publications, software, dataverse, and a user-friendly web interface.
+Over the two-year period, we will attend multiple conferences, including but not limited to the Annual Meetings of the American Political Science Association (APSA), the International Studies Association (ISA), and the Midwest Political Science Association (MPSA).
+In the first year, we will present our work in progress to attain scholarly suggestions and feedback to improve our model and substantive work.
+In the second year, we will disseminate our estimates by introducing our packages and dashboard as well as presenting our substantive results.
+
+Specifically, during the first year, we will focus on the estimates of public opinion by extensively expanding raw source data and survey items, including environment-related questions and respondents' demographics.
+In the second year, we will update the DCPO packages to measure polarization in climate change attitudes across different subpopulation groups across countries over time.
+Meanwhile, we will apply these estimates to study the dynamic relationship between climate change attitudes, polarization, and climate-policy adoption in cross-sectional time-series data.
+Additionally, PIs will take advantage of conference time for in-person, in-depth project meetings to exchange ideas and set the agenda.
+
+Beyond conference presentations and three scholarly publications, we will disseminate our data through Dataverse, provide two updated DCPO packages, and develop a user-friendly dashboard.
+Climate scholars can download our estimates directly from Dataverse for use in downstream analyses.
+The updated DCPO packages will enable scholars to measure public opinion of their interests, from data collection and data wrangling to generating estimates.
+The user-friendly dashboard will be a valuable tool for the general public to explore temporal trends and compare spatial differences in public climate change attitudes, allowing users to visualize data based on their preferred time period, demographics, country, or region.
+
 # Timeline and Project Implementation
+We propose a two-year project. 
+
+Fall 2024: Raw data collection.
+
+Spring 2025: Document climate change public opinion estimates.
+
+Summer 2025: Revise DCPO models and packages for estimating polarization.
+
+Fall 2025:  Estimate climate change polarization.
+
+Spring 2026: Document climate change polarization estimates.
+
+Summer 2026: Write up the paper about dynamic relationship between climate public opinion and climate policies.
 
 # Broader Impacts
+The Climate Change Public Opinion Dataset (CCPOD) will serve as a crucial research infrastructure for researchers, educators, students, policymakers, non-governmental organizations, and news agencies worldwide, fostering both within and cross-national work on climate change, polarization, and broader public opinion.
+Through conference presentations, scholarly publications, and a user-friendly web interface, the dissemination of the resulting estimates will enhance the understanding of both scholars, policymakers, and general audience (like NGOs and Journalists) about the relationship between public opinion and climate policies, ultimately contributing to more informed and effective climate change action.
+In addition, two open-source R package for automatically data collection and measurement are made available so others can analyze similar data.
+This aligns with NSF’s commitment to making knowledge accessible to policymakers, the public, and researchers.
+Moreover, this project will promote teaching by providing CCPOD's web-based graphical interface with user-friendly functionality to facilitate its use for teaching and learning data analytics and by employing graduate research assistants, especially members of marginalized groups, who will develop valuable new skills in this important interdisciplinary field.
 
 # Results From Prior NSF Support
 We have received no prior NSF support.
+We are confident about the broad impact of our proposed project.
+Efficiently addressing climate change requires public support.
+Our project aims to fill the gap in public opinion data on climate change by estimating public opinion and polarization across countries over time.
+These estimates will be openly available and downloadable to everyone.
+Our web interface will facilitate the general public's understanding of climate change public opinion through customized visualizations.
+
+The DCPO packages will be available to scholars, allowing them to measure public opinion and polarization in other fields.
+The success of the Standardized World Income Inequality Database (SWIID), a counterpart of DCPO that measures income inequality across countries over time, demonstrates the potential impact of our proposal.
+SWIID has been highly cited in SSCI, with 1,579 citations in Google Scholar and 133,990 downloads in Harvard Dataverse.
+This achievement underscores the potential reach and influence of our proposed project.
+
 
 <!-- \begin{wrapfigure}{R}{.25\textwidth}   -->
 <!-- ```{r new, echo=F, fig.width=2, fig.height=1.5,warning=F,message=F,out.width=".25\\textwidth"} -->
