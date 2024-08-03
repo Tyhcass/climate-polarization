@@ -293,18 +293,36 @@ These items have been asked in 87 different countries at least three times over 
 Despite our extensive collection efforts, the current source data covers 978 country-years and includes a total of 3,830 country-year-item observations, which represents 37% of a complete set of total country-year data.
 
 This initial effort demonstrates the potential for building a comprehensive cross-national time-series dataset on climate opinion while also highlighting the challenges in measuring comparative public climate data.
-Our primary focus has been on cross-national surveys, including the World Values Survey, Eurobarometer, European Social Survey, International Social Survey Programme, and Regional Barometer surveys, supplemented by a few country-specific surveys.
-Expanding the dataset to include more country-specific surveys will enhance the geographical and temporal scope of the raw data but will require a significant commitment of time and resources due to language barriers and difficulties in accessing data.
-Additionally, the severe sparsity of identical questions across different survey projects necessitates further development of the DCPO model to address these inconsistencies.
+Our primary focus has been on well-known and publicly-accessible cross-national surveys, including the World Values Survey, Eurobarometer, European Social Survey, International Social Survey Programme, and Regional Barometer surveys, supplemented by a few country-specific surveys.
+
+These established worldwide surveys have advantages in standardized questions and thorough documentation, but they also have limitations in geographic and temporal coverage.
+For instance, the World Values Survey and Regional Barometer Survey are typically conducted every four years, while the International Social Survey Programme's topic modules are conducted approximately every five to ten years.
+Relying solely on these publicly accessible cross-national surveys is insufficient.
+
+There are also public but non-accessible survey projects.
+For example, Gallup has included climate change questions in their surveys since 2005, providing a valuable dataset for climate change
+However, this data is only available to subscribers, making it difficult to access without project funding. 
+
+Expanding the dataset to include more country-specific surveys will enhance the geographical and temporal scope of the raw data.
+However, this expansion will require a significant commitment of time and resources due to language barriers and difficulties in accessing data.
+For instance, the Finnish Social Science Data Archive has surveys with climate or energy-relevant questions dating back to 2000.
+Most of these surveys are in Finnish, requiring research assistance to identify relevant questions and clean the raw data.
+Similarly, other non-English surveys necessitate research assistance, further emphasizing the need for funding to hire skilled research assistants.
 
 In addition to expanding survey datasets, we will expand survey items to include both climate-related items and environment-related items.
 Both general questions about environmental concern and protection and specific questions about environmental policy preferences will be identified and incorporated into our source data.
+Additionally, the severe sparsity of identical questions across different survey projects necessitates further development of the DCPO model to address these inconsistencies.
 We will also identify demographic and political information of respondents in survey datasets, including but not limited to gender, religion, residence location, and ideology.
 These demographics will allow us to estimate public opinion between subpopulations, which we will illustrate in the polarization estimates section. 
 
 *Generating estimates for public opinion on climate change.*
 To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model as presented in @solt2020modeling.
-Compared to other models, such as @mcgann2019parallel and @kolczynska2024modeling, which require dense survey data or ancillary data on population characteristics, DCPO is specifically designed to address issues of incomparability and sparsity in comparative opinion data over time with fewer data requirements.
+Other models usually require a high quality data, either dense survey data or ancillary data on population characteristics [@mcgann2019parallel,@kolczynska2024modeling].
+The latest development in this stream is @Berwick2024's dynamic multidimensional group-level IRT model.
+By using an exploratory approach, their method can measure multidimensional opinions by poststratifying subpopulation opinion estimates. 
+The exploratory method can help understand complex opinion structures when scholars care about dimensions.
+However, the practicality of poststratifying subpopulation estimates in scenarios involving numerous countries and extended time periods is questionable and may present challenges.
+Compared to these models, DCPO is specifically designed to address issues of incomparability and sparsity in comparative opinion data over time with fewer data requirements.
 
 DCPO handles incomparability with two key parameters: _difficulty_ and _dispersion_. 
 Difficulty indicates the level of climate change attitude represented by a given response.
@@ -356,17 +374,17 @@ The user-friendly dashboard will be a valuable tool for the general public to ex
 # Timeline and Project Implementation
 We propose a two-year project. 
 
-Fall 2024: Raw data collection.
+Fall 2025: Raw data collection.
 
-Spring 2025: Document climate change public opinion estimates.
+Spring 2026: Document climate change public opinion estimates.
 
-Summer 2025: Revise DCPO models and packages for estimating polarization.
+Summer 2026: Revise DCPO models and packages for estimating polarization.
 
-Fall 2025:  Estimate climate change polarization.
+Fall 2026:  Estimate climate change polarization.
 
-Spring 2026: Document climate change polarization estimates.
+Spring 2027: Document climate change polarization estimates.
 
-Summer 2026: Write up the paper about dynamic relationship between climate public opinion and climate policies.
+Summer 2027: Write up the paper about dynamic relationship between climate public opinion and climate policies.
 
 # Broader Impacts
 The Climate Change Public Opinion Dataset (CCPOD) will serve as a crucial research infrastructure for researchers, educators, students, policymakers, non-governmental organizations, and news agencies worldwide, fostering both within and cross-national work on climate change, polarization, and broader public opinion.
