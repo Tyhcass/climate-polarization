@@ -124,20 +124,6 @@ The scarcity of comparative data at the aggregate level is due to data sparsenes
 However, an emerging group of scholars has been dedicated to developing models to measure comparative public opinion across countries over time [@claassen2019estimating; @caughey2019policy; @mcgann2019parallel; @kolczynska2024modeling; @solt2020modeling].
 Among these, the Dynamic Comparative Public Opinion model (DCPO) [@solt2020modeling] has been widely used to measure comparative public opinion and has successfully created comparative data for gender egalitarianism [@woo2023public], macrointerest [@humacrointerest], and tolerance of homosexuality [@woo2023measuring].
 
-Regarding climate change public opinion, we first explored the country-year coverage of climate-change questions in existing surveys and the literature.
-Figure\nobreakspace{}\ref{pocc-plot} shows how the available data have influenced scholarship on the topic.
-Using the Web of Science and Google Scholar, we assembled a sample of prominent published articles on public opinion toward climate change.^[
-Web of Science topic searches return articles in which the search terms appear in the title or abstract.
-We executed the following search: `TS=("public opinion" AND ("climate change" OR "global warming" OR "greenhouse effect"))`.
-The fifty most-cited empirical research articles returned were retained.
-Google Scholar, [according to its about page](https://scholar.google.com/intl/en/scholar/about.html), "aims to rank documents the way researchers do, weighing the full text of each document, where it was published, who it was written by, as well as how often and how recently it has been cited in other scholarly literature."
-We searched `"public opinion" "climate change"` and identified the first fifty articles returned.
-Then we added the Web of Science records for the Google Scholar results (to ensure consistency of citation counts) to our original Web of Science sample and dropped all duplicates, yielding a total of `r nrow(pocc)` different articles.]
-These articles had publication dates as early as `r summary(pocc$year)[[1]]` and as late as `r summary(pocc$year)[[6]]` (median: `r summary(pocc$year)[[3]]`) and were cited in the Web of Science from `r summary(pocc$hits)[[1]]` to `r summary(pocc$hits)[[6]]` times (median: `r summary(pocc$hits)[[3]]`).
-We then examined these articles to find the number of countries and years investigated in each.
-As the zoomed portion of the plot pocc-plot emphasizes, many of these articles might be described as using case-study or small-_n_ research designs.
-Just over a third consider only a single year in a single country; together with works that study four and fewer countries and years (inset) they comprise nearly half of this sample.
-
 ```{r pocc-plot, fig.cap="Countries and Mean Years Observed in Prominent Research\\label{pocc_plot}", fig.height=4.5, fig.width=7.5, fig.pos='h', cache=FALSE}
 
 cited <- tribble(~citation, ~text_x, ~text_y,
@@ -265,6 +251,21 @@ pocc_plot +
     plot_annotation(caption = str_wrap("Note: Citation counts as reported by the Web of Science on June 15, 2024.", 
                                        width = 114))
 ```
+
+
+Regarding climate change public opinion, we first explored the country-year coverage of climate-change questions in existing surveys and the literature.
+Figure\nobreakspace{}\ref{pocc-plot} shows how the available data have influenced scholarship on the topic.
+Using the Web of Science and Google Scholar, we assembled a sample of prominent published articles on public opinion toward climate change.^[
+Web of Science topic searches return articles in which the search terms appear in the title or abstract.
+We executed the following search: `TS=("public opinion" AND ("climate change" OR "global warming" OR "greenhouse effect"))`.
+The fifty most-cited empirical research articles returned were retained.
+Google Scholar, [according to its about page](https://scholar.google.com/intl/en/scholar/about.html), "aims to rank documents the way researchers do, weighing the full text of each document, where it was published, who it was written by, as well as how often and how recently it has been cited in other scholarly literature."
+We searched `"public opinion" "climate change"` and identified the first fifty articles returned.
+Then we added the Web of Science records for the Google Scholar results (to ensure consistency of citation counts) to our original Web of Science sample and dropped all duplicates, yielding a total of `r nrow(pocc)` different articles.]
+These articles had publication dates as early as `r summary(pocc$year)[[1]]` and as late as `r summary(pocc$year)[[6]]` (median: `r summary(pocc$year)[[3]]`) and were cited in the Web of Science from `r summary(pocc$hits)[[1]]` to `r summary(pocc$hits)[[6]]` times (median: `r summary(pocc$hits)[[3]]`).
+We then examined these articles to find the number of countries and years investigated in each.
+As the zoomed portion of the plot pocc-plot emphasizes, many of these articles might be described as using case-study or small-_n_ research designs.
+Just over a third consider only a single year in a single country; together with works that study four and fewer countries and years (inset) they comprise nearly half of this sample.
 
 In addition, climate change data presents distinctive challenges.
 First, the data are particularly fragmented among many different survey questions due to the rapid changes in the salience of the climate change topic and specific subtopics, from climate knowledge to policy preference.
