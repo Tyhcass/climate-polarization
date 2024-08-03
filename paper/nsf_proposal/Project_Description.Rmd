@@ -316,7 +316,12 @@ These demographics will allow us to estimate public opinion between subpopulatio
 
 *Generating estimates for public opinion on climate change.*
 To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model as presented in @solt2020modeling.
-Compared to other models, such as @mcgann2019parallel and @kolczynska2024modeling, which require dense survey data or ancillary data on population characteristics, DCPO is specifically designed to address issues of incomparability and sparsity in comparative opinion data over time with fewer data requirements.
+Other models usually require a high quality data, either dense survey data or ancillary data on population characteristics [@mcgann2019parallel,@kolczynska2024modeling].
+The latest development in this stream is @Berwick2024's dynamic multidimensional group-level IRT model.
+By using an exploratory approach, their method can measure multidimensional opinions by poststratifying subpopulation opinion estimates. 
+The exploratory method can help understand complex opinion structures when scholars care about dimensions.
+However, the practicality of poststratifying subpopulation estimates in scenarios involving numerous countries and extended time periods is questionable and may present challenges.
+Compared to these models, DCPO is specifically designed to address issues of incomparability and sparsity in comparative opinion data over time with fewer data requirements.
 
 DCPO handles incomparability with two key parameters: _difficulty_ and _dispersion_. 
 Difficulty indicates the level of climate change attitude represented by a given response.
