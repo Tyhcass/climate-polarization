@@ -2,6 +2,7 @@
 title: | 
   | Public Opinion Regarding Climate Change:
   | Measuring Public Concern and Polarization
+  | Across Countries and Over Time
   |
   | Project Description
 date: "\\vspace{-5em}"
@@ -65,7 +66,7 @@ Our preliminary data collection from 93 different survey datasets from 1992 to 2
 To address these challenges, we will rely on the Dynamic Comparative Public Opinion model (DCPO) [@solt2020modeling] for latent variable estimation on climate change.
 The DCPO model has been widely used in cross-national opinion estimation [@woo2023public;@humacrointerest;@woo2023measuring] among other latent variable models [e.g.,@claassen2019estimating; @caughey2019policy; @mcgann2019parallel;@kolczynska2024modeling].
 We plan to expand the survey source data both temporally and geographically by including more country-specific surveys.
-We will also improve the multiple-imputation routine by incorporating new techniques to ensure DCPO's estimates are comparable.
+We will also improve the latent-variable estimation model by incorporating new techniques to ensure DCPO's estimates are comparable.
 This includes setting stronger priors for change over time and in data-poor countries, and nesting similar items in hierarchical models to address item-comparability issues.
 Additionally, we will develop and test various methods for generating polarization estimates.
 
