@@ -98,7 +98,7 @@ Narrowing the scope to cross-national research reduces the count to 28.
 Among these, most studies have examined the determinants of environment/climate attitude and the determinants climate policies independently [e.g.,@stenner2015current;@papiez2018determinants;@fankhauser2014domestic;@hao2021really]; few consider the role of public opinion in affecting environmental and climate policy outputs: here only proxy measures of climate public opinion (e.g., using environmental rather than climate attitudes as well as media coverage of climate issues) are used [@anderson2017public; @bakaki2020triangular; @schaffer2022policymakers]. 
 
 Again, cross-national analyses overlook the role of public opinion due to data limitations.
-Even for broader attitudes towards environmental issues, comprehensive multi-decade, cross-national surveys are lacking [@von2022democracy]. \citet{anderson2017public} found a positive relationship between public environmental attitudes (using Eurobarometer data) and renewable energy policy outputs in Europe from 1974 to 2015.
+Even for broader attitudes towards environmental issues, comprehensive multi-decade, cross-national surveys are lacking [@von2022democracy]. @anderson2017public found a positive relationship between public environmental attitudes (using Eurobarometer data) and renewable energy policy outputs in Europe from 1974 to 2015.
 Similarly, @bakaki2020triangular identified a triangular relationship between citizens' environmental concerns, media attention, and renewable policy output in six European democracies from 1983 to 2012.
 The limited spatial coverage is primarily due to the lack of data.
 The situation is even more severe for climate change attitudes.
