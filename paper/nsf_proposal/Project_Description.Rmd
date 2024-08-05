@@ -10,7 +10,6 @@ csl: american-political-science-association.csl
 output: 
   pdf_document:
     includes:
-     in_header: style/preamble.tex
     extra_dependencies: ["float"]
     template: null
     keep_tex: no
@@ -19,6 +18,10 @@ documentclass: nsf2
 bibliography: references.bib
 biblio-style: apalike
 header-includes:
+      - \usepackage{times}
+      - \usepackage[fontsize=12pt]{scrextend}
+      - \usepackage{wrapfig}
+      - \date{\vspace{-10em}} 
       - \renewcommand{\topfraction}{.85} # Adjust LaTeX placement rules per 
       - \renewcommand{\bottomfraction}{.7} # https://bookdown.org/yihui/rmarkdown-cookbook/figure-placement.html
       - \renewcommand{\textfraction}{.15}
@@ -102,9 +105,9 @@ Even for broader attitudes towards environmental issues, comprehensive multi-dec
 Similarly, @bakaki2020triangular identified a triangular relationship between citizens' environmental concerns, media attention, and renewable policy output in six European democracies from 1983 to 2012.
 The limited spatial coverage is primarily due to the lack of data.
 The situation is even more severe for climate change attitudes.
-Due to the absence of comparative climate opinion data, @schaffer2022policymakers used media coverage of climate issues as a proxy for public concerns in studying climate change mitigation in six OECD countries over a period of 1995-2010, even though this measure has low validity given its low correlation (r = 0.27) with climate public opinion data [@oehl2017measure] and the authors acknowledge that ``public opinion surveys arguably provide the most direct measure of public demand." [see, p.~137, @schaffer2022policymakers].
+Due to the absence of comparative climate opinion data, @schaffer2022policymakers used media coverage of climate issues as a proxy for public concerns in studying climate change mitigation in six OECD countries over a period of 1995-2010, even though this measure has low validity given its low correlation (r = 0.27) with climate public opinion data [@oehl2017measure] and the authors acknowledge that "public opinion surveys arguably provide the most direct measure of public demand." [see, p.~137, @schaffer2022policymakers].
 
-In addition to the average level of public climate concern, how such concerns are distributed within a society, especially along with existing salient social cleavages -- partisan lines, urban-rural divide, and gender differences, to name but a few -- is equally if not more important for climate policies.
+In addition to the average level of public climate concern, how such concerns are distributed within a society, especially along with existing salient social cleavages---partisan lines, urban-rural divide, and gender differences, to name but a few---is equally if not more important for climate policies.
 Polarization in climate concerns captures the intuition that significant differences in views and preferences towards climate issues exist and likely increase between different groups of people in a society.
 It is an important concept with profound policy implications.
 Addressing the climate challenge requires a transformation of our societies and this scale of change depend upon far-reaching reforms from governments that many believe are only possible when there is a widespread social and political support for such a transition.
@@ -123,7 +126,7 @@ However, despite the evident polarization in climate change opinion, there is a 
 It is well documented that comparative public opinion studies have been hampered by the lack of comprehensive data, not to mention public polarization data.
 The scarcity of comparative data at the aggregate level is due to data sparseness and fragmentation, with many countries and years lacking data, and existing data often being incomparable due to differences in items and interpretations.
 However, an emerging group of scholars has been dedicated to developing models to measure comparative public opinion across countries over time [@claassen2019estimating; @caughey2019policy; @mcgann2019parallel; @kolczynska2024modeling; @solt2020modeling].
-Among these, the Dynamic Comparative Public Opinion model (DCPO) [@solt2020modeling] has been widely used to measure comparative public opinion and has successfully created comparative data for gender egalitarianism [@woo2023public], macrointerest [@humacrointerest], and tolerance of homosexuality [@woo2023measuring].
+Among these, the Dynamic Comparative Public Opinion model [DCPO, @solt2020modeling] has been widely used to measure comparative public opinion and has successfully created comparative data for views on gender equality in politics and the workplace [@woo2023public], political interest [@humacrointerest], and attitudes toward gay rights [@woo2023measuring].
 
 ```{r pocc-plot, fig.cap="Countries and Mean Years Observed in Prominent Research\\label{pocc_plot}", fig.height=4.5, fig.width=7.5, fig.pos='h', cache=FALSE}
 
