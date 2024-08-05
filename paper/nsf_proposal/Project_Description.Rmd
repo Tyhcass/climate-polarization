@@ -255,7 +255,7 @@ pocc_plot +
 
 
 Regarding climate change public opinion, we first explored the country-year coverage of climate-change questions in existing surveys and the literature.
-Figure\nobreakspace{}\ref{pocc-plot} shows how the available data have influenced scholarship on the topic.
+Figure\nobreakspace{}\ref{pocc_plot} shows how the available data have influenced scholarship on the topic.
 Using the Web of Science and Google Scholar, we assembled a sample of prominent published articles on public opinion toward climate change.^[
 Web of Science topic searches return articles in which the search terms appear in the title or abstract.
 We executed the following search: `TS=("public opinion" AND ("climate change" OR "global warming" OR "greenhouse effect"))`.
