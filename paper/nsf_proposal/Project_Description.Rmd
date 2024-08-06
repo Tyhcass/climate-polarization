@@ -416,14 +416,22 @@ Our plan for the project timeline is outlined as follows:
 
 
 Fall 2025: Raw data collection.
+In our first year, in addition to expand temporal coverage from latest released data, such as European Barometer and European Social Survey, we will focus on expanding our data to include single-country surveys, which are often conducted in their native languages, such as the Chinese General Social Survey (CGSS), Korean General Social Surveys, and single-country surveys not incorporated in the compiled data of the African Barometer and Latin American Public Opinion, both of which have recently released their latest 2023 survey data.
+Due to language and transcription challenges, these single-country surveys usually take longer to identify, collect, and clean.
 
-Spring 2026: Document climate change public opinion estimates.
+We also plan to expand our items to include both climate-relevant and environment-relevant questions.
+The project team will write a codebook for item selection, train RAs to code items, conduct inter-coder reliability tests, and update the codebook to achieve a higher level of intercoder reliability.
+This process will involve several rounds of discussions and revisions, potentially extending the timeline.
+
+Spring 2026: Estimate climate change public opinion measures and write up the first scholarly paper on measures and validations.
+When public opinion measures are ready, as described above, we will draft our first paper on these measures and validate them.
+We will present our paper and introduce our opinion data in conferences during Spring and Summer 2026. 
 
 Summer 2026: Revise DCPO models and packages for estimating polarization.
 
 Fall 2026:  Estimate climate change polarization.
 
-Spring 2027: Document climate change polarization estimates.
+Spring 2027: Write up paper on climate change polarization estimates and validations.
 
 Summer 2027: Write up the paper about dynamic relationship between climate public opinion and climate policies.
 
