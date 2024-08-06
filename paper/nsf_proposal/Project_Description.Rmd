@@ -404,7 +404,16 @@ The updated DCPO packages will enable scholars to measure public opinion of thei
 The user-friendly dashboard will be a valuable tool for the general public to explore temporal trends and compare spatial differences in public climate change attitudes, allowing users to visualize data based on their preferred time period, demographics, country, or region.
 
 # Timeline and Project Implementation
-We propose a two-year project. 
+We propose a two-year project, estimated based on our initial efforts in collecting, cleaning, and measuring data.
+In our initial phase, we gathered data from 85 countries, each with an average of 19 years of estimates.
+However, there is variation in the number of years of estimates across regions. European countries have the longest data spans; for instance, 12 countries (Belgium, Denmark, France, Germany, Greece, Ireland, Italy, Luxembourg, Netherlands, Portugal, Spain, and the United Kingdom) have 31 years of estimates.
+In contrast, Asian, Latin American, and African countries have fewer years of data, despite being more vulnerable to climate change due to their geographical location and state capacity in dealing with climate threats.
+For example, five countries (Uganda, Ghana, Tunisia, Senegal, and Vietnam) have less than 10 years of data.
+
+During our two-year project, we will expand the coverage of our raw data in terms of country-year and country-year-items, measure public opinion, revise and improve DCPO models to measure polarization, write up three scholarly papers and disseminate our estimates. 
+Our plan for the project timeline is outlined as follows:
+
+
 
 Fall 2025: Raw data collection.
 
