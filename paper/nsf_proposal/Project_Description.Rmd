@@ -325,7 +325,13 @@ Other models usually require a high quality data, either dense survey data or an
 The latest development in this stream is @Berwick2024's dynamic multidimensional group-level IRT model.
 By using an exploratory approach, their method can measure multidimensional opinions by poststratifying subpopulation opinion estimates. 
 The exploratory method can help understand complex opinion structures when scholars care about dimensions.
+For example, public support for democracy is a complex and multidimensional concept. 
+Unidimensional measures of public support cannot capture public support in different dimensions, such as supporting contestation and participation; civil liberties; and institutional constraints on executive power [@hu2024multi]. 
+In that case, their method can help scholars explore the potential dimension following a data-driven approach. 
 However, the practicality of poststratifying subpopulation estimates in scenarios involving numerous countries and extended time periods is questionable and may present challenges.
+This approach is practical for single-country studies or when the sample of countries is small and regular census data are available.
+However, collecting subgroup population proportions becomes an immense task when the sample size is large, especially when subgroups include factors like gender, religion, and ideology, as in our project.
+Moreover, some countries in a worldwide study may lack available or accessible census data, further complicating the process, as we have encountered in our project.
 Compared to these models, DCPO is specifically designed to address issues of incomparability and sparsity in comparative opinion data over time with fewer data requirements.
 
 DCPO handles incomparability with two key parameters: _difficulty_ and _dispersion_. 
@@ -336,6 +342,8 @@ Similarly, giving "very high priority" to the question "How high a priority do y
 Dispersion measures the degree to which a question can capture the latent attitude towards climate change.
 A smaller dispersion suggests that changes in question responses can better reflect changes in supportive attitudes.
 For example, compared to the question about the degree of agreement with "Climate change is caused by human behavior," the response to "Would you be willing to give part of your income or pay more taxes if you were sure that the extra money was used to handle climate change?" can better map onto the change in climate attitude.
+This is because people who acknowledge that climate change is caused by human behavior might not necessarily support any climate policies.
+Their knowledge of climate change might not naturally translate into support for climate policies, due to other considerations such as confidence in the government's capacity to address climate issues or personal interests, like those of coal workers.
 
 To address the sparsity of source data, which includes inconsistencies in the time series of each country due to unobserved country-years or limited observed items, DCPO uses local-level dynamic linear models.
 These models estimate public opinion by taking the previous year's estimate and adding a random shock.
@@ -366,8 +374,28 @@ In the first year, we will present our work in progress to attain scholarly sugg
 In the second year, we will disseminate our estimates by introducing our packages and dashboard as well as presenting our substantive results.
 
 Specifically, during the first year, we will focus on the estimates of public opinion by extensively expanding raw source data and survey items, including environment-related questions and respondents' demographics.
+Our first scholarly article will focus on measures of public opinion on climate change and their validations through both convergent validation and construct validation.
+According to @adcock2001measurement, convergent validation compares a given indicator with another indicator of the same concept, while construct validation assesses whether a given indicator is empirically correlated with other indicators in a way that conforms to theoretical expectations.
+We will conduct an "internal" test [@caughey2019policy,@woo2023measuring] comparing climate attitudes to responses to individual survey items.
+For example, we will look at the percentage of respondents who agree to some extent that climate change should precede economic growth and that climate change is a threat, or their public stance on supporting relevant policies and government efforts to mitigate climate change.
+For construct validation, we plan to test the relationship between climate attitude and exposure to disasters.
+
 In the second year, we will update the DCPO packages to measure polarization in climate change attitudes across different subpopulation groups across countries over time.
+The second scholarly article will focus on measures of polarization on public opinion on climate change.
+We will introduce our models to measure polarization.
+To validate our measures, we will compare them with measures from alternative polarization measuring approaches.
+For example, xxxxxxx
+
 Meanwhile, we will apply these estimates to study the dynamic relationship between climate change attitudes, polarization, and climate-policy adoption in cross-sectional time-series data.
+The third paper examines how public climate change concerns and policy preferences impact climate policy adoption. 
+Using our measures of public opinion and polarization, we will analyze the relationship between public opinion and climate policy adoption across countries over time.
+We will use data from the Climate Change Laws of the World [@nachmany2017global], which compiles laws and regulations aimed at reducing carbon emissions and promoting clean energy.
+The main outcome variable is the number of new climate policies adopted per country-year, with the previous year's cumulative climate policies as a control variable.
+This approach tests  how current levels of public concern about climate change contribute to the existing level of climate laws and regulations. 
+We will control for GDP per capita (log), oil rent (% of GDP), coal rent (% of GDP), and CO2 emissions per capita using World Development Indicators (WDI).
+Political regime effects will be controlled using the liberal democracy variable from the V-Dem Dataset.
+To account for the impact of climate-related natural disasters on policy adoption, we will use data from the Emergency Events Database (EM-DAT), which includes global natural disaster data.
+For empirical analysis, we will employ a two-way fixed effects model with robust standard errors at both time and entity levels to control for unobserved heterogeneity in panel data.
 Additionally, PIs will take advantage of conference time for in-person, in-depth project meetings to exchange ideas and set the agenda.
 
 Beyond conference presentations and three scholarly publications, we will disseminate our data through Dataverse, provide two updated DCPO packages, and develop a user-friendly dashboard.
