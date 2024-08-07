@@ -40,7 +40,7 @@ Therefore, comprehensive and reliable public opinion data is indispensable for c
 Building and supporting the CCPOD database is central to promoting scientific progress on these topics and aligns with NSF priorities outlined in the NSF Strategic Plan 2022-2026, particularly in advancing frontiers of research by building research infrastructure and data access, facilitating international engagement in science, and capitalizing on interdisciplinary developments to advance responses to global environmental change.
 
 
-### Broader Impacts of the Proposed Work
+### Broader Impacts
 The CCPOD will serve as a crucial research infrastructure for researchers, educators, students, policymakers, non-governmental organizations, and news agencies worldwide, fostering both within-country and cross-national work on public opinion, polarization, and the response to climate change.
 Dissemination of the resulting estimates will enhance our understanding of the relationship between public opinion and climate policies, ultimately contributing to more informed and effective climate change action.
 We will achieve broad dissemination through conference presentations, scholarly publications, and a web interface.
