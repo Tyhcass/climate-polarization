@@ -13,3 +13,4 @@
 *.toc
 data/*
 dev/*
+.DS_Store
