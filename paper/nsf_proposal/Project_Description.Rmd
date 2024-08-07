@@ -315,6 +315,7 @@ Moreover, regarding climate-change opinion, researchers are particularly interes
 The lack of extensive cross-sectional time series data on public opinion and polarization regarding climate change significantly impedes research in the fields of opinion and climate policy.
 Our project aims to expand both the geographic and temporal dimensions and contribute to the literature on public opinion, polarization, and policy outcomes related to climate change policies.
 
+
 # The Proposed Research
 
 The proposed research comprises four principal activities: (1) expanding the survey source data, (2) generating estimates for public opinion on climate change, (3) developing and testing a range of methods for generating polarization estimates, and (4) disseminating the resulting estimates to researchers, educators, students, and policymakers worldwide through conference presentations, scholarly publications, open-source software, and a web interface.
@@ -343,7 +344,7 @@ For example, Gallup has included climate change questions in their surveys since
 However, this data is only available to subscribers, making it difficult to access without project funding. 
 
 Expanding the dataset to include more country-specific surveys will enhance the geographical and temporal scope of the raw data.
-However, this expansion will require a significant commitment of time and resources due to language barriers and difficulties in accessing data.
+However, this expansion will require a significant commitment of time and resources due to language barriers and other difficulties in accessing data.
 For instance, the Finnish Social Science Data Archive has surveys with climate or energy-relevant questions dating back to 2000.
 Most of these surveys are in Finnish, requiring research assistance to identify relevant questions and clean the raw data.
 Similarly, other non-English surveys necessitate research assistance, further emphasizing the need for funding to hire skilled research assistants.
@@ -356,7 +357,7 @@ These demographics will allow us to estimate public opinion between subpopulatio
 
 *Generating estimates for public opinion on climate change.*
 To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model as presented in @solt2020modeling.
-Other models usually require a high quality data, either dense survey data or ancillary data on population characteristics [@mcgann2019parallel,@kolczynska2024modeling].
+Other models usually require high quality data, either dense survey data or ancillary data on population characteristics [@mcgann2019parallel,@kolczynska2024modeling].
 The latest development in this stream is @Berwick2024's dynamic multidimensional group-level IRT model.
 By using an exploratory approach, their method can measure multidimensional opinions by poststratifying subpopulation opinion estimates. 
 The exploratory method can help understand complex opinion structures when scholars care about dimensions.
@@ -370,7 +371,7 @@ Moreover, some countries in a worldwide study may lack available or accessible c
 Compared to these models, DCPO is specifically designed to address issues of incomparability and sparsity in comparative opinion data over time with fewer data requirements.
 
 DCPO handles incomparability with two key parameters: _difficulty_ and _dispersion_. 
-Difficulty indicates the level of climate change attitude represented by a given response.
+In our context of climate-related surveys, difficulty indicates the level of climate change attitude represented by a given response.
 For instance, answering "very concerned" to the question "To what extent are you concerned about climate change?" shows more supportive attitude than answering "somewhat concerned," "little concerned," or "not at all."
 Similarly, giving "very high priority" to the question "How high a priority do you think the government SHOULD place on addressing climate change?" indicates more support than merely expressing concern.
 
@@ -390,6 +391,7 @@ This increases the efficiency and transparency of data processing, avoids data e
 DCPO is the package written in Stan for running DCPO models and estimating latent public opinion from cross-national survey data collected through DCPOtools.
 Together, these tools enable scholars to translate survey data into estimates of public opinion.
 
+
 *Developing and testing a range of methods for generating polarization estimates.*
 There are different ways to measure polarization.
 Indeed, scholars have been using various polarization measures, likely contributing to the disagreement regarding the identification and consequences of polarization, especially in a comparative context [@mehlhaff2022group].
@@ -408,6 +410,8 @@ To this end, we will first revise DCPOtools to automatically collect and process
 Secondly, we will develop the DCPO model and package to estimate public opinion within subpopulation groups and then the cleavage of opinion between subpopulation groups.
 
 <!--Need more infor here.  maybe encounter more DN or missing data for certain groups.   -->
+
+
 
 *Disseminating the resulting estimates.*
 
@@ -446,6 +450,7 @@ Climate scholars can download our estimates directly from Dataverse for use in d
 The updated DCPO packages will enable scholars to measure public opinion of their interests, from data collection and data wrangling to generating estimates.
 The user-friendly dashboard will be a valuable tool for the general public to explore temporal trends and compare spatial differences in public climate change attitudes, allowing users to visualize data based on their preferred time period, demographics, country, or region.
 
+
 # Timeline and Project Implementation
 We propose a two-year project, estimated based on our initial efforts in collecting, cleaning, and measuring data.
 In our initial phase, we gathered data from 85 countries, each with an average of 19 years of estimates.
@@ -480,7 +485,7 @@ Summer 2027: Write up the paper about dynamic relationship between climate publi
 
 # Broader Impacts
 The Climate Change Public Opinion Dataset (CCPOD) will serve as a crucial research infrastructure for researchers, educators, students, policymakers, non-governmental organizations, and news agencies worldwide, fostering both within and cross-national work on climate change, polarization, and broader public opinion.
-Through conference presentations, scholarly publications, and a user-friendly web interface, the dissemination of the resulting estimates will enhance the understanding of both scholars, policymakers, and general audience (like NGOs and Journalists) about the relationship between public opinion and climate policies, ultimately contributing to more informed and effective climate change action.
+Through conference presentations, scholarly publications, and a user-friendly web interface, the dissemination of the resulting estimates will enhance the understanding of scholars, policymakers, and general audience (like NGOs and Journalists) about the relationship between public opinion and climate policies, ultimately contributing to more informed and effective climate change action.
 In addition, two open-source R package for automatically data collection and measurement are made available so others can analyze similar data.
 This aligns with NSF’s commitment to making knowledge accessible to policymakers, the public, and researchers.
 Moreover, this project will promote teaching by providing CCPOD's web-based graphical interface with user-friendly functionality to facilitate its use for teaching and learning data analytics and by employing graduate research assistants, especially members of marginalized groups, who will develop valuable new skills in this important interdisciplinary field.
@@ -489,7 +494,7 @@ Moreover, this project will promote teaching by providing CCPOD's web-based grap
 We have received no prior NSF support.
 We are confident about the broad impact of our proposed project.
 Efficiently addressing climate change requires public support.
-Our project aims to fill the gap in public opinion data on climate change by estimating public opinion and polarization across countries over time.
+Our project aims to fill the gap in public opinion data on climate change by estimating public opinion and polarization across countries and over time.
 These estimates will be openly available and downloadable to everyone.
 Our web interface will facilitate the general public's understanding of climate change public opinion through customized visualizations.
 
