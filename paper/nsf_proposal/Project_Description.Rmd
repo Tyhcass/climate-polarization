@@ -1,11 +1,11 @@
 ---
-title: | 
-  | Public Opinion Regarding Climate Change:
+title: "Public Opinion Regarding Climate Change"
+subtitle: | 
   | Measuring Public Concern and Polarization
   | Across Countries and Over Time
   |
   | Project Description
-date: "\\vspace{-5em}"
+date: "\\vspace{-7em}"
 csl: american-political-science-association.csl
 output: 
   pdf_document:
@@ -218,8 +218,8 @@ n_cc_data_poorest <- {data_cc_poorest %>%
 
 Effectively addressing climate change necessitates understanding the interplay between policy, politics, and public opinion.
 Understanding how public opinion on climate change affects policy, especially across partisan lines, urban-rural divides, and gender differences, is crucial, as polarization challenges the implementation and sustainability of climate reforms.
-However, existing theories often prioritize collective action problems [@ostrom1990governing;@barrett2003environment;@nordhaus2015climate;@keohane2016cooperation] and distributive politics [@colgan2021asset;@aklin2020prisoners], overlooking the critical role of public attitudes, despite their influence on government actions in democracies [@dahl1971polyarchy;@burstein2003impact] and in authoritarian countries [@alkon2018pollution].
-We analyzed 70 highly-cited articles on public opinion toward climate change, identified from the top 100 Web of Science and Google Scholar results (duplicates removed), spanning 1998 to 2022.
+However, existing theories often prioritize collective action problems [@ostrom1990governing;@barrett2003environment;@nordhaus2015climate;@keohane2016cooperation] and distributive politics [@colgan2021asset; @aklin2020prisoners], overlooking the critical role of public attitudes, despite their influence on government actions in democracies [@dahl1971polyarchy; @burstein2003impact] and in authoritarian countries [@alkon2018pollution].
+We analyzed 70 highly-cited articles on public opinion toward climate change, identified from the top 50 results on Web of Science and on Google Scholar (duplicates removed), spanning 1998 to 2022.
 Many of these studies relied on case-study or small-n designs, with nearly half examining four or fewer countries and years, and over a third focusing on a single year in a single country.
 This highlights the significant absence of comprehensive, longitudinal, and cross-national studies in the field, making it imperative to fill this critical research gap.
 
@@ -239,7 +239,7 @@ Indeed, popular disagreement on issues surrounding climate policies provides fer
 Therefore, many believe that political polarization of public attitudes relevant to climate change presents a challenge for not only the implementation but also the durability of climate reforms (McCright et al. 2011).
 However, due to the scattered and sparse data, we do not have measures of polarization on climate change public opinion beyond a few advanced ecoonomies.
 
-To address these challenges, we will rely on the Dynamic Comparative Public Opinion model (DCPO) [@solt2020modeling] for latent variable estimation on climate change concern and polarization.
+To address these challenges, we will rely on the Dynamic Comparative Public Opinion model [DCPO, @solt2020modeling] for latent variable estimation on climate change concern and polarization.
 The DCPO model has been widely used in cross-national opinion estimation [@woo2023public;@humacrointerest;@woo2023measuring] among other latent variable models [e.g.,@claassen2019estimating; @caughey2019policy; @mcgann2019parallel;@kolczynska2024modeling].
 We plan to expand the survey source data both temporally and geographically by including more country-specific surveys.
 We will also improve the latent-variable estimation model by incorporating new techniques to ensure DCPO's estimates are comparable.
@@ -802,7 +802,7 @@ Moreover, this project will promote teaching by providing CCPOD's web-based grap
 # Results From Prior NSF Support
 Co-PIs Cao and Tai have received no prior NSF support.
 Solt was PI of NSF Award Number 1533746, "Standardized World Income Inequality Database" (SWIID) which was successfully completed in 2019.
-The project resulted in the publication of @Solt2020, which is listed by the Web of Science _Essential Science Indicators_ as a Highly Cited Paper, among the top 1% most cited articles in the social sciences for its year of publication; biannual updates to the SWIID on the Harvard Dataverse each year since 2017 that collectively have been downloaded more than 150,000 times; and the SWIID website, which provides a user-friendly interface to the dataset and receives in excess of 100 visitors daily.
+The project resulted in the publication of @Solt2020, which is listed by the Web of Science _Essential Science Indicators_ as a Highly Cited Paper, among the top 1% most cited articles in the social sciences (excluding economics) for its year of publication; biannual updates to the SWIID on the Harvard Dataverse each year since 2017 that collectively have been downloaded more than 150,000 times; and the SWIID website, which provides a user-friendly interface to the dataset and receives in excess of 100 visitors daily.
 
 
 
