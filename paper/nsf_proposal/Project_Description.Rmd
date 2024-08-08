@@ -794,17 +794,32 @@ Summer 2027: Write up the paper about dynamic relationship between climate publi
 
 # Broader Impacts
 The Climate Change Public Opinion Dataset (CCPOD) will serve as a crucial research infrastructure for researchers, educators, students, policymakers, non-governmental organizations, and news agencies worldwide, fostering both within and cross-national work on climate change, polarization, and broader public opinion.
-Through conference presentations, scholarly publications, and a user-friendly web interface, the dissemination of the resulting estimates will enhance the understanding of scholars, policymakers, and general audience (like NGOs and Journalists) about the relationship between public opinion and climate policies, ultimately contributing to more informed and effective climate change action.
-In addition, two open-source R package for automatically data collection and measurement are made available so others can analyze similar data.
+Through conference presentations, scholarly publications, and a user-friendly web interface, the dissemination of the resulting estimates will enhance the understanding of scholars, policymakers, and general audience (like NGOs and ournalists) about the relationship between public opinion and climate policies, ultimately contributing to more informed and effective climate change action.
+In addition, two open-source R packages for automating data collection and measurement are made available so others can analyze similar data.
 This aligns with NSF’s commitment to making knowledge accessible to policymakers, the public, and researchers.
 Moreover, this project will promote teaching by providing CCPOD's web-based graphical interface with user-friendly functionality to facilitate its use for teaching and learning data analytics and by employing graduate research assistants, especially members of marginalized groups, who will develop valuable new skills in this important interdisciplinary field.
 
-# Results From Prior NSF Support
+### Results From Prior NSF Support
 Co-PIs Cao and Tai have received no prior NSF support.
-Solt was PI of NSF Award Number 1533746, "Standardized World Income Inequality Database" (SWIID) which was successfully completed in 2019.
-The project resulted in the publication of @Solt2020, which is listed by the Web of Science _Essential Science Indicators_ as a Highly Cited Paper, among the top 1% most cited articles in the social sciences (excluding economics) for its year of publication; biannual updates to the SWIID on the Harvard Dataverse each year since 2017 that collectively have been downloaded more than 150,000 times; and the SWIID website, which provides a user-friendly interface to the dataset and receives in excess of 100 visitors daily.
 
+Solt was PI of NSF Award Number 1533746, "Standardized World Income Inequality Database" (SWIID), in the amount of $228,809.00, which began August 15, 2015 and was successfully completed on July 31, 2019.
 
+#### Intellectual Merit
+Income inequality is an enduring focus of inquiry in the social sciences that has attracted renewed attention from policymakers and the public, but research has been hindered by a choice between data coverage and data comparability.
+The Standardized World Income Inequality Database (SWIID) overcomes this tradeoff by using a Bayesian latent-variable model on data drawn from regional collections, national statistical offices, and academic studies anchored by the high-quality but sparse Luxembourg Income Study dataset.
+The SWIID currently provides comparable estimates of market- and net-income inequality for 199 countries for as many years as possible from 1960 to the present.
+It also includes information on absolute and relative redistribution, creating crucial infrastructure for research on the causes and consequences of income inequality.
+The proposed research comprised four principal activities to improve the SWIID project: (1) acquiring and cleaning data to expand its coverage, (2) assessing and improving the techniques used to ensure its estimates are comparable, (3) expanding documentation to help researchers use income-inequality data in ways appropriate to their research questions, and (4) improving the web-based system for disseminating the SWIID to researchers, educators, and policymakers worldwide.
+
+Economists, political scientists, sociologists, and other social scientists have long sought to explain why incomes are relatively equal in some countries and times and much larger disparities between rich and poor are found in others.
+The effects of income inequality on other forms of social inequality, such as health disparities, and on other phenomena ranging from political violence to economic growth to democratic transitions are similarly vital questions.
+The reliability of the results of these investigations, and any policy interventions they suggest, depend crucially on the quality of the income-inequality data they employ.
+The expansion, improvement, and support of the SWIID database was (and remains) central to the promotion of scientific progress on these topics and matched NSF priorities outlined in the NSF Strategic Plan 2011-2016, most especially in transforming frontiers of knowledge by building research infrastructure and data access, facilitating international engagement in science, and emphasizing interdisciplinary research.
+
+#### Broader Impacts
+The project resulted in (1) the publication of @Solt2020, which is listed by the Web of Science _Essential Science Indicators_ as a Highly Cited Paper, among the top 1% most cited articles in the social sciences (excluding economics) for its year of publication; (2) biannual updates to the SWIID on the Harvard Dataverse each year since 2017 that collectively have been downloaded more than 150,000 times; and (3) the SWIID website, which provides a user-friendly interface to the dataset and receives in excess of 100 visitors daily.
+The SWIID has been used by thousands of researchers around the world who are working in academia, governments, non-governmental organizations, international organizations, and news agencies; the broad dissemination of expanded and improved versions of the SWIID therefore comports with NSF’s longstanding commitment to making knowledge accessible to policymakers and the public as well as to researchers.
+Moreover, this project promoted teaching by improving the SWIID’s web-based graphical interface to facilitate its use for teaching and learning; developing online training modules on the use of cross-national income-inequality data over time; and employed a graduate research assistant who is a member of an underrepresented group, finished her Ph.D. in 2021, and is now a tenure-track assistant professor, helping contribute to the development of a diverse, globally competitive STEM workforce.
 
 
 
