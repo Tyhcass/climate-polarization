@@ -801,7 +801,7 @@ Moreover, this project will promote teaching by providing CCPOD's web-based grap
 
 # Results From Prior NSF Support
 Co-PIs Cao and Tai have received no prior NSF support.
-Solt was PI of NSF Award Number 1533746, "Standardized World Income Inequality Database" (SWIID) which was successfully completed in 2019.  
+Solt was PI of NSF Award Number 1533746, "Standardized World Income Inequality Database" (SWIID) which was successfully completed in 2019.
 The project resulted in the publication of @Solt2020, which is listed by the Web of Science _Essential Science Indicators_ as a Highly Cited Paper, among the top 1% most cited articles in the social sciences for its year of publication; biannual updates to the SWIID on the Harvard Dataverse each year since 2017 that collectively have been downloaded more than 150,000 times; and the SWIID website, which provides a user-friendly interface to the dataset and receives in excess of 100 visitors daily.
 
 
