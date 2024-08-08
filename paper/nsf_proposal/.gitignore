@@ -12,4 +12,7 @@
 *.snm
 *.toc
 dev/*
-
+paper/nsf_proposal/docs/Project_Description_files/*
+paper/nsf_proposal/Project_Description_files/*
+paper/nsf_proposal/Project_Description_cache/*
+paper/nsf_proposal/docs/site_libs/*
