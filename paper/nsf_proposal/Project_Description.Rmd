@@ -228,7 +228,7 @@ Comparative public opinion data are sparse and fragmented, with many countries a
 These challenges are particularly severe for climate change opinion.
 Unlike established concepts such as democratic support, trust, and gender egalitarianism, climate-related questions have only been surveyed sporadically since the 1990s, mainly in developed countries.
 Actually, even for OECD countries, due to the absence of comparative data, @schaffer2022policymakers had to use media coverage of climate issues as a proxy for public concerns.
-Our preliminary data collection from `r n_items` from `r n_surveys` different survey datasets, `r year_range`, highlights this sparsity, with only `r n_cyi` country-year-item available observations representing `r {n_cy/total_cy}` of the total country-year data.
+Our preliminary data collection from `r n_items` from `r n_surveys` different survey datasets, `r year_range`, highlights this sparsity, with only `r n_cyi` country-year-item available observations representing `r round({as.numeric(n_cy)/as.numeric(total_cy %>% str_remove(","))} * 100)`% of the total possible country-year data.
 
 In addition to the average level of public climate concern, how such concerns are distributed within a society, especially along with existing salient social cleavages -- partisan lines, urban-rural divide, and gender differences, to name but a few -- is equally if not more important for climate policies.
 Polarization in climate concerns captures the intuition that significant differences in views and preferences towards climate issues exist and likely increase between different groups of people in a society.
@@ -498,14 +498,14 @@ Furthermore, through local random walk, DCPO smooths the missing measures based 
 To measure public opinion toward climate change, by using DCPOtools in our initial efforts, we have identified `r n_items` such survey items that were asked in at least five country-years in countries surveyed more than three times from `r n_surveys` different survey datasets.
 These items have been asked in `r n_countries` different countries at least three times over the past `r n_years` years, `r year_range`.
 
-The current source data covers `r n_cy` country-years and includes a total of `r n_cyi` country-year-item observations, which represents `r {n_cy/total_cy}`% of a complete set of total country-year data.
+The current source data covers `r n_cy` country-years and includes a total of `r n_cyi` country-year-item observations, which represents `r round({as.numeric(n_cy)/as.numeric(total_cy %>% str_remove(","))} * 100)`% of a complete set of total country-year data.
 
 The left panel of Figure \ref{item_country_plots} shows the years observed by country in current dataset.
 We have more year data in European countries and the United States but fewer data in African and Asian continents. 
 The upper right panel shows the top countries with the highest count of year-item observations.
 The `r top_country_cyi` has `r top_country_cyi_obs` observations, followed by `r others_cc`.
 The bottom right panel counts the countries observed in each year.
-Country coverage reached its peak in `r y_peak_year`, when respondents in `r y_peak_nn` countries were asked items about climate change, but few relevant survey items were asked before 2007.
+<!-- Country coverage reached its peak in `y_peak_year`, when respondents in `y_peak_nn` countries were asked items about climate change, but few relevant survey items were asked before 2007. -->
 
 The number of items observed in the source data for each country-year is plotted in Figure\ref{obs_by_cy} below.
 It demonstrates the potential for building a comprehensive cross-national time-series dataset on climate opinion while also highlighting the challenges in measuring comparative public climate data, including the variation in data availability geographically and temporally. 
@@ -805,17 +805,6 @@ Solt was PI of NSF Award Number 1533746, "Standardized World Income Inequality D
 The project resulted in the publication of @Solt2020, which is listed by the Web of Science _Essential Science Indicators_ as a Highly Cited Paper, among the top 1% most cited articles in the social sciences for its year of publication; biannual updates to the SWIID on the Harvard Dataverse each year since 2017 that collectively have been downloaded more than 150,000 times; and the SWIID website, which provides a user-friendly interface to the dataset and receives in excess of 100 visitors daily.
 
 
-<!-- \begin{wrapfigure}{R}{.25\textwidth}   -->
-<!-- ```{r new, echo=F, fig.width=2, fig.height=1.5,warning=F,message=F,out.width=".25\\textwidth"} -->
-<!-- nums<-rnorm(100,0,1) -->
-<!-- df<-data.frame(s=1:100,nums) -->
-<!-- library(ggplot2) -->
-<!-- ggplot(df, aes(x=nums))+ -->
-<!--   geom_histogram()+ -->
-<!--   theme_classic(base_size=9) -->
-<!-- ``` -->
-
-<!-- \end{wrapfigure} -->
 
 
 
