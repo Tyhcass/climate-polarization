@@ -45,10 +45,174 @@ knitr::opts_chunk$set(
   }
 )
 
+if (!require(pacman))
+    renv::install("pacman")
+library(pacman)
+p_install_gh(c("fsolt/DCPOtools"))
 library(tidyverse)
 library(here)
 library(RColorBrewer)
 library(patchwork)
+library(DCPOtools)
+```
+
+```{r cc_summary_stats}
+
+surveys <-  read_csv(here::here("data-raw/climate_index_cli.csv"),
+                       col_types = "cccc")[c(1:26,29:141,145:455,458:480),]
+
+dcpo_input_raw_cc <- read_csv(here::here("data-raw/dcpo_input_raw_cc.csv")) 
+
+with_min_coverage <- function(x, min_cov) {
+  if (!is.na(min_cov)) {
+    country <- year <- years <- spanned <- coverage <- NULL
+    x <- x %>%
+      group_by(country) %>%
+      mutate(years = length(unique(year)),
+             spanned = length(min(year):max(year)),
+             coverage = years/spanned) %>%
+      filter(coverage >= min_cov) %>%
+      select(-years, -spanned, -coverage) %>%
+      ungroup()
+  }
+  return(x)
+}
+with_max_gap <- function(x, max_gap, edges = TRUE) {
+    if (!is.na(max_gap)) {
+        country <- yr_obs <- NULL
+        c_yrs <- x %>% 
+            group_by(country, year) %>% 
+            summarize(year = first(year)) %>% 
+            mutate(lead_span = ifelse(!is.na(lead(year)),
+                                      lead(year) - year - 1,
+                                      50),
+                   lag_span = ifelse(!is.na(lag(year)),
+                                     year - lag(year) - 1,
+                                     50),
+                   min_span = pmin(lead_span, lag_span),
+                   max_span = pmax(lead_span, lag_span),
+                   drop = min_span > max_gap & max_span == 50)
+        
+        x <- x %>% 
+          left_join(c_yrs,
+                    by = c("country", "year")) %>% 
+          filter(!drop) %>% 
+          select(-contains("span")) %>% 
+          select(-drop)
+    }
+    return(x)
+}
+
+process_dcpo_input_raw <- function(dcpo_input_raw_df) {
+  dcpo_input_raw_df %>% 
+    with_min_yrs(3) %>% 
+    with_min_cy(5) %>% 
+    with_min_yrs(3) %>% # double-check after dropping <5 cy
+    filter(year >= 1972 & n > 0) %>% 
+    group_by(country) %>% 
+    mutate(cc_rank = n()) %>% 
+    ungroup() %>% 
+    arrange(-cc_rank)
+}
+
+
+dcpo_input_raw_cc <- process_dcpo_input_raw(dcpo_input_raw_cc)
+
+
+n_surveys <- surveys %>%
+  distinct(survey) %>% 
+  nrow()  
+
+n_items <- dcpo_input_raw_cc %>%
+  distinct(item) %>% 
+  nrow() 
+
+n_countries <- dcpo_input_raw_cc %>%
+  distinct(country) %>% 
+  nrow()  
+
+n_cy <- dcpo_input_raw_cc %>%
+  distinct(country, year) %>% 
+  nrow() %>% 
+  scales::comma() 
+
+n_years <- as.integer(summary(dcpo_input_raw_cc$year)[6]-summary(dcpo_input_raw_cc$year)[1]) 
+
+spanned_cy <- dcpo_input_raw_cc %>% 
+  group_by(country) %>% 
+  summarize(years = max(year) - min(year) + 1) %>% 
+  summarize(n = sum(years)) %>% 
+  pull(n) %>% 
+  scales::comma() 
+
+total_cy <- {n_countries * n_years} %>% 
+  scales::comma()  
+
+year_range <- paste("from",
+                    summary(dcpo_input_raw_cc$year)[1], 
+                    "to",
+                    summary(dcpo_input_raw_cc$year)[6]) 
+n_cyi <- dcpo_input_raw_cc %>% 
+  distinct(country, year, item) %>% 
+  nrow() %>% 
+  scales::comma() 
+back_to_numeric <- function(string_number) {
+  string_number %>% 
+    str_replace(",", "") %>% 
+    as.numeric()
+}
+covered_share_of_spanned <- {back_to_numeric(n_cy)/back_to_numeric(spanned_cy) * 100}
+
+top_country_cyi <- dcpo_input_raw_cc %>% 
+  distinct(country, year, item) %>%
+  count(country) %>%
+  arrange(-n) %>% 
+  slice_head() %>%
+ pull(country) 
+
+top_country_cyi_obs <- dcpo_input_raw_cc %>%
+  filter(country == top_country_cyi) %>%
+  distinct(country, year, item) %>%
+  nrow()  
+
+others_cc <- dcpo_input_raw_cc %>%
+  distinct(country, year, item) %>%
+  count(country) %>%
+  arrange(desc(n)) %>%
+  slice(2:5) %>%
+  pull(country) %>% 
+  paste(collapse = ", ") %>% 
+  str_replace(", (\\w+)$", ", and \\1") # "Spain, France, Italy, and Netherlands""
+
+
+y_cc_peak_year <- dcpo_input_raw_cc %>%
+  distinct(country, year) %>%
+  count(year, name = "nn") %>% 
+  filter(nn == max(nn)) %>% 
+  pull(year) #2010
+
+y_cc_peak_nn <- dcpo_input_raw_cc %>%
+  distinct(country, year) %>%
+  count(year, name = "nn") %>% 
+  filter(nn == max(nn)) %>% 
+  pull(nn) #74 countries
+
+data_cc_poorest <- dcpo_input_raw_cc %>%
+  distinct(country, year, item) %>%
+  count(country) %>%
+  arrange(n) %>%
+  filter(n < 10) %>%
+  pull(country) %>% 
+  paste(collapse = ", ") %>% 
+  str_replace(", (\\w+)$", ", and \\1")  #Palestinian Territories, Tunisia, Uganda, Armenia, German Democratic Republic, Ghana, Pakistan, Taiwan, and Tanzania
+
+wordify_numeral <- function(x) setNames(c("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", " seventeen", "eighteen", "nineteen"), 1:19)[x]
+
+n_cc_data_poorest <- {data_cc_poorest %>%
+    str_split(",") %>% 
+    first()} %>% 
+  length() %>% 
+  wordify_numeral()
 ```
 
 
@@ -62,9 +226,9 @@ This highlights the significant absence of comprehensive, longitudinal, and cros
 The reason for this oversight is the lack of systematic cross-country public opinion data on climate change.
 Comparative public opinion data are sparse and fragmented, with many countries and years lacking data, and existing data often being incomparable due to differences in items and interpretations.
 These challenges are particularly severe for climate change opinion.
-Unlike established concepts such as democratic support, trust, and gender egalitarianism, climate-related questions have only been surveyed sporadically since the 1990s, mainly in developing countries.
-Actually, even for OECD countries, due to the absence of comparative data, @schaffer2022policymakers had to use media coverage of climate issues as a proxy for public concerns over 15 years.
-Our preliminary data collection from 93 different survey datasets from 1992 to 2022 highlights this sparsity, with only 3,830 country-year-item observations representing 37% of the total possible data.
+Unlike established concepts such as democratic support, trust, and gender egalitarianism, climate-related questions have only been surveyed sporadically since the 1990s, mainly in developed countries.
+Actually, even for OECD countries, due to the absence of comparative data, @schaffer2022policymakers had to use media coverage of climate issues as a proxy for public concerns.
+Our preliminary data collection from `r n_items` from `r n_surveys` different survey datasets, `r year_range`, highlights this sparsity, with only `r n_cyi` country-year-item available observations representing `r {n_cy/total_cy}` of the total country-year data.
 
 In addition to the average level of public climate concern, how such concerns are distributed within a society, especially along with existing salient social cleavages -- partisan lines, urban-rural divide, and gender differences, to name but a few -- is equally if not more important for climate policies.
 Polarization in climate concerns captures the intuition that significant differences in views and preferences towards climate issues exist and likely increase between different groups of people in a society.
@@ -73,9 +237,9 @@ Addressing the climate challenge requires a transformation of our societies and 
 Increasing political polarization of climate policy-relevant attitudes would inhibit such climate reforms.
 Indeed, popular disagreement on issues surrounding climate policies provides fertile grounds for political mobilization that often blocks necessary reforms.
 Therefore, many believe that political polarization of public attitudes relevant to climate change presents a challenge for not only the implementation but also the durability of climate reforms (McCright et al. 2011).
-However, due to the scattered and sparse data, we do not have measures of polarization on climate change public opinion.
+However, due to the scattered and sparse data, we do not have measures of polarization on climate change public opinion beyond a few advanced ecoonomies.
 
-To address these challenges, we will rely on the Dynamic Comparative Public Opinion model (DCPO) [@solt2020modeling] for latent variable estimation on climate change.
+To address these challenges, we will rely on the Dynamic Comparative Public Opinion model (DCPO) [@solt2020modeling] for latent variable estimation on climate change concern and polarization.
 The DCPO model has been widely used in cross-national opinion estimation [@woo2023public;@humacrointerest;@woo2023measuring] among other latent variable models [e.g.,@claassen2019estimating; @caughey2019policy; @mcgann2019parallel;@kolczynska2024modeling].
 We plan to expand the survey source data both temporally and geographically by including more country-specific surveys.
 We will also improve the latent-variable estimation model by incorporating new techniques to ensure DCPO's estimates are comparable.
@@ -84,12 +248,12 @@ Additionally, we will develop and test various methods for generating polarizati
 
 Our project aims to build crucial research infrastructure for cross-national work on climate change, polarization, and broader public opinion.
 We will disseminate the resulting estimates to researchers, educators, students, and policymakers worldwide through conference presentations, a symposium, scholarly publications, and a web interface.
-This work will enhance our understanding of the relationship between public opinion and climate policies, ultimately contributing to more informed and effective climate action.
+This work will enhance our understanding of the relationship between public opinion and climate policies, ultimately contributing to more informed and effective climate actions.
 
 # Background
 There is a very large existing literature that explains public opinion on climate change (e.g., citizen knowledge, attention, concern for climate change as well as policy preferences) in especially developed economies.
-For instance, many have shown that climate change triggered extreme weather events (e.g., droughts, wildfires, and hurricanes) increase public climate change concerns and preferences for mitigation policies.
-This scholarly enthusiasm to explain climate public opinion is probably underpinned by an underlying assumption that one needs public opinion support to produce climate policies to combat climate change; in other words, public opinion matters in the realm of climate policies.
+For instance, many have shown that extreme weather events (e.g., droughts, wildfires, and hurricanes) triggered by climate change increase public climate change concerns and preferences for mitigation policies.
+This scholarly enthusiasm to explain climate public opinion is probably underpinned by an underlying assumption that one needs public support to produce climate policies to combat climate change; in other words, public opinion matters in the realm of climate policies.
 But does it? More specifically, would public opinion on climate change affect national climate change policy outputs?
 Surprisingly, the literature is silent when it comes to this obvious and yet extremely important question.
 The reason for this is simple and yet it presents a great challenge for the research community: there is no systematic data on cross-country public opinion regarding climate change. 
@@ -107,7 +271,7 @@ Traditional wisdom suggests that public opinion influences public policy through
 In @burstein2003impact's influential review on public opinion and policy, it was found that while public opinion often strongly influences policy, most studies focus on the US and a few West European countries, with minimal attention to developing countries.
 According to the Web of Science, since 1990, there have been 1,829 articles on environment/climate change and public opinion, with 306 focused on the United States, 128 on China, 114 on the EU, 38 on Africa, and 15 on Latin America.
 Narrowing the scope to cross-national research reduces the count to 28.
-Among these, most studies have examined the determinants of environment/climate attitude and the determinants climate policies independently [e.g.,@stenner2015current;@papiez2018determinants;@fankhauser2014domestic;@hao2021really]; few consider the role of public opinion in affecting environmental and climate policy outputs: here only proxy measures of climate public opinion (e.g., using environmental rather than climate attitudes as well as media coverage of climate issues) are used [@anderson2017public; @bakaki2020triangular; @schaffer2022policymakers]. 
+Among these, most studies have examined the determinants of environment/climate attitude and the determinants climate policies independently [@stenner2015current;@papiez2018determinants;@fankhauser2014domestic;@hao2021really]; few consider the role of public opinion in affecting environmental and climate policy outputs: here only proxy measures of climate public opinion (e.g., using environmental rather than climate attitudes or media coverage of climate issues) are used [@anderson2017public; @bakaki2020triangular; @schaffer2022policymakers]. 
 
 Again, cross-national analyses overlook the role of public opinion due to data limitations.
 Even for broader attitudes towards environmental issues, comprehensive multi-decade, cross-national surveys are lacking [@von2022democracy]. @anderson2017public found a positive relationship between public environmental attitudes (using Eurobarometer data) and renewable energy policy outputs in Europe from 1974 to 2015.
@@ -124,13 +288,14 @@ Increasing political polarization of climate policy-relevant attitudes would inh
 It signifies popular disagreement on issues surrounding climate policies and provide fertile grounds for political mobilization that often blocks necessary reforms.
 Therefore, many believe that political polarization of public attitudes relevant to climate change presents a challenge for not only the implementation but also the durability of climate reforms.
 
+Besides the overall levels of public concern over climate change and support for climate policies, how polarized such concern and support are matters greatly for policy adoption and implementation. Combatting climate change often demands ambititious and comprehensive changes in the way we live our lives (e.g., driving EVs), which in turn often requires (costly) government policies to support such changes (e.g., subsidizing EV production and purchases and the construction of more charging stations). It is simply more difficult for a  polarized society to reach concensus and push through such necessary reforms.   
 
 Even though we have seen no systematic, large-N analysis studying the effect of polarization on climate policies in a cross-country context, there are many studies connecting polarization to important political and policy outputs and outcomes in other issues areas.
 For instance, some have argued that polarization affects government accountability (Jones 2015; Bornschier 2019); others have shown that polarization can make party brands more visible, therefore helping voters with clearer choices during elections (Lupu 2015 and Singer 2016).
 At the same time, polarization might also result in instability in legislative process and democratic backsliding (McCoy and Somer 2019; Stavrakakis 2018).
 Elsewhere, Iversen and Soskice (2015) discover a negative correlation between mass polarization and income inequality; they argue that in the context of advanced economies such a correlation is a function of political information available to voters.
 Using data from the 1999 European Election Study and an expert survey on party positions, Lachat (2008) shows that the role of citizens' left–right orientations in affecting voting behaviors increases with party system polarization.
-Lindqvist and Östling (2010) find that political polarization is strongly associated with smaller government in democracies, but there is no such relationship in undemocratic countries; though they acknowledge that multiple explanations exist for a connection between polarization and government spending, and they can point to different directions (e.g., polarization could lead to conflicts of interest among the poor that affect their ability to form coalitions for increased redistribution). 
+Lindqvist and Östling (2010) find that political polarization is strongly associated with smaller government in democracies, but there is no such relationship in undemocratic countries.\footnote{Though they acknowledge that multiple explanations exist for a connection between polarization and government spending, and they can point to different directions (e.g., polarization could lead to conflicts of interest among the poor that affect their ability to form coalitions for increased redistribution).}
 
 Also, the study of polarization is not limited to the case of the United States – even though US saw most of the studies on the subject largely because of its rich data.
 Other regions of the world, even countries outside the advanced economies, have seen an increasing number of studies on polarization. 
@@ -149,14 +314,15 @@ Since then, Americans’ climate attitudes have become more and more strongly as
 Many attribute this trend of polarization to the influence of conservative political elites’ climate denial campaigns upon Republican voters (Tesler 2018). 
 Whether similar levels of climate polarization have occurred in other countries, however, remains an open question.
 It seems that climate attitude polarization (based on political party affiliations for example) does exist in other English-speaking countries including Australia, Canada, and the UK (Lachapelle et al. 2012; Tranter 2013; Kenny 2022) as well as in some western European countries such as Switzerland (Lüth and Schaffer 2022).
-Yet, there is no evidence that such polarization exists in Eastern European countries (Fisher et al. 2022) and no study has looked at polarization in climate change public opinion beyond North American and European countries.   
+Yet, there is no evidence that such polarization exists in Eastern European countries (Fisher et al. 2022) and as far as we know, no study has looked at polarization in climate change public opinion beyond North American and European countries.   
 
-There are at least three major obstacles that prevent the study of climate change public opinion polarization in a cross-country setting.
+There are at least three major obstacles that prevent the study of climate public opinion polarization in a cross-country setting.
 First, other than partisan polarization, factors such as gender, race, education, income, and socioeconomic status also influence public climate attitudes, as shown in various cross-national studies [@lewis2019cross, @pearson2017race, @hornsey2016meta, @lee2015predictors].
 For instance, women in wealthier countries in the Americas and Europe are more likely to be concerned about climate change than men, possibly because men perceive higher costs in climate mitigation policies since they benefit more from the current hierarchical political and social system [@bush2023facing].
-Identifying (most) relevant fault lines that divide public opinion in cross-country setting is challenging because one needs country-specific knowledge regarding social cleavages.
+Identifying (most) relevant fault lines that divide public opinion in cross-country setting is challenging because one needs country-specific knowledge regarding key social cleavages.
 Second, one needs survey data with individual-level variables that measure these cleavages, and these surveys also need to include questions on climate change concerns.
-Once we move out of advanced countries, such surveys become less common. 
+Once we move out of advanced countries, such surveys become less common. Finally, there are various ways to measure polarization and there is no concensus regarding which approach is better in general and in our context of climate change attitude polarization.
+
 
 It is well documented that comparative public opinion studies have been hampered by the lack of comprehensive data, not to mention public polarization data.
 The scarcity of comparative data at the aggregate level is due to data sparseness and fragmentation, with many countries and years lacking data, and existing data often being incomparable due to differences in items and interpretations.
@@ -306,7 +472,7 @@ We then examined these articles to find the number of countries and years invest
 As the zoomed portion of the plot pocc-plot emphasizes, many of these articles might be described as using case-study or small-_n_ research designs.
 Just over a third consider only a single year in a single country; together with works that study four and fewer countries and years (inset) they comprise nearly half of this sample.
 
-In addition, climate change data presents distinctive challenges.
+In addition, climate change survey data presents distinctive challenges.
 First, the data are particularly fragmented among many different survey questions due to the rapid changes in the salience of the climate change topic and specific subtopics, from climate knowledge to policy preference.
 Second, an unusually large number of countries are data-poor.
 <!-- plots of country-years per question across topics (climate change vs. PGE vs. macrointerest, for example).-->
@@ -328,12 +494,141 @@ By incorporating country-specific characteristics that capture systematic differ
 Furthermore, through local random walk, DCPO smooths the missing measures based on available data from previous years.
 
 *Expanding the survey source data.* 
-To measure public opinion toward climate change, we have collected raw data from 93 different survey datasets and identified 43 survey items that were asked in at least five country-years in countries surveyed more than three times.
-These items have been asked in 87 different countries at least three times over the past 30 years, from 1992 to 2022.
-Despite our extensive collection efforts, the current source data covers 978 country-years and includes a total of 3,830 country-year-item observations, which represents 37% of a complete set of total country-year data.
 
-This initial effort demonstrates the potential for building a comprehensive cross-national time-series dataset on climate opinion while also highlighting the challenges in measuring comparative public climate data.
+To measure public opinion toward climate change, by using DCPOtools in our initial efforts, we have identified `r n_items` such survey items that were asked in at least five country-years in countries surveyed more than three times from `r n_surveys` different survey datasets.
+These items have been asked in `r n_countries` different countries at least three times over the past `r n_years` years, `r year_range`.
+
+The current source data covers `r n_cy` country-years and includes a total of `r n_cyi` country-year-item observations, which represents `r {n_cy/total_cy}`% of a complete set of total country-year data.
+
+The left panel of Figure \ref{item_country_plots} shows the years observed by country in current dataset.
+We have more year data in European countries and the United States but fewer data in African and Asian continents. 
+The upper right panel shows the top countries with the highest count of year-item observations.
+The `r top_country_cyi` has `r top_country_cyi_obs` observations, followed by `r others_cc`.
+The bottom right panel counts the countries observed in each year.
+Country coverage reached its peak in `r y_peak_year`, when respondents in `r y_peak_nn` countries were asked items about climate change, but few relevant survey items were asked before 2007.
+
+The number of items observed in the source data for each country-year is plotted in Figure\ref{obs_by_cy} below.
+It demonstrates the potential for building a comprehensive cross-national time-series dataset on climate opinion while also highlighting the challenges in measuring comparative public climate data, including the variation in data availability geographically and temporally. 
 Our primary focus has been on well-known and publicly-accessible cross-national surveys, including the World Values Survey, Eurobarometer, European Social Survey, International Social Survey Programme, and Regional Barometer surveys, supplemented by a few country-specific surveys.
+
+```{r itemcountry, fig.cap="Countries and Years with the Most Observations in the Source Data \\label{item_country_plots}", fig.height=3.5, fig.width=6, fig.pos='h', cache=FALSE}
+countries_plot <- dcpo_input_raw_cc %>%
+  mutate(country = if_else(stringr::str_detect(country, "United"),
+                           stringr::str_replace(country, "((.).*) ((.).*)", "\\2.\\4."),
+                           country)) %>% 
+  distinct(country, year, item) %>% 
+  count(country) %>%
+  arrange(desc(n)) %>% 
+  head(12) %>% 
+  ggplot(aes(forcats::fct_reorder(country, n, .desc = TRUE), n)) +
+  geom_bar(stat = "identity") +
+  theme_bw() +
+  theme(axis.title.x = element_blank(),
+        axis.text.x  = element_text(angle = 90, vjust = .45, hjust = .95, size = 7),
+        axis.title.y = element_text(size = 9),
+        plot.title = element_text(hjust = 0.5, size = 11)) +
+  ylab("Year-Items\nObserved") +
+  ggtitle("Countries")
+
+
+cby_plot <- dcpo_input_raw_cc %>%
+  mutate(country = if_else(stringr::str_detect(country, "United"),
+                           stringr::str_replace(country, "((.).*) ((.).*)", "\\2.\\4."),
+                           country),
+         country = stringr::str_replace(country, "South", "S.")) %>% 
+  distinct(country, year) %>%
+  count(country) %>% 
+  arrange(desc(n)) %>% 
+  head(12) %>% 
+  ggplot(aes(forcats::fct_reorder(country, n, .desc = TRUE), n)) +
+  geom_bar(stat = "identity") +
+  theme_bw() +
+  theme(axis.title.x = element_blank(),
+        axis.text.x  = element_text(angle = 90, vjust = .45, hjust = .95),
+        axis.title.y = element_text(size = 9),
+        plot.title = element_text(hjust = 0.5, size = 11)) +
+  ylab("Years\nObserved") +
+  ggtitle("Countries")
+
+ybc_plot <- dcpo_input_raw_cc %>%
+  distinct(country, year) %>%
+  count(year, name = "nn") %>%
+  ggplot(aes(year, nn)) +
+  geom_bar(stat = "identity") +
+   scale_x_continuous(
+    minor_breaks = seq(1989, 2023, by = 1),
+    breaks = seq(1992, 2023, by = 2), limits = c(1991, 2023))  +
+  theme_bw() +
+  theme(axis.title.x = element_blank(),
+        axis.text.x  = element_text(angle = 90, vjust = .45, hjust = .95, size = 6),
+        axis.title.y = element_text(size = 9),
+        plot.title = element_text(hjust = 0.5, size = 11)) +
+  xlab("Year") +
+  ylab("Countries\nObserved") +
+  ggtitle("Year")
+
+world_map <- map_data("world") %>% 
+  filter(!long > 180)
+
+cby_map <- world_map %>% 
+  distinct(region) %>% 
+  mutate(country = countrycode::countrycode(region,
+                                            "country.name",
+                                            "country.name")) %>% 
+  filter(!region=="Antarctica") %>% 
+  left_join(dcpo_input_raw_cc %>% 
+              count(country, year) %>% 
+              count(country, name = "Years"),
+            by = "country") %>% 
+  mutate(Years = ifelse(is.na(Years), 0, Years)) %>% 
+  ggplot(aes(fill = Years, map_id = region)) +
+  geom_map(map = world_map,
+           color = "white",
+           size = 0.06) +
+  coord_map(projection = "mollweide", 
+            ylim=c(-80, 90),
+            xlim=c(-170, 170)) +
+  theme_void() +
+  scale_fill_distiller(na.value = "gray90", 
+                       palette = "Blues",
+                       direction = 1) +
+  ggtitle("Years Observed by Country") +
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position.inside = c(.05,.1),
+        legend.justification = c(0,0), 
+        legend.direction = "vertical") +
+  scale_y_continuous(expand=c(0,0)) +
+scale_x_continuous(expand=c(0,0))
+cby_map + (countries_plot/ ybc_plot) + plot_layout(widths = c(3.8, 1.2))
+```
+
+```{r obs_by_cy, fig.height = 9, fig.width = 6.5, fig.cap = "Source Data Observations by Country and Year \\label{obs_by_cy}"}
+dcpo_input_raw_cc %>% 
+  mutate(country = str_replace(country, "’", "'")) %>% 
+  distinct(country, year, item, cc_rank) %>% 
+  group_by(country, year) %>% 
+  summarize(n = n(),
+            cc_rank = cc_rank) %>% 
+  ungroup() %>% 
+  distinct() %>% 
+  ggplot(aes(x = year, 
+             y = forcats::fct_reorder(country, cc_rank),
+             fill = n)) + 
+  geom_tile() +
+  scale_fill_stepsn(colors = rev(hcl.colors(5, "inferno")),
+                    n.breaks = 5,
+                    show.limits = TRUE,
+                    right = FALSE,
+                    name = "Observations") +
+  labs(x = NULL, y = NULL) +
+  scale_x_continuous(breaks=seq(1992, 2022, 4),
+                     sec.axis = dup_axis()) +
+  scale_y_discrete(position = "right") +
+  theme(legend.justification=c(0, 0), 
+        legend.position=c(0.01, 0.01),
+        axis.text.y  = element_text(size = 7)) 
+```    
+
 
 These established worldwide surveys have advantages in standardized questions and thorough documentation, but they also have limitations in geographic and temporal coverage.
 For instance, the World Values Survey and Regional Barometer Survey are typically conducted every four years, while the International Social Survey Programme's topic modules are conducted approximately every five to ten years.
@@ -356,14 +651,18 @@ We will also identify demographic and political information of respondents in su
 These demographics will allow us to estimate public opinion between subpopulations, which we will illustrate in the polarization estimates section. 
 
 *Generating estimates for public opinion on climate change.*
-To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model as presented in @solt2020modeling.
+To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model.
 Other models usually require high quality data, either dense survey data or ancillary data on population characteristics [@mcgann2019parallel,@kolczynska2024modeling].
 The latest development in this stream is @Berwick2024's dynamic multidimensional group-level IRT model.
 By using an exploratory approach, their method can measure multidimensional opinions by poststratifying subpopulation opinion estimates. 
 The exploratory method can help understand complex opinion structures when scholars care about dimensions.
 For example, public support for democracy is a complex and multidimensional concept. 
 Unidimensional measures of public support cannot capture public support in different dimensions, such as supporting contestation and participation; civil liberties; and institutional constraints on executive power [@hu2024multi]. 
-In that case, their method can help scholars explore the potential dimension following a data-driven approach. 
+In that case, their method can help scholars explore potential dimensions using a data-driven approach.
+However, our aim is not to explore and measure multidimensional public opinion on climate change.
+Even though there might be multiple dimensions, DCPO can detect items relevant to climate change that might measure different concepts and exclude these items from the latent variables.
+This ensures that these items do not influence our opinion or polarization measures.
+
 However, the practicality of poststratifying subpopulation estimates in scenarios involving numerous countries and extended time periods is questionable and may present challenges.
 This approach is practical for single-country studies or when the sample of countries is small and regular census data are available.
 However, collecting subgroup population proportions becomes an immense task when the sample size is large, especially when subgroups include factors like gender, religion, and ideology, as in our project.
@@ -438,12 +737,12 @@ The third paper examines how public climate change concerns and policy preferenc
 Using our measures of public opinion and polarization, we will analyze the relationship between public opinion and climate policy adoption across countries over time.
 We will use data from the Climate Change Laws of the World [@nachmany2017global], which compiles laws and regulations aimed at reducing carbon emissions and promoting clean energy.
 The main outcome variable is the number of new climate policies adopted per country-year, with the previous year's cumulative climate policies as a control variable.
-This approach tests  how current levels of public concern about climate change contribute to the existing level of climate laws and regulations. 
+This approach tests  how current levels of public concern about climate change contribute to the existing level of climate laws and regulations.^[
 We will control for GDP per capita (log), oil rent (% of GDP), coal rent (% of GDP), and CO2 emissions per capita using World Development Indicators (WDI).
 Political regime effects will be controlled using the liberal democracy variable from the V-Dem Dataset.
 To account for the impact of climate-related natural disasters on policy adoption, we will use data from the Emergency Events Database (EM-DAT), which includes global natural disaster data.
-For empirical analysis, we will employ a two-way fixed effects model with robust standard errors at both time and entity levels to control for unobserved heterogeneity in panel data.
-Additionally, PIs will take advantage of conference time for in-person, in-depth project meetings to exchange ideas and set the agenda.
+For empirical analysis, we will employ a two-way fixed effects model with robust standard errors at both time and entity levels to control for unobserved heterogeneity in panel data.]
+Additionally, the PIs will take advantage of conference time for in-person, in-depth project meetings to exchange ideas and set the agenda.
 
 Beyond conference presentations and three scholarly publications, we will disseminate our data through Dataverse, provide two updated DCPO packages, and develop a user-friendly dashboard.
 Climate scholars can download our estimates directly from Dataverse for use in downstream analyses.
@@ -453,7 +752,7 @@ The user-friendly dashboard will be a valuable tool for the general public to ex
 
 # Timeline and Project Implementation
 We propose a two-year project, estimated based on our initial efforts in collecting, cleaning, and measuring data.
-In our initial phase, we gathered data from 85 countries, each with an average of 19 years of estimates.
+To this date, we have gathered survey data from 85 countries, each with an average of 19 years of estimates.^[This is supported by a seed grant from the Center of Social Data Analytics (C-SODA) of the Penn State University, 2022-2023.]
 However, there is variation in the number of years of estimates across regions. European countries have the longest data spans; for instance, 12 countries (Belgium, Denmark, France, Germany, Greece, Ireland, Italy, Luxembourg, Netherlands, Portugal, Spain, and the United Kingdom) have 31 years of estimates.
 In contrast, Asian, Latin American, and African countries have fewer years of data, despite being more vulnerable to climate change due to their geographical location and state capacity in dealing with climate threats.
 For example, five countries (Uganda, Ghana, Tunisia, Senegal, and Vietnam) have less than 10 years of data.
@@ -461,25 +760,35 @@ For example, five countries (Uganda, Ghana, Tunisia, Senegal, and Vietnam) have 
 During our two-year project, we will expand the coverage of our raw data in terms of country-year and country-year-items, measure public opinion, revise and improve DCPO models to measure polarization, write up three scholarly papers and disseminate our estimates. 
 Our plan for the project timeline is outlined as follows:
 
-
-
 Summer and Fall 2025: Raw data collection.
+
 In our first year, in addition to expand temporal coverage from latest released data, such as European Barometer and European Social Survey, we will focus on expanding our data to include single-country surveys, which are often conducted in their native languages, such as the Chinese General Social Survey (CGSS), Korean General Social Surveys, and single-country surveys not incorporated in the compiled data of the African Barometer and Latin American Public Opinion, both of which have recently released their latest 2023 survey data.
 Due to language and transcription challenges, these single-country surveys usually take longer to identify, collect, and clean.
 
 We also plan to expand our items to include both climate-relevant and environment-relevant questions.
-The project team will write a codebook for item selection, train RAs to code items, conduct inter-coder reliability tests, and update the codebook to achieve a higher level of intercoder reliability.
+The project team will write a codebook for item selection, train research assistances to code items, conduct inter-coder reliability tests, and update the codebook to achieve a higher level of intercoder reliability.
 This process will involve several rounds of discussions and revisions, potentially extending the timeline.
 
 Spring 2026: Estimate climate change public opinion measures and write up the first scholarly paper on measures and validations.
-When public opinion measures are ready, as described above, we will draft our first paper on these measures and validate them.
-We will present our paper and introduce our opinion data in conferences during Spring and Summer 2026. 
+Once the public opinion measures are ready, as described above, we will draft our first paper on these measures and validate them.
+We will present our findings and introduce our opinion data at various conferences during Spring and Summer 2026, ensuring feedback from peers.
+We will publish our web interface, making the opinion data available for download and user interaction.
 
-Summer 2026: Revise DCPO models and packages for estimating polarization.
+Summer 2026: Revise DCPO models and packages for estimating polarization; collect demographic information from survey data for measuring polarization.
+During the summer, we will collect demographic information from surveys, including but not limited to gender, ideology, residence, and religion.
+This information will be essential for subgroup opinion measures.
+We will revise our DCPO models to measure climate change opinion within subpopulations and assess differences, such as comparing climate opinion between male and female. 
 
-Fall 2026:  Estimate climate change polarization.
+Fall 2026:: Estimate climate change polarization through various approaches, compare polarization measures, and draft a paper on climate change polarization estimates and validations.
+Although existing methods of measuring polarization cannot address gaps in time-series data, we can use them when data is available and compare their results with our methods, which can smooth time-series data.
+Based on our findings, we will write up our second paper about polarization measures. 
 
-Spring 2027: Write up paper on climate change polarization estimates and validations.
+Spring 2027: Finalize data collection for dynamic analysis up to recent years and conduct analysis on the relationship between public opinion, polarization, and policy outputs.
+We will finalize the data collection required for our dynamic analysis, ensuring it covers the most recent years.
+We will then analyze the relationships between public opinion, polarization, and policy outputs.
+We will present our polarization measures and preliminary analysis for the third paper at academic conferences.
+Our polarization measures will be added to our web interface. 
+We will enhance data visualization, online analysis, and provide customized functions for users at our web interface.
 
 Summer 2027: Write up the paper about dynamic relationship between climate public opinion and climate policies.
 
