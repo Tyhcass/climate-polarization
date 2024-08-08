@@ -440,11 +440,11 @@ The third paper examines how public climate change concerns and policy preferenc
 Using our measures of public opinion and polarization, we will analyze the relationship between public opinion and climate policy adoption across countries over time.
 We will use data from the Climate Change Laws of the World [@nachmany2017global], which compiles laws and regulations aimed at reducing carbon emissions and promoting clean energy.
 The main outcome variable is the number of new climate policies adopted per country-year, with the previous year's cumulative climate policies as a control variable.
-This approach tests  how current levels of public concern about climate change contribute to the existing level of climate laws and regulations.\footnote{ 
+This approach tests  how current levels of public concern about climate change contribute to the existing level of climate laws and regulations.^[
 We will control for GDP per capita (log), oil rent (% of GDP), coal rent (% of GDP), and CO2 emissions per capita using World Development Indicators (WDI).
 Political regime effects will be controlled using the liberal democracy variable from the V-Dem Dataset.
 To account for the impact of climate-related natural disasters on policy adoption, we will use data from the Emergency Events Database (EM-DAT), which includes global natural disaster data.
-For empirical analysis, we will employ a two-way fixed effects model with robust standard errors at both time and entity levels to control for unobserved heterogeneity in panel data.}
+For empirical analysis, we will employ a two-way fixed effects model with robust standard errors at both time and entity levels to control for unobserved heterogeneity in panel data.]
 Additionally, the PIs will take advantage of conference time for in-person, in-depth project meetings to exchange ideas and set the agenda.
 
 Beyond conference presentations and three scholarly publications, we will disseminate our data through Dataverse, provide two updated DCPO packages, and develop a user-friendly dashboard.
@@ -455,7 +455,7 @@ The user-friendly dashboard will be a valuable tool for the general public to ex
 
 # Timeline and Project Implementation
 We propose a two-year project, estimated based on our initial efforts in collecting, cleaning, and measuring data.
-To this date, we have gathered survey data from 85 countries, each with an average of 19 years of estimates.\footnote{This is supported by a seed grant from the Center of Social Data Analytics (C-SODA) of the Penn State University, 2022-2023.}
+To this date, we have gathered survey data from 85 countries, each with an average of 19 years of estimates.^[This is supported by a seed grant from the Center of Social Data Analytics (C-SODA) of the Penn State University, 2022-2023.]
 However, there is variation in the number of years of estimates across regions. European countries have the longest data spans; for instance, 12 countries (Belgium, Denmark, France, Germany, Greece, Ireland, Italy, Luxembourg, Netherlands, Portugal, Spain, and the United Kingdom) have 31 years of estimates.
 In contrast, Asian, Latin American, and African countries have fewer years of data, despite being more vulnerable to climate change due to their geographical location and state capacity in dealing with climate threats.
 For example, five countries (Uganda, Ghana, Tunisia, Senegal, and Vietnam) have less than 10 years of data.
@@ -463,25 +463,34 @@ For example, five countries (Uganda, Ghana, Tunisia, Senegal, and Vietnam) have 
 During our two-year project, we will expand the coverage of our raw data in terms of country-year and country-year-items, measure public opinion, revise and improve DCPO models to measure polarization, write up three scholarly papers and disseminate our estimates. 
 Our plan for the project timeline is outlined as follows:
 
-
-
 Fall 2025: Raw data collection.
 In our first year, in addition to expand temporal coverage from latest released data, such as European Barometer and European Social Survey, we will focus on expanding our data to include single-country surveys, which are often conducted in their native languages, such as the Chinese General Social Survey (CGSS), Korean General Social Surveys, and single-country surveys not incorporated in the compiled data of the African Barometer and Latin American Public Opinion, both of which have recently released their latest 2023 survey data.
 Due to language and transcription challenges, these single-country surveys usually take longer to identify, collect, and clean.
 
 We also plan to expand our items to include both climate-relevant and environment-relevant questions.
-The project team will write a codebook for item selection, train RAs to code items, conduct inter-coder reliability tests, and update the codebook to achieve a higher level of intercoder reliability.
+The project team will write a codebook for item selection, train research assistances to code items, conduct inter-coder reliability tests, and update the codebook to achieve a higher level of intercoder reliability.
 This process will involve several rounds of discussions and revisions, potentially extending the timeline.
 
 Spring 2026: Estimate climate change public opinion measures and write up the first scholarly paper on measures and validations.
-When public opinion measures are ready, as described above, we will draft our first paper on these measures and validate them.
-We will present our paper and introduce our opinion data in conferences during Spring and Summer 2026. 
+Once the public opinion measures are ready, as described above, we will draft our first paper on these measures and validate them.
+We will present our findings and introduce our opinion data at various conferences during Spring and Summer 2026, ensuring feedback from peers.
+We will publish our web interface, making the opinion data available for download and user interaction.
 
-Summer 2026: Revise DCPO models and packages for estimating polarization.
+Summer 2026: Revise DCPO models and packages for estimating polarization; collect demographic information from survey data for measuring polarization.
+During the summer, we will collect demographic information from surveys, including but not limited to gender, ideology, residence, and religion.
+This information will be essential for subgroup opinion measures.
+We will revise our DCPO models to measure climate change opinion within subpopulations and assess differences, such as comparing climate opinion between male and female. 
 
-Fall 2026:  Estimate climate change polarization.
+Fall 2026:: Estimate climate change polarization through various approaches, compare polarization measures, and draft a paper on climate change polarization estimates and validations.
+Although existing methods of measuring polarization cannot address gaps in time-series data, we can use them when data is available and compare their results with our methods, which can smooth time-series data.
+Based on our findings, we will write up our second paper about polarization measures. 
 
-Spring 2027: Write up paper on climate change polarization estimates and validations.
+Spring 2027: Finalize data collection for dynamic analysis up to recent years and conduct analysis on the relationship between public opinion, polarization, and policy outputs.
+We will finalize the data collection required for our dynamic analysis, ensuring it covers the most recent years.
+We will then analyze the relationships between public opinion, polarization, and policy outputs.
+We will present our polarization measures and preliminary analysis for the third paper at academic conferences.
+Our polarization measures will be added to our web interface. 
+We will enhance data visualization, online analysis, and provide customized functions for users at our web interface.
 
 Summer 2027: Write up the paper about dynamic relationship between climate public opinion and climate policies.
 
