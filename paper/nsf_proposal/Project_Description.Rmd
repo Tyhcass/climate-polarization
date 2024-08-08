@@ -45,10 +45,174 @@ knitr::opts_chunk$set(
   }
 )
 
+if (!require(pacman))
+    renv::install("pacman")
+library(pacman)
+p_install_gh(c("fsolt/DCPOtools"))
 library(tidyverse)
 library(here)
 library(RColorBrewer)
 library(patchwork)
+library(DCPOtools)
+```
+
+```{r cc_summary_stats}
+
+surveys <-  read_csv(here::here("data-raw/climate_index_cli.csv"),
+                       col_types = "cccc")[c(1:26,29:141,145:455,458:480),]
+
+dcpo_input_raw_cc <- read_csv(here::here("data-raw/dcpo_input_raw_cc.csv")) 
+
+with_min_coverage <- function(x, min_cov) {
+  if (!is.na(min_cov)) {
+    country <- year <- years <- spanned <- coverage <- NULL
+    x <- x %>%
+      group_by(country) %>%
+      mutate(years = length(unique(year)),
+             spanned = length(min(year):max(year)),
+             coverage = years/spanned) %>%
+      filter(coverage >= min_cov) %>%
+      select(-years, -spanned, -coverage) %>%
+      ungroup()
+  }
+  return(x)
+}
+with_max_gap <- function(x, max_gap, edges = TRUE) {
+    if (!is.na(max_gap)) {
+        country <- yr_obs <- NULL
+        c_yrs <- x %>% 
+            group_by(country, year) %>% 
+            summarize(year = first(year)) %>% 
+            mutate(lead_span = ifelse(!is.na(lead(year)),
+                                      lead(year) - year - 1,
+                                      50),
+                   lag_span = ifelse(!is.na(lag(year)),
+                                     year - lag(year) - 1,
+                                     50),
+                   min_span = pmin(lead_span, lag_span),
+                   max_span = pmax(lead_span, lag_span),
+                   drop = min_span > max_gap & max_span == 50)
+        
+        x <- x %>% 
+          left_join(c_yrs,
+                    by = c("country", "year")) %>% 
+          filter(!drop) %>% 
+          select(-contains("span")) %>% 
+          select(-drop)
+    }
+    return(x)
+}
+
+process_dcpo_input_raw <- function(dcpo_input_raw_df) {
+  dcpo_input_raw_df %>% 
+    with_min_yrs(3) %>% 
+    with_min_cy(5) %>% 
+    with_min_yrs(3) %>% # double-check after dropping <5 cy
+    filter(year >= 1972 & n > 0) %>% 
+    group_by(country) %>% 
+    mutate(cc_rank = n()) %>% 
+    ungroup() %>% 
+    arrange(-cc_rank)
+}
+
+
+dcpo_input_raw_cc <- process_dcpo_input_raw(dcpo_input_raw_cc)
+
+
+n_surveys <- surveys %>%
+  distinct(survey) %>% 
+  nrow()  
+
+n_items <- dcpo_input_raw_cc %>%
+  distinct(item) %>% 
+  nrow() 
+
+n_countries <- dcpo_input_raw_cc %>%
+  distinct(country) %>% 
+  nrow()  
+
+n_cy <- dcpo_input_raw_cc %>%
+  distinct(country, year) %>% 
+  nrow() %>% 
+  scales::comma() 
+
+n_years <- as.integer(summary(dcpo_input_raw_cc$year)[6]-summary(dcpo_input_raw_cc$year)[1]) 
+
+spanned_cy <- dcpo_input_raw_cc %>% 
+  group_by(country) %>% 
+  summarize(years = max(year) - min(year) + 1) %>% 
+  summarize(n = sum(years)) %>% 
+  pull(n) %>% 
+  scales::comma() 
+
+total_cy <- {n_countries * n_years} %>% 
+  scales::comma()  
+
+year_range <- paste("from",
+                    summary(dcpo_input_raw_cc$year)[1], 
+                    "to",
+                    summary(dcpo_input_raw_cc$year)[6]) 
+n_cyi <- dcpo_input_raw_cc %>% 
+  distinct(country, year, item) %>% 
+  nrow() %>% 
+  scales::comma() 
+back_to_numeric <- function(string_number) {
+  string_number %>% 
+    str_replace(",", "") %>% 
+    as.numeric()
+}
+covered_share_of_spanned <- {back_to_numeric(n_cy)/back_to_numeric(spanned_cy) * 100}
+
+top_country_cyi <- dcpo_input_raw_cc %>% 
+  distinct(country, year, item) %>%
+  count(country) %>%
+  arrange(-n) %>% 
+  slice_head() %>%
+ pull(country) 
+
+top_country_cyi_obs <- dcpo_input_raw_cc %>%
+  filter(country == top_country_cyi) %>%
+  distinct(country, year, item) %>%
+  nrow()  
+
+others_cc <- dcpo_input_raw_cc %>%
+  distinct(country, year, item) %>%
+  count(country) %>%
+  arrange(desc(n)) %>%
+  slice(2:5) %>%
+  pull(country) %>% 
+  paste(collapse = ", ") %>% 
+  str_replace(", (\\w+)$", ", and \\1") # "Spain, France, Italy, and Netherlands""
+
+
+y_cc_peak_year <- dcpo_input_raw_cc %>%
+  distinct(country, year) %>%
+  count(year, name = "nn") %>% 
+  filter(nn == max(nn)) %>% 
+  pull(year) #2010
+
+y_cc_peak_nn <- dcpo_input_raw_cc %>%
+  distinct(country, year) %>%
+  count(year, name = "nn") %>% 
+  filter(nn == max(nn)) %>% 
+  pull(nn) #74 countries
+
+data_cc_poorest <- dcpo_input_raw_cc %>%
+  distinct(country, year, item) %>%
+  count(country) %>%
+  arrange(n) %>%
+  filter(n < 10) %>%
+  pull(country) %>% 
+  paste(collapse = ", ") %>% 
+  str_replace(", (\\w+)$", ", and \\1")  #Palestinian Territories, Tunisia, Uganda, Armenia, German Democratic Republic, Ghana, Pakistan, Taiwan, and Tanzania
+
+wordify_numeral <- function(x) setNames(c("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", " seventeen", "eighteen", "nineteen"), 1:19)[x]
+
+n_cc_data_poorest <- {data_cc_poorest %>%
+    str_split(",") %>% 
+    first()} %>% 
+  length() %>% 
+  wordify_numeral()
 ```
 
 
@@ -64,7 +228,7 @@ Comparative public opinion data are sparse and fragmented, with many countries a
 These challenges are particularly severe for climate change opinion.
 Unlike established concepts such as democratic support, trust, and gender egalitarianism, climate-related questions have only been surveyed sporadically since the 1990s, mainly in developed countries.
 Actually, even for OECD countries, due to the absence of comparative data, @schaffer2022policymakers had to use media coverage of climate issues as a proxy for public concerns.
-Our preliminary data collection from 93 different survey datasets from 1992 to 2022 highlights this sparsity, with only 3,830 country-year-item available observations representing 37% of the total possible data.
+Our preliminary data collection from `r n_items` from `r n_surveys` different survey datasets, `r year_range`, highlights this sparsity, with only `r n_cyi` country-year-item available observations representing `r {n_cy/total_cy}` of the total country-year data.
 
 In addition to the average level of public climate concern, how such concerns are distributed within a society, especially along with existing salient social cleavages -- partisan lines, urban-rural divide, and gender differences, to name but a few -- is equally if not more important for climate policies.
 Polarization in climate concerns captures the intuition that significant differences in views and preferences towards climate issues exist and likely increase between different groups of people in a society.
@@ -330,12 +494,141 @@ By incorporating country-specific characteristics that capture systematic differ
 Furthermore, through local random walk, DCPO smooths the missing measures based on available data from previous years.
 
 *Expanding the survey source data.* 
-To measure public opinion toward climate change, we have collected raw data from 93 different survey datasets and identified 43 survey items that were asked in at least five country-years in countries surveyed more than three times.
-These items have been asked in 87 different countries at least three times over the past 30 years, from 1992 to 2022.
-Despite our extensive collection efforts, the current source data covers 978 country-years and includes a total of 3,830 country-year-item observations, which represents 37% of a complete set of total country-year data.
 
-This initial effort demonstrates the potential for building a comprehensive cross-national time-series dataset on climate opinion while also highlighting the challenges in measuring comparative public climate data.
+To measure public opinion toward climate change, by using DCPOtools in our initial efforts, we have identified `r n_items` such survey items that were asked in at least five country-years in countries surveyed more than three times from `r n_surveys` different survey datasets.
+These items have been asked in `r n_countries` different countries at least three times over the past `r n_years` years, `r year_range`.
+
+The current source data covers `r n_cy` country-years and includes a total of `r n_cyi` country-year-item observations, which represents `r {n_cy/total_cy}`% of a complete set of total country-year data.
+
+The left panel of Figure \ref{item_country_plots} shows the years observed by country in current dataset.
+We have more year data in European countries and the United States but fewer data in African and Asian continents. 
+The upper right panel shows the top countries with the highest count of year-item observations.
+The `r top_country_cyi` has `r top_country_cyi_obs` observations, followed by `r others_cc`.
+The bottom right panel counts the countries observed in each year.
+Country coverage reached its peak in `r y_peak_year`, when respondents in `r y_peak_nn` countries were asked items about climate change, but few relevant survey items were asked before 2007.
+
+The number of items observed in the source data for each country-year is plotted in Figure\ref{obs_by_cy} below.
+It demonstrates the potential for building a comprehensive cross-national time-series dataset on climate opinion while also highlighting the challenges in measuring comparative public climate data, including the variation in data availability geographically and temporally. 
 Our primary focus has been on well-known and publicly-accessible cross-national surveys, including the World Values Survey, Eurobarometer, European Social Survey, International Social Survey Programme, and Regional Barometer surveys, supplemented by a few country-specific surveys.
+
+```{r itemcountry, fig.cap="Countries and Years with the Most Observations in the Source Data \\label{item_country_plots}", fig.height=3.5, fig.width=6, fig.pos='h', cache=FALSE}
+countries_plot <- dcpo_input_raw_cc %>%
+  mutate(country = if_else(stringr::str_detect(country, "United"),
+                           stringr::str_replace(country, "((.).*) ((.).*)", "\\2.\\4."),
+                           country)) %>% 
+  distinct(country, year, item) %>% 
+  count(country) %>%
+  arrange(desc(n)) %>% 
+  head(12) %>% 
+  ggplot(aes(forcats::fct_reorder(country, n, .desc = TRUE), n)) +
+  geom_bar(stat = "identity") +
+  theme_bw() +
+  theme(axis.title.x = element_blank(),
+        axis.text.x  = element_text(angle = 90, vjust = .45, hjust = .95, size = 7),
+        axis.title.y = element_text(size = 9),
+        plot.title = element_text(hjust = 0.5, size = 11)) +
+  ylab("Year-Items\nObserved") +
+  ggtitle("Countries")
+
+
+cby_plot <- dcpo_input_raw_cc %>%
+  mutate(country = if_else(stringr::str_detect(country, "United"),
+                           stringr::str_replace(country, "((.).*) ((.).*)", "\\2.\\4."),
+                           country),
+         country = stringr::str_replace(country, "South", "S.")) %>% 
+  distinct(country, year) %>%
+  count(country) %>% 
+  arrange(desc(n)) %>% 
+  head(12) %>% 
+  ggplot(aes(forcats::fct_reorder(country, n, .desc = TRUE), n)) +
+  geom_bar(stat = "identity") +
+  theme_bw() +
+  theme(axis.title.x = element_blank(),
+        axis.text.x  = element_text(angle = 90, vjust = .45, hjust = .95),
+        axis.title.y = element_text(size = 9),
+        plot.title = element_text(hjust = 0.5, size = 11)) +
+  ylab("Years\nObserved") +
+  ggtitle("Countries")
+
+ybc_plot <- dcpo_input_raw_cc %>%
+  distinct(country, year) %>%
+  count(year, name = "nn") %>%
+  ggplot(aes(year, nn)) +
+  geom_bar(stat = "identity") +
+   scale_x_continuous(
+    minor_breaks = seq(1989, 2023, by = 1),
+    breaks = seq(1992, 2023, by = 2), limits = c(1991, 2023))  +
+  theme_bw() +
+  theme(axis.title.x = element_blank(),
+        axis.text.x  = element_text(angle = 90, vjust = .45, hjust = .95, size = 6),
+        axis.title.y = element_text(size = 9),
+        plot.title = element_text(hjust = 0.5, size = 11)) +
+  xlab("Year") +
+  ylab("Countries\nObserved") +
+  ggtitle("Year")
+
+world_map <- map_data("world") %>% 
+  filter(!long > 180)
+
+cby_map <- world_map %>% 
+  distinct(region) %>% 
+  mutate(country = countrycode::countrycode(region,
+                                            "country.name",
+                                            "country.name")) %>% 
+  filter(!region=="Antarctica") %>% 
+  left_join(dcpo_input_raw_cc %>% 
+              count(country, year) %>% 
+              count(country, name = "Years"),
+            by = "country") %>% 
+  mutate(Years = ifelse(is.na(Years), 0, Years)) %>% 
+  ggplot(aes(fill = Years, map_id = region)) +
+  geom_map(map = world_map,
+           color = "white",
+           size = 0.06) +
+  coord_map(projection = "mollweide", 
+            ylim=c(-80, 90),
+            xlim=c(-170, 170)) +
+  theme_void() +
+  scale_fill_distiller(na.value = "gray90", 
+                       palette = "Blues",
+                       direction = 1) +
+  ggtitle("Years Observed by Country") +
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position.inside = c(.05,.1),
+        legend.justification = c(0,0), 
+        legend.direction = "vertical") +
+  scale_y_continuous(expand=c(0,0)) +
+scale_x_continuous(expand=c(0,0))
+cby_map + (countries_plot/ ybc_plot) + plot_layout(widths = c(3.8, 1.2))
+```
+
+```{r obs_by_cy, fig.height = 9, fig.width = 6.5, fig.cap = "Source Data Observations by Country and Year \\label{obs_by_cy}"}
+dcpo_input_raw_cc %>% 
+  mutate(country = str_replace(country, "’", "'")) %>% 
+  distinct(country, year, item, cc_rank) %>% 
+  group_by(country, year) %>% 
+  summarize(n = n(),
+            cc_rank = cc_rank) %>% 
+  ungroup() %>% 
+  distinct() %>% 
+  ggplot(aes(x = year, 
+             y = forcats::fct_reorder(country, cc_rank),
+             fill = n)) + 
+  geom_tile() +
+  scale_fill_stepsn(colors = rev(hcl.colors(5, "inferno")),
+                    n.breaks = 5,
+                    show.limits = TRUE,
+                    right = FALSE,
+                    name = "Observations") +
+  labs(x = NULL, y = NULL) +
+  scale_x_continuous(breaks=seq(1992, 2022, 4),
+                     sec.axis = dup_axis()) +
+  scale_y_discrete(position = "right") +
+  theme(legend.justification=c(0, 0), 
+        legend.position=c(0.01, 0.01),
+        axis.text.y  = element_text(size = 7)) 
+```    
+
 
 These established worldwide surveys have advantages in standardized questions and thorough documentation, but they also have limitations in geographic and temporal coverage.
 For instance, the World Values Survey and Regional Barometer Survey are typically conducted every four years, while the International Social Survey Programme's topic modules are conducted approximately every five to ten years.
@@ -365,7 +658,11 @@ By using an exploratory approach, their method can measure multidimensional opin
 The exploratory method can help understand complex opinion structures when scholars care about dimensions.
 For example, public support for democracy is a complex and multidimensional concept. 
 Unidimensional measures of public support cannot capture public support in different dimensions, such as supporting contestation and participation; civil liberties; and institutional constraints on executive power [@hu2024multi]. 
-In that case, their method can help scholars explore the potential dimension following a data-driven approach. 
+In that case, their method can help scholars explore potential dimensions using a data-driven approach.
+However, our aim is not to explore and measure multidimensional public opinion on climate change.
+Even though there might be multiple dimensions, DCPO can detect items relevant to climate change that might measure different concepts and exclude these items from the latent variables.
+This ensures that these items do not influence our opinion or polarization measures.
+
 However, the practicality of poststratifying subpopulation estimates in scenarios involving numerous countries and extended time periods is questionable and may present challenges.
 This approach is practical for single-country studies or when the sample of countries is small and regular census data are available.
 However, collecting subgroup population proportions becomes an immense task when the sample size is large, especially when subgroups include factors like gender, religion, and ideology, as in our project.
