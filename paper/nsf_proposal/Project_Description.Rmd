@@ -219,7 +219,7 @@ n_cc_data_poorest <- {data_cc_poorest %>%
 
 As the NSF's current Strategic Plan observes, addressing climate change is one of the "great scientific challenges of our time" [@NSF2022, 16].
 It is also, fundamentally, a political challenge.
-Consider heat pumps, which work by moving heat in or out of a home depending on the season to ensure a comfortable temperature.
+Consider heat pumps, which work by moving heat into or out of a home depending on the season to ensure a comfortable temperature.
 Heat pumps are electric and as renewable energy expands, increasingly zero-emission, making them a key part of decarbonization efforts; they are also so efficient that they are much cheaper to operate than fossil-fuel furnaces or boilers.
 But they also cost more to buy and install.
 When Germany announced last year that it would effectively prohibit the installation of new gas and oil heating systems and so ensure a gradual transition to heat pumps, the resulting public backlash was so intense it forced the government to delay and water down its effort to even begin to decarbonize the source of one-sixth of the country's carbon emissions [see, e.g., @VonDerBurchard2023].
@@ -268,7 +268,7 @@ Even for broader attitudes towards environmental issues, comprehensive multi-dec
 Similarly, @bakaki2020triangular identified a triangular relationship between citizens' environmental concerns, media attention, and renewable policy output in six European democracies from 1983 to 2012.
 The limited spatial coverage is primarily due to the lack of data.
 The situation is even more severe for climate change attitudes.
-Due to the absence of comparative climate opinion data, @schaffer2022policymakers used media coverage of climate issues as a proxy for public concerns in studying climate change mitigation in six OECD countries over a period of 1995-2010, even though this measure has low validity given its low correlation (r = 0.27) with climate public opinion data [@oehl2017measure] and the authors acknowledge that "public opinion surveys arguably provide the most direct measure of public demand." [see, p.~137, @schaffer2022policymakers].
+Due to the absence of comparative climate opinion data, @schaffer2022policymakers used media coverage of climate issues as a proxy for public concerns in studying climate change mitigation in six OECD countries over a period of 1995-2010, even though this measure has low validity given its low correlation (r = 0.27) with climate public opinion data [@oehl2017measure] and the paper itself acknowledges that "public opinion surveys arguably provide the most direct measure of public demand" [see, @schaffer2022policymakers, 137].
 
 In addition to the average level of public climate concern, how such concerns are distributed within a society, especially along with existing salient social cleavages---partisan lines, urban-rural divide, and gender differences, to name but a few---is equally if not more important for climate policies.
 Polarization in climate concerns captures the intuition that significant differences in views and preferences towards climate issues exist and likely increase between different groups of people in a society.
