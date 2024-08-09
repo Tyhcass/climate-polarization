@@ -12,7 +12,8 @@
 \RequirePackage{wrapfig}
 
 \RequirePackage{fancyhdr}
-\pagestyle{fancyplain}
+\pagestyle{fancy}
+\fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \fancyhf{}
 %\fancyfoot[R]{\thepage} 
@@ -27,7 +28,7 @@
 \titlespacing*{\subsection}{0pt}{0.35em}{0pt}
 \titlespacing*{\subsubsection}{0pt}{0.25em}{0pt}
 \titlespacing*{\paragraph}{0pt}{0em}{0pt}
-\usepackage[skip=2pt,font=scriptsize]{caption}
+\usepackage[skip=2pt]{caption}
 
 %\newcommand{\newsection}[1]{\pagenumbering{arabic}\renewcommand{\thepage}{#1--\arabic{page}}}
 
