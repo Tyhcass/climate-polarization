@@ -220,21 +220,21 @@ n_cc_data_poorest <- {data_cc_poorest %>%
 As the NSF's current Strategic Plan observes, addressing climate change is one of the "great scientific challenges of our time" [@NSF2022, 16].
 It is also, fundamentally, a political challenge.
 Consider heat pumps, which work by moving heat into or out of a home depending on the season to ensure a comfortable temperature.
-Heat pumps are electric and as renewable energy expands, increasingly zero-emission, making them a key part of decarbonization efforts; they are also so efficient that they are much cheaper to operate than fossil-fuel furnaces or boilers.
-But they also cost more to buy and install.
-When Germany announced last year that it would effectively prohibit the installation of new gas and oil heating systems and so ensure a gradual transition to heat pumps, the resulting public backlash was so intense it forced the government to delay and water down its effort to even begin to decarbonize the source of one-sixth of the country's carbon emissions [see, e.g., @VonDerBurchard2023].
+Heat pumps are electric and therefore as renewable energy expands, increasingly zero-emission, making them a key part of decarbonization efforts; they are also so efficient that they are much cheaper to operate than fossil-fuel furnaces or boilers.
+But they also, at present, cost more to buy and install.
+When Germany announced last year that it would effectively prohibit the installation of new gas and oil heating systems and so ensure a gradual transition to heat pumps, the resulting public backlash was so intense it forced the government to delay and water down its effort to even begin to decarbonize home heating, the source of one-sixth of the country's carbon emissions [see, e.g., @VonDerBurchard2023].
 As this example demonstrates, understanding the interplay between policy and public opinion is crucial to effectively addressing climate change.
 
 Regardless of this crucial need, data issues have hindered efforts to understand the extent and causes of the public's demand for action on climate, the conditions in which governments act on these demands, and how public opinion responds when they do.
 Cross-national survey data on attitudes toward climate change, as on other topics, is sparse, incomparable, or most often both.
 That is, survey data is unavailable for many countries and years, and, even when relevant surveys exist, the multiple different questions asked make putting all of the information to use in any comparative study difficult [see, e.g., @Caughey2019; @Solt2020c].
-These difficulties are so severe as to lead many researchers to give up on measuring public opinion entirely and rely instead on proxies such as media coverage of climate issues [e.g., @schaffer2022policymakers].
-To enable research that will successfully allow policymakers to navigate the politics of climate change, there is a critical need for better data on public opinion. 
+These difficulties are so severe as to lead many researchers to give up on measuring public opinion about climate change entirely and rely instead on proxies such as media coverage of climate issues [e.g., @schaffer2022policymakers].
+To enable research that will successfully allow policymakers to navigate the politics of addressing climate change, there is a critical need for better data on public opinion. 
 
 This proposal's objective is to address this need.
 The approach is to collect all of the data on climate-change attitudes available in national, regional, and global surveys and then use computational social science methods, specifically Bayesian latent-variable models, to overcome their sparsity and incomparability.
 Bayesian latent-variable models have emerged as a powerful tool for generating comparable estimates of the trends in the mean of public opinion over many years in many countries [see, e.g., @Caughey2019; @Woo2023; @Hu2024].
-Growing scholarly and popular attention to political polarization suggests, however, that mean attitudes alone may be insufficient to capture important features of public opinion: concentrated opposition, for example, or divisions that fall along existing social cleavages may be at least as important.
+Growing scholarly and popular attention to political polarization suggests, however, that mean attitudes alone may be insufficient to capture important features of public opinion: concentrated opposition or divisions that fall along existing social cleavages may be at least as important.
 This project will therefore build on one of these latent-variable models, the Dynamic Comparative Public Opinion (DCPO) model introduced by @Solt2020c, to expand its output to measures of polarization.
 Applying this expanded model to the collected surveys will yield the Climate Change Public Opinion Dataset (CCPOD), which will serve as critical infrastructure for research on the causes and consequences of climate change attitudes in the public of countries around the world.
 The CCPOD will advance knowledge about the world and inform policymakers as they seek effective policy solutions in the fight against climate change.
@@ -243,7 +243,7 @@ The CCPOD will advance knowledge about the world and inform policymakers as they
 ### Background
 There is a large existing literature that explains public opinion on climate change (e.g., citizen knowledge, attention, concern for climate change as well as policy preferences), especially in developed economies.
 For instance, many have shown that extreme weather events (e.g., droughts, wildfires, and hurricanes) triggered by climate change increase public climate change concerns and preferences for mitigation policies.
-This scholarly enthusiasm to explain climate public opinion is probably underpinned by an underlying assumption that one needs public support to produce climate policies to combat climate change; in other words, public opinion matters in the realm of climate policies.
+This scholarly enthusiasm to explain climate public opinion is underpinned by an underlying assumption that one needs public support to produce climate policies to combat climate change; in other words, public opinion matters in the realm of climate policies.
 But does it? More specifically, would public opinion on climate change affect national climate change policy outputs?
 Surprisingly, the literature is silent when it comes to this obvious and yet extremely important question.
 The reason for this is simple and yet it presents a great challenge for the research community: there is no systematic data on cross-country public opinion regarding climate change. 
@@ -463,6 +463,7 @@ We then examined these articles to find the number of countries and years invest
 As the zoomed portion of the plot pocc-plot emphasizes, many of these articles might be described as using case-study or small-_n_ research designs.
 Just over a third consider only a single year in a single country; together with works that study four and fewer countries and years (inset) they comprise nearly half of this sample.
 
+<!-- reconsider this paragraph-->
 In addition, climate change survey data presents distinctive challenges.
 First, the data are particularly fragmented among many different survey questions due to the rapid changes in the salience of the climate change topic and specific subtopics, from climate knowledge to policy preference.
 Second, an unusually large number of countries are data-poor.
@@ -494,7 +495,6 @@ We have more year data in European countries and the United States but fewer dat
 The upper right panel shows the top countries with the highest count of year-item observations.
 The `r top_country_cyi` has `r top_country_cyi_obs` observations, followed by `r others_cc`.
 The bottom right panel counts the countries observed in each year.
-<!-- Country coverage reached its peak in `y_peak_year`, when respondents in `y_peak_nn` countries were asked items about climate change, but few relevant survey items were asked before 2007. -->
 
 The number of items observed in the source data for each country-year is plotted in Figure\ref{obs_by_cy} below.
 It demonstrates the potential for building a comprehensive cross-national time-series dataset on climate opinion while also highlighting the challenges in measuring comparative public climate data, including the variation in data availability geographically and temporally. 
@@ -670,7 +670,8 @@ Their knowledge of climate change might not naturally translate into support for
 
 To address the sparsity of source data, which includes inconsistencies in the time series of each country due to unobserved country-years or limited observed items, DCPO uses local-level dynamic linear models.
 These models estimate public opinion by taking the previous year's estimate and adding a random shock.
-This approach smooths the estimates over time and allows for estimation even in years with little or no survey data, albeit at the expense of greater measurement uncertainty[^Scholars have developed and tested approaches to incorporate measurement uncertainty [@TaiEtAl2022a]].
+This approach smooths the estimates over time and allows for estimation even in years with little or no survey data, albeit at the expense of greater measurement uncertainty.[^
+Incorporating measurement uncertainty is crucial to arriving at well-grounded conclusions [see, e.g., @Tai2024], and it is especially easy to do so in a Bayesian context [see, e.g., @Hu20204].]
 
 To facilitate data collection, measurement, and broader open data science, DCPO has developed two open-source R packages: DCPO and DCPOtools.
 DCPOtools, designed by @SoltEtAl2019, automates the process of collecting the necessary survey items from datasets and performs data wrangling computationally.
@@ -792,7 +793,7 @@ Co-PIs Cao and Tai have received no prior NSF support.
 
 Solt was PI of NSF Award Number 1533746, "Standardized World Income Inequality Database" (SWIID), in the amount of $228,809.00, which began August 15, 2015 and was successfully completed on July 31, 2019.
 
-#### Intellectual Merit
+#### Intellectual Merit. 
 Income inequality is an enduring focus of inquiry in the social sciences that has attracted renewed attention from policymakers and the public, but research has been hindered by a choice between data coverage and data comparability.
 The Standardized World Income Inequality Database (SWIID) overcomes this tradeoff by using a Bayesian latent-variable model on data drawn from regional collections, national statistical offices, and academic studies anchored by the high-quality but sparse Luxembourg Income Study dataset.
 The SWIID currently provides comparable estimates of market- and net-income inequality for 199 countries for as many years as possible from 1960 to the present.
@@ -804,7 +805,7 @@ The effects of income inequality on other forms of social inequality, such as he
 The reliability of the results of these investigations, and any policy interventions they suggest, depend crucially on the quality of the income-inequality data they employ.
 The expansion, improvement, and support of the SWIID database was (and remains) central to the promotion of scientific progress on these topics and matched NSF priorities outlined in the NSF Strategic Plan 2011-2016, most especially in transforming frontiers of knowledge by building research infrastructure and data access, facilitating international engagement in science, and emphasizing interdisciplinary research.
 
-#### Broader Impacts
+#### Broader Impacts. 
 The project resulted in (1) the publication of @Solt2020, which is listed by the Web of Science _Essential Science Indicators_ as a Highly Cited Paper, among the top 1% most cited articles in the social sciences (excluding economics) for its year of publication; (2) biannual updates to the SWIID on the Harvard Dataverse each year since 2017 that collectively have been downloaded more than 150,000 times; and (3) the SWIID website, which provides a user-friendly interface to the dataset and receives in excess of 100 visitors daily.
 The SWIID has been used by thousands of researchers around the world who are working in academia, governments, non-governmental organizations, international organizations, and news agencies; the broad dissemination of expanded and improved versions of the SWIID therefore comports with NSF's longstanding commitment to making knowledge accessible to policymakers and the public as well as to researchers.
 Moreover, this project promoted teaching by improving the SWIID's web-based graphical interface to facilitate its use for teaching and learning; developing online training modules on the use of cross-national income-inequality data over time; and employed a graduate research assistant who is a member of an underrepresented group, finished her Ph.D. in 2021, and is now a tenure-track assistant professor, helping contribute to the development of a diverse, globally competitive STEM workforce.
