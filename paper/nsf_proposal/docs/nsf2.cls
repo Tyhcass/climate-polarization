@@ -15,7 +15,7 @@
 \pagestyle{fancy}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
-\fancyhf{}
+%\fancyhf{}
 %\fancyfoot[R]{\thepage} 
 
 \RequirePackage{titlecaps}
