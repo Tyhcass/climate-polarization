@@ -75,7 +75,7 @@ dcpo_input_raw_cc2 <- read_csv(here::here("data-raw",
                                           "dcpo_input_raw_cc2.csv"),
                                col_types = "cdcddcd")
 
-dcpo_input_raw_cc <- read_csv(here::here("data-raw",
+dcpo_input_raw_cc0 <- read_csv(here::here("data-raw",
                                          "dcpo_input_raw_cc.csv"),
                                col_types = "cdcddcd") %>% 
   filter(!survey %in% c("eb672", "eb692", "eb621")) %>% # don't double-count
@@ -126,14 +126,14 @@ process_dcpo_input_raw <- function(dcpo_input_raw_df) {
     with_min_yrs(3) %>% 
     with_min_cy(5) %>% 
     with_min_yrs(3) %>% # double-check after dropping <5 cy
-    filter(year >= 1972 & n > 0) %>% 
+    filter(year >= 1972 & n > 0 & country!="German Democratic Republic") %>% # see https://github.com/fsolt/DCPOtools/issues/62 re GDR--filtering out here is a quick-and-dirty fix
     group_by(country) %>% 
     mutate(cc_rank = n()) %>% 
     ungroup() %>% 
     arrange(-cc_rank)
 }
 
-dcpo_input_raw_cc <- process_dcpo_input_raw(dcpo_input_raw_cc)
+dcpo_input_raw_cc <- process_dcpo_input_raw(dcpo_input_raw_cc0)
 
 n_surveys <- surveys %>%
   distinct(survey) %>% 
@@ -506,16 +506,13 @@ The proposed research comprises four principal activities: (1) _collecting the a
 <!-- Furthermore, through a local random-walk prior, DCPO smooths the missing measures based on available data from previous years. -->
 
 *Collecting the available survey data.* 
-To date, the project investigators have collected data on climate change opinion from over one hundred survey datasets.
-
-To date, the project investigators have gathered survey data from `r n_countries` countries, each with an average of 19 years of estimates.^[
-This is supported by a seed grant from the Center of Social Data Analytics (C-SODA) of the Penn State University, 2022-2023.]
-However, there is variation in the number of years of estimates across regions. European countries have the longest data spans; for instance, 12 countries (Belgium, Denmark, France, Germany, Greece, Ireland, Italy, Luxembourg, Netherlands, Portugal, Spain, and the United Kingdom) have 31 years of estimates.
-In contrast, Asian, Latin American, and African countries have fewer years of data, despite being more vulnerable to climate change due to their geographical location and state capacity in dealing with climate threats.
-For example, five countries (Uganda, Ghana, Tunisia, Senegal, and Vietnam) have less than 10 years of data.
-
-To measure public opinion toward climate change, by using DCPOtools in our initial efforts, we have identified `r n_items` such survey items that were asked in at least five country-years in countries surveyed more than three times from `r n_surveys` different survey datasets.
-These items have been asked in `r n_countries` different countries at least three times over the past `r n_years` years, `r year_range`.
+To date, the project investigators have collected data on climate change opinion from over 150 survey datasets.
+Nearly all of these datasets are regional (e.g., the Afrobarometer, Eurobarometer, and Latinobarometer surveys) or global (e.g., the International Social Survey Program's Environment module and the Pew Global Attitudes surveys).
+Together they provide information about `r n_countries` with an mean of `r round(back_to_numeric(n_cy)/n_countries)` years observed.^[
+This data collection was supported by a seed grant from the Center of Social Data Analytics (C-SODA) at Pennsylvania State University, 2022-2023.]
+This average is deceptive.
+The United States and sixteen European countries are observed in twenty or more years.
+In contrast, Asian, Latin American, and African countries have fewer years of data, despite being more vulnerable to climate change due to their geographical location and state capacity in dealing with climate threats: public opinion is observed in fewer than ten years in some `r dcpo_input_raw_cc %>% distinct(country, year) %>% count(country) %>% filter(n < 10) %>% nrow()` countries.
 
 The current source data covers `r n_cy` country-years and includes a total of `r n_cyi` country-year-item observations, which represents `r covered_share_of_spanned`% of all of the country-years spanned by the data, but just `r round({back_to_numeric(n_cy)/back_to_numeric(total_cy)} * 100)`% of a complete set of country-year data.
 
@@ -811,17 +808,18 @@ Summer 2027: Write up the paper about dynamic relationship between climate publi
 
 ### Broader Impacts
 The Climate Change Public Opinion Dataset (CCPOD) will serve as a crucial research infrastructure for researchers, educators, students, policymakers, non-governmental organizations, and news agencies worldwide, fostering both within and cross-national work on climate change, polarization, and broader public opinion.
-Through conference presentations, scholarly publications, and a user-friendly web interface, the dissemination of the resulting estimates will enhance the understanding of scholars, policymakers, and general audience (like NGOs and ournalists) about the relationship between public opinion and climate policies, ultimately contributing to more informed and effective climate change action.
+Through conference presentations, scholarly publications, and a user-friendly web interface, the dissemination of the resulting estimates will enhance the understanding of scholars, policymakers, NGOs, journalists, and the general public about the relationship between public opinion and climate policies, ultimately contributing to more informed and effective climate change action.
 In addition, two open-source R packages for automating data collection and measurement are made available so others can analyze similar data.
 This aligns with NSF's commitment to making knowledge accessible to policymakers, the public, and researchers.
-Moreover, this project will promote teaching by providing CCPOD's web-based graphical interface with user-friendly functionality to facilitate its use for teaching and learning data analytics and by employing graduate research assistants, especially members of marginalized groups, who will develop valuable new skills in this important interdisciplinary field.
+Moreover, this project will promote teaching by providing CCPOD's web-based graphical interface with user-friendly functionality to facilitate its use for teaching and learning and by employing graduate research assistants, especially members of marginalized groups, who will develop valuable new skills in this important interdisciplinary field.
+
 
 ### Results From Prior NSF Support
 Co-PIs Cao and Tai have received no prior NSF support.
 
-Solt was PI of NSF Award Number 1533746, "Standardized World Income Inequality Database" (SWIID), in the amount of $228,809.00, which began August 15, 2015 and was successfully completed on July 31, 2019.
+PI Solt was PI of NSF Award Number 1533746, "Standardized World Income Inequality Database" (SWIID), in the amount of $228,809.00, which began on August 15, 2015 and was successfully completed on July 31, 2019.
 
-#### Intellectual Merit. 
+**Intellectual Merit.**
 Income inequality is an enduring focus of inquiry in the social sciences that has attracted renewed attention from policymakers and the public, but research has been hindered by a choice between data coverage and data comparability.
 The Standardized World Income Inequality Database (SWIID) overcomes this tradeoff by using a Bayesian latent-variable model on data drawn from regional collections, national statistical offices, and academic studies anchored by the high-quality but sparse Luxembourg Income Study dataset.
 The SWIID currently provides comparable estimates of market- and net-income inequality for 199 countries for as many years as possible from 1960 to the present.
@@ -833,10 +831,10 @@ The effects of income inequality on other forms of social inequality, such as he
 The reliability of the results of these investigations, and any policy interventions they suggest, depend crucially on the quality of the income-inequality data they employ.
 The expansion, improvement, and support of the SWIID database was (and remains) central to the promotion of scientific progress on these topics and matched NSF priorities outlined in the NSF Strategic Plan 2011-2016, most especially in transforming frontiers of knowledge by building research infrastructure and data access, facilitating international engagement in science, and emphasizing interdisciplinary research.
 
-#### Broader Impacts. 
+**Broader Impacts.**
 The project resulted in (1) the publication of @Solt2020, which is listed by the Web of Science _Essential Science Indicators_ as a Highly Cited Paper, among the top 1% most cited articles in the social sciences (excluding economics) for its year of publication; (2) biannual updates to the SWIID on the Harvard Dataverse each year since 2017 that collectively have been downloaded more than 150,000 times; and (3) the SWIID website, which provides a user-friendly interface to the dataset and receives in excess of 100 visitors daily.
 The SWIID has been used by thousands of researchers around the world who are working in academia, governments, non-governmental organizations, international organizations, and news agencies; the broad dissemination of expanded and improved versions of the SWIID therefore comports with NSF's longstanding commitment to making knowledge accessible to policymakers and the public as well as to researchers.
-Moreover, this project promoted teaching by improving the SWIID's web-based graphical interface to facilitate its use for teaching and learning; developing online training modules on the use of cross-national income-inequality data over time; and employed a graduate research assistant who is a member of an underrepresented group, finished her Ph.D. in 2021, and is now a tenure-track assistant professor, helping contribute to the development of a diverse, globally competitive STEM workforce.
+Moreover, this project promoted teaching by improving the SWIID's web-based graphical interface to facilitate its use for teaching and learning; developing online training modules on the use of cross-national income-inequality data over time; and employing a graduate research assistant who is a member of an underrepresented group, finished her Ph.D. in 2021, and is now a tenure-track assistant professor, helping contribute to the development of a diverse, globally competitive STEM workforce.
 
 
 
