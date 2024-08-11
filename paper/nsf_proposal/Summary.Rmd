@@ -28,7 +28,7 @@ Understanding how public opinion on climate change affects policy---especially a
 Research in this area, however, has been impeded by the absence of data on public opinion that is comparable across countries and over time.
 The Climate Change Public Opinion Database (CCPOD) aims to overcome these challenges by using a Bayesian Item Response Theory latent-variable model on survey data drawn from national, regional, and global projects to generate a time-series cross-national dataset.
 We have currently collected data from 93 different survey projects from 1992 to 2022, providing a foundation for further data expansion and latent variable measures.
-The proposed research comprises four principal activities: (1) acquiring more surveys to expand the source data, (2) assessing and improving the latent-variable model to ensure its estimates are comparable when and where survey data are particularly sparse, (3) developing and testing various methods for generating estimates of polarization in climate-change views, and (4) implementing a web-based system for disseminating the CCPOD to researchers, educators, and policymakers worldwide.
+The proposed research comprises four principal activities: (1) expanding the survey source data, (2) generating estimates for public opinion on climate change, (3) developing and testing a range of methods for generating polarization estimates, and (4) disseminating the resulting estimates to researchers, educators, students, and policymakers worldwide through conference presentations, scholarly publications, open-source software, and a web interface.
 
 
 ### Intellectual Merit
