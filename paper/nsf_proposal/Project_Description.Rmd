@@ -38,7 +38,7 @@ knitr::opts_chunk$set(
   echo = FALSE,
   message = FALSE,
   warning = FALSE,
-  cache = TRUE,
+  cache = FALSE,
   dpi = 600,
   fig.width = 7,
   fig.height = 4,
@@ -58,6 +58,12 @@ library(patchwork)
 library(DCPOtools)
 ```
 
+```{r dcpo_input_raw_cc2, eval=FALSE}
+dcpo_input_raw_cc2 <- DCPOtools::dcpo_setup(surveys2,
+                                            file = here::here(
+                                              "data-raw",                                                              "dcpo_input_raw_cc2.csv"))}
+```
+
 ```{r cc_summary_stats}
 surveys2 <- bind_rows(read_csv(here::here("data-raw", "surveys_cc_add.csv")))
 
@@ -65,12 +71,13 @@ surveys <-  read_csv(here::here("data-raw", "climate_index_cli.csv"),
                        col_types = "cccc")[c(1:26,29:141,145:455,458:480),] %>% 
   bind_rows(surveys2)
 
-dcpo_input_raw_cc2 <- DCPOtools::dcpo_setup(surveys2,
-                                            file = here::here(
-                                              "data-raw",                                                              "dcpo_input_raw_cc2.csv"))
+dcpo_input_raw_cc2 <- read_csv(here::here("data-raw",
+                                          "dcpo_input_raw_cc2.csv"),
+                               col_types = "cdcddcd")
 
 dcpo_input_raw_cc <- read_csv(here::here("data-raw",
-                                         "dcpo_input_raw_cc.csv")) %>% 
+                                         "dcpo_input_raw_cc.csv"),
+                               col_types = "cdcddcd") %>% 
   filter(!survey %in% c("eb672", "eb692", "eb621")) %>% # don't double-count
   bind_rows(dcpo_input_raw_cc2)
 
@@ -172,7 +179,9 @@ back_to_numeric <- function(string_number) {
     str_replace(",", "") %>% 
     as.numeric()
 }
-covered_share_of_spanned <- {back_to_numeric(n_cy)/back_to_numeric(spanned_cy) * 100}
+covered_share_of_spanned <- {back_to_numeric(n_cy)/
+    back_to_numeric(spanned_cy) * 100} %>%
+  round()
 
 top_country_cyi <- dcpo_input_raw_cc %>% 
   distinct(country, year, item) %>%
@@ -267,7 +276,7 @@ One key question that remains to be answered is whether pro-mitigation public pr
 <!--The key question is: (how) does public opinion influence climate policy?-->
 
 Traditional wisdom suggests that public opinion influences public policy through government responsiveness [@Dahl1971], a dynamic observed even in authoritarian countries [@Alkon2018; @Miller2015; @Meng2017].
-In @Burstein2003's influential review on public opinion and policy, it was found that while public opinion often strongly influences policy, most studies focus on the US and a few West European countries, with minimal attention to developing countries.
+In @Burstein2003's influential review on public opinion and policy, it was found that while public opinion often strongly influences policy, most studies focus on the United States and a few West European countries, with minimal attention to developing countries.
 According to the Web of Science, since 1990, there have been 1,829 articles on the environment or climate change and public opinion, with 306 focused on the United States, 128 on China, 114 on the EU, 38 on Africa, and 15 on Latin America.
 Narrowing the scope to cross-national research reduces the count to 28.
 Among these, most studies have examined the determinants of environment/climate attitude and the determinants of climate policies independently [@Stenner2015; @Papiez2018; @Fankhauser2014; @Hao2021]; few consider the role of public opinion in affecting environmental and climate policy outputs: here only proxy measures of climate public opinion (e.g., using environmental rather than climate attitudes or media coverage of climate issues) are used [@Anderson2017; @Bakaki2020; @Schaffer2022]. 
@@ -293,11 +302,12 @@ It is simply more difficult for a polarized society to reach consensus and push 
 
 Even though we have seen no systematic, large-N analysis studying the effect of polarization on climate policies in a cross-country context, there are many studies connecting polarization to important political and policy outputs and outcomes in other issues areas.
 
-For instance, some have argued that polarization affects government accountability [@Jones2015;@Bornschier2019]; others have shown that polarization can make party brands more visible, therefore helping voters with clearer choices during elections [@Lupu2015;@Singer2016].
+For instance, some have argued that polarization affects government accountability [@Jones2015;@Bornschier2019]; others have shown that polarization can make party brands more visible, therefore helping voters with clearer choices during elections [@Lupu2015; @Singer2016].
 At the same time, polarization might also result in instability in legislative process and democratic backsliding [@Mccoy2019;@Stavrakakis2018].
 Elsewhere, @Iversen2015 discover a negative correlation between mass polarization and income inequality; they argue that in the context of advanced economies such a correlation is a function of political information available to voters.
 Using data from the 1999 European Election Study and an expert survey on party positions, @Lachat2008 shows that the role of citizens' left–right orientations in affecting voting behaviors increases with party system polarization.
-@Lindqvist2010 find that political polarization is strongly associated with smaller government in democracies, but there is no such relationship in undemocratic countries.^[Though they acknowledge that multiple explanations exist for a connection between polarization and government spending, and they can point to different directions (e.g., polarization could lead to conflicts of interest among the poor that affect their ability to form coalitions for increased redistribution).]
+@Lindqvist2010 find that political polarization is strongly associated with smaller government in democracies, but there is no such relationship in undemocratic countries.^[T
+hough they acknowledge that multiple explanations exist for a connection between polarization and government spending, and they can point to different directions (e.g., polarization could lead to conflicts of interest among the poor that affect their ability to form coalitions for increased redistribution).]
 
 Also, the study of polarization is not limited to the case of the United States---even though the country is the subject most of the studies on the topic largely because of its rich data.
 Other regions of the world, even countries outside the advanced economies, have seen an increasing number of studies on polarization. 
@@ -309,24 +319,20 @@ In an Asian context, @Slater2018 present a comparative analysis of polarizing cr
 @Singer2016 shows that in developing democracies such as those in Latin America, political polarization increases representation because it helps parties better differentiate themselves from each other and make it easier for voters to see the connection between their personal ideologies and the electoral offerings. 
 
 Public opinion on climate change has become increasingly complex during times of polarization.
-Yet, when we zoom in on polarization in climate change, we find that past studies often focus on the case of the US, they are descriptive in nature, and no study has tested the effect of polarization on climate policies in a cross-country setting.
-Indeed, in the U.S., climate change is a deeply divisive and politicized issue, with political ideology significantly influencing attitudes towards climate and environmental policies [@Mccright2011; @Czarnek2021;@Jasny2015].
-For instance, liberals generally show greater support for climate change policies than conservatives [@Boudet2020; @Hazlett2020; @Mccright2016;@Egan2017; @Merkley2018].
+Yet, when we zoom in on polarization in climate change, we find that past studies often focus on the case of the United States, they are descriptive in nature, and no study has tested the effect of polarization on climate policies in a cross-country setting.
+Indeed, in the United States, climate change is a deeply divisive and politicized issue, with political ideology significantly influencing attitudes towards climate and environmental policies [@Mccright2011; @Czarnek2021;@Jasny2015].
+For instance, liberals generally show greater support for climate change policies than conservatives [@Boudet2020; @Hazlett2020; @Mccright2016; @Egan2017; @Merkley2018].
 This polarized view on climate change can be traced all the way back to the early 1990s.
 Since then, Americans’ climate attitudes have become more and more strongly associated with their partisan and ideological affiliations.
 Many attribute this trend of polarization to the influence of conservative political elites’ climate denial campaigns upon Republican voters [@Tesler2018]. 
 Whether similar levels of climate polarization have occurred in other countries, however, remains an open question.
-It seems that climate attitude polarization (based on political party affiliations for example) does exist in other English-speaking countries including Australia, Canada, and the UK [@Lachapelle2012;@Tranter2013;@Kenny2024] as well as in some western European countries such as Switzerland [@Luth2022].
+It seems that climate attitude polarization (based on political party affiliations for example) does exist in other English-speaking countries including Australia, Canada, and the UK [@Lachapelle2012; @Tranter2013; @Kenny2024] as well as in some western European countries such as Switzerland [@Luth2022].
 Yet, there is no evidence that such polarization exists in Eastern European countries [@Fisher2022] and as far as we know, no study has looked at polarization in climate change public opinion beyond North American and European countries.   
 
 There are at least three major obstacles that prevent the study of climate public opinion polarization in a cross-country setting.
-<<<<<<< HEAD
-First, other than partisan polarization, other social divides such as gender, race, education, income, and socioeconomic status also influence public climate attitudes, as shown in various cross-national studies [@lewis2019cross, @pearson2017race, @hornsey2016meta, @lee2015predictors].
-For instance, women in wealthier countries in the Americas and Europe are more likely to be concerned about climate change than men, possibly because men perceive higher costs in climate mitigation policies since they benefit more from the current hierarchical political and social system [@bush2023facing].
-=======
-First, other than partisan polarization, factors such as gender, race, education, income, and socioeconomic status also influence public climate attitudes, as shown in various cross-national studies [@Lewis2019; @Pearson2017; @Hornsey2016; @Lee2015].
+First, other than partisan polarization, other social divides such as gender, race, education, income, and socioeconomic status also influence public climate attitudes, as shown in various cross-national studies [@Lewis2019; @Pearson2017; @Hornsey2016; @Lee2015].
 For instance, women in wealthier countries in the Americas and Europe are more likely to be concerned about climate change than men, possibly because men perceive higher costs in climate mitigation policies since they benefit more from the current hierarchical political and social system [@Bush2023].
->>>>>>> d9e08ca0bd36c25ebd97f5535653e0999db77989
+
 Identifying (most) relevant fault lines that divide public opinion in cross-country setting is challenging because one needs country-specific knowledge regarding key social cleavages.
 Second, one needs survey data with individual-level variables that measure these cleavages, and these surveys also need to include questions on climate change concerns.
 Once we move out of advanced countries, such surveys become less common. Finally, there are various ways to measure polarization and there is no concensus regarding which approach is better in general and in our context of climate change attitude polarization.
@@ -464,7 +470,6 @@ pocc_plot +
                                        width = 114))
 ```
 
-
 Regarding climate change public opinion, we first explored the country-year coverage of climate-change questions in existing surveys and the literature.
 Figure\nobreakspace{}\ref{pocc_plot} shows how the available data have influenced scholarship on the topic.
 Using the Web of Science and Google Scholar, we assembled a sample of prominent published articles on public opinion toward climate change.^[
@@ -493,11 +498,7 @@ Our project aims to expand both the geographic and temporal dimensions and contr
 ### The Proposed Research
 The proposed research comprises four principal activities: (1) _collecting the available survey data_ on climate change, (2) _generating mean estimates_ for public opinion on climate change, (3) developing and testing a range of methods for _generating estimates of polarization_ in public opinion on climate change, and (4) _disseminating the results_ to researchers, educators, students, and policymakers worldwide through conference presentations, scholarly publications, open-source software, and a web interface.
 
-<<<<<<< HEAD
-<!-- We will rely on the DCPO model [@Solt2020c] to measure public opinion since it has been widely used in measuring comparative public opinion and successfully generated comparative datasets in public opinion on gender egalitarianism [@Woo2023], aggregate political interest [@Hu2024], and attitudes toward gay rights [@woo2023measuring]. -->
-=======
-We will rely on the DCPO model [@Solt2020c] to measure public opinion since it has been widely used in measuring comparative public opinion and successfully generated comparative datasets in public opinion on gender egalitarianism [@Woo2023], aggregate political interest [@Hu2024], and attitudes toward gay rights [@Woo2024].
->>>>>>> d9e08ca0bd36c25ebd97f5535653e0999db77989
+<!-- We will rely on the DCPO model [@Solt2020c] to measure public opinion since it has been widely used in measuring comparative public opinion and successfully generated comparative datasets in public opinion on gender egalitarianism [@Woo2023], aggregate political interest [@Hu2024], and attitudes toward gay rights [@Woo2024]. -->
 
 <!-- The DCPO model is a population-level two-parameter ordinal logistic item response theory (IRT) model. -->
 <!-- It interprets an individual's response to a certain question as a function of the mean latent public attitude of a population at a country-year level, the difficulty of giving a certain answer to the question, and the degree to which the question measures the latent attitude. -->
@@ -507,7 +508,8 @@ We will rely on the DCPO model [@Solt2020c] to measure public opinion since it h
 *Collecting the available survey data.* 
 To date, the project investigators have collected data on climate change opinion from over one hundred survey datasets.
 
-To date, the project investigators have gathered survey data from 85 countries, each with an average of 19 years of estimates.^[This is supported by a seed grant from the Center of Social Data Analytics (C-SODA) of the Penn State University, 2022-2023.]
+To date, the project investigators have gathered survey data from `r n_countries` countries, each with an average of 19 years of estimates.^[
+This is supported by a seed grant from the Center of Social Data Analytics (C-SODA) of the Penn State University, 2022-2023.]
 However, there is variation in the number of years of estimates across regions. European countries have the longest data spans; for instance, 12 countries (Belgium, Denmark, France, Germany, Greece, Ireland, Italy, Luxembourg, Netherlands, Portugal, Spain, and the United Kingdom) have 31 years of estimates.
 In contrast, Asian, Latin American, and African countries have fewer years of data, despite being more vulnerable to climate change due to their geographical location and state capacity in dealing with climate threats.
 For example, five countries (Uganda, Ghana, Tunisia, Senegal, and Vietnam) have less than 10 years of data.
@@ -515,7 +517,7 @@ For example, five countries (Uganda, Ghana, Tunisia, Senegal, and Vietnam) have 
 To measure public opinion toward climate change, by using DCPOtools in our initial efforts, we have identified `r n_items` such survey items that were asked in at least five country-years in countries surveyed more than three times from `r n_surveys` different survey datasets.
 These items have been asked in `r n_countries` different countries at least three times over the past `r n_years` years, `r year_range`.
 
-The current source data covers `r n_cy` country-years and includes a total of `r n_cyi` country-year-item observations, which represents `r round({as.numeric(n_cy)/as.numeric(total_cy %>% str_remove(","))} * 100)`% of a complete set of total country-year data.
+The current source data covers `r n_cy` country-years and includes a total of `r n_cyi` country-year-item observations, which represents `r covered_share_of_spanned`% of all of the country-years spanned by the data, but just `r round({back_to_numeric(n_cy)/back_to_numeric(total_cy)} * 100)`% of a complete set of country-year data.
 
 The left panel of Figure \ref{item_country_plots} shows the years observed by country in current dataset.
 We have more year data in European countries and the United States but fewer data in African and Asian continents. 
@@ -736,14 +738,11 @@ In the second year, we will disseminate our estimates by introducing our package
 
 Specifically, during the first year, we will focus on the estimates of public opinion by extensively expanding raw source data and survey items, including environment-related questions and respondents' demographics.
 Our first scholarly article will focus on measures of public opinion on climate change and their validations through both convergent validation and construct validation.
-<<<<<<< HEAD
-According to @adcock2001measurement, convergent validation compares a given indicator with another indicator of the same concept, while construct validation assesses whether a given indicator is empirically correlated with other indicators in a way that conforms to theoretical expectations.
-We will conduct an "internal" test [@Caughey2019, @woo2023measuring] comparing climate attitudes to responses to individual survey items.
-=======
+
 According to @Adcock2001, convergent validation compares a given indicator with another indicator of the same concept, while construct validation assesses whether a given indicator is empirically correlated with other indicators in a way that conforms to theoretical expectations.
 
-We will conduct an "internal" test [@Caughey2019;@Woo2024] comparing climate attitudes to responses to individual survey items.
->>>>>>> d9e08ca0bd36c25ebd97f5535653e0999db77989
+We will conduct an "internal" test [@Caughey2019; @Woo2024] comparing climate attitudes to responses to individual survey items.
+
 For example, we will look at the percentage of respondents who agree to some extent that climate change should precede economic growth and that climate change is a threat, or their public stance on supporting relevant policies and government efforts to mitigate climate change.
 For construct validation, we plan to test the relationship between climate attitude and exposure to disasters.
 
