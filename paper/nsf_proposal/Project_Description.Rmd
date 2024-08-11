@@ -59,11 +59,20 @@ library(DCPOtools)
 ```
 
 ```{r cc_summary_stats}
+surveys2 <- bind_rows(read_csv(here::here("data-raw", "surveys_cc_add.csv")))
 
-surveys <-  read_csv(here::here("data-raw/climate_index_cli.csv"),
-                       col_types = "cccc")[c(1:26,29:141,145:455,458:480),]
+surveys <-  read_csv(here::here("data-raw", "climate_index_cli.csv"),
+                       col_types = "cccc")[c(1:26,29:141,145:455,458:480),] %>% 
+  bind_rows(surveys2)
 
-dcpo_input_raw_cc <- read_csv(here::here("data-raw/dcpo_input_raw_cc.csv")) 
+dcpo_input_raw_cc2 <- DCPOtools::dcpo_setup(surveys2,
+                                            file = here::here(
+                                              "data-raw",                                                              "dcpo_input_raw_cc2.csv"))
+
+dcpo_input_raw_cc <- read_csv(here::here("data-raw",
+                                         "dcpo_input_raw_cc.csv")) %>% 
+  filter(!survey %in% c("eb672", "eb692", "eb621")) %>% # don't double-count
+  bind_rows(dcpo_input_raw_cc2)
 
 with_min_coverage <- function(x, min_cov) {
   if (!is.na(min_cov)) {
@@ -117,9 +126,7 @@ process_dcpo_input_raw <- function(dcpo_input_raw_df) {
     arrange(-cc_rank)
 }
 
-
 dcpo_input_raw_cc <- process_dcpo_input_raw(dcpo_input_raw_cc)
-
 
 n_surveys <- surveys %>%
   distinct(survey) %>% 
@@ -154,10 +161,12 @@ year_range <- paste("from",
                     summary(dcpo_input_raw_cc$year)[1], 
                     "to",
                     summary(dcpo_input_raw_cc$year)[6]) 
+
 n_cyi <- dcpo_input_raw_cc %>% 
   distinct(country, year, item) %>% 
   nrow() %>% 
   scales::comma() 
+
 back_to_numeric <- function(string_number) {
   string_number %>% 
     str_replace(",", "") %>% 
@@ -184,8 +193,7 @@ others_cc <- dcpo_input_raw_cc %>%
   slice(2:5) %>%
   pull(country) %>% 
   paste(collapse = ", ") %>% 
-  str_replace(", (\\w+)$", ", and \\1") # "Spain, France, Italy, and Netherlands""
-
+  str_replace(", (\\w+)$", ", and \\1") # "Germany, France, Spain, and Italy""
 
 y_cc_peak_year <- dcpo_input_raw_cc %>%
   distinct(country, year) %>%
@@ -197,7 +205,8 @@ y_cc_peak_nn <- dcpo_input_raw_cc %>%
   distinct(country, year) %>%
   count(year, name = "nn") %>% 
   filter(nn == max(nn)) %>% 
-  pull(nn) #74 countries
+  pull(nn) %>% 
+  first() #74 countries in 2010 and 2017
 
 data_cc_poorest <- dcpo_input_raw_cc %>%
   distinct(country, year, item) %>%
@@ -220,8 +229,8 @@ n_cc_data_poorest <- {data_cc_poorest %>%
 As the NSF's current Strategic Plan observes, addressing climate change is one of the "great scientific challenges of our time" [@NSF2022, 16].
 It is also, fundamentally, a political challenge.
 Consider heat pumps, which work by moving heat into or out of a home depending on the season to ensure a comfortable temperature.
-Heat pumps are electric and therefore as renewable energy expands, increasingly zero-emission, making them a key part of decarbonization efforts; they are also so efficient that they are much cheaper to operate than fossil-fuel furnaces or boilers.
-But they also, at present, cost more to buy and install.
+Heat pumps are electric and therefore as renewable energy expands increasingly zero-emission, making them a key part of decarbonization efforts; they are also so efficient that they are much cheaper to operate than fossil-fuel furnaces or boilers.
+But they also cost more to buy and install.
 When Germany announced last year that it would effectively prohibit the installation of new gas and oil heating systems and so ensure a gradual transition to heat pumps, the resulting public backlash was so intense it forced the government to delay and water down its effort to even begin to decarbonize home heating, the source of one-sixth of the country's carbon emissions [see, e.g., @VonDerBurchard2023].
 As this example demonstrates, understanding the interplay between policy and public opinion is crucial to effectively addressing climate change.
 
@@ -309,7 +318,7 @@ It seems that climate attitude polarization (based on political party affiliatio
 Yet, there is no evidence that such polarization exists in Eastern European countries (Fisher et al. 2022) and as far as we know, no study has looked at polarization in climate change public opinion beyond North American and European countries.   
 
 There are at least three major obstacles that prevent the study of climate public opinion polarization in a cross-country setting.
-First, other than partisan polarization, factors such as gender, race, education, income, and socioeconomic status also influence public climate attitudes, as shown in various cross-national studies [@lewis2019cross, @pearson2017race, @hornsey2016meta, @lee2015predictors].
+First, other than partisan polarization, other social divides such as gender, race, education, income, and socioeconomic status also influence public climate attitudes, as shown in various cross-national studies [@lewis2019cross, @pearson2017race, @hornsey2016meta, @lee2015predictors].
 For instance, women in wealthier countries in the Americas and Europe are more likely to be concerned about climate change than men, possibly because men perceive higher costs in climate mitigation policies since they benefit more from the current hierarchical political and social system [@bush2023facing].
 Identifying (most) relevant fault lines that divide public opinion in cross-country setting is challenging because one needs country-specific knowledge regarding key social cleavages.
 Second, one needs survey data with individual-level variables that measure these cleavages, and these surveys also need to include questions on climate change concerns.
@@ -475,16 +484,23 @@ Our project aims to expand both the geographic and temporal dimensions and contr
 
 
 ### The Proposed Research
-The proposed research comprises four principal activities: (1) expanding the survey source data, (2) generating estimates for public opinion on climate change, (3) developing and testing a range of methods for generating polarization estimates, and (4) disseminating the resulting estimates to researchers, educators, students, and policymakers worldwide through conference presentations, scholarly publications, open-source software, and a web interface.
+The proposed research comprises four principal activities: (1) _collecting the available survey data_ on climate change, (2) _generating mean estimates_ for public opinion on climate change, (3) developing and testing a range of methods for _generating estimates of polarization_ in public opinion on climate change, and (4) _disseminating the results_ to researchers, educators, students, and policymakers worldwide through conference presentations, scholarly publications, open-source software, and a web interface.
 
-We will rely on the DCPO model [@Solt2020c] to measure public opinion since it has been widely used in measuring comparative public opinion and successfully generated comparative datasets in public opinion on gender egalitarianism [@Woo2023], aggregate political interest [@Hu2024], and attitudes toward gay rights [@woo2023measuring].
+<!-- We will rely on the DCPO model [@Solt2020c] to measure public opinion since it has been widely used in measuring comparative public opinion and successfully generated comparative datasets in public opinion on gender egalitarianism [@Woo2023], aggregate political interest [@Hu2024], and attitudes toward gay rights [@woo2023measuring]. -->
 
-The DCPO model is a population-level two-parameter ordinal logistic item response theory (IRT) model.
-It interprets an individual's response to a certain question as a function of the mean latent public attitude of a population at a country-year level, the difficulty of giving a certain answer to the question, and the degree to which the question measures the latent attitude.
-By incorporating country-specific characteristics that capture systematic differences in responses due to cultural factors or distinctive interpretations, DCPO ensures comparability of measured latent attitudes between countries.
-Furthermore, through a local random-walk prior, DCPO smooths the missing measures based on available data from previous years.
+<!-- The DCPO model is a population-level two-parameter ordinal logistic item response theory (IRT) model. -->
+<!-- It interprets an individual's response to a certain question as a function of the mean latent public attitude of a population at a country-year level, the difficulty of giving a certain answer to the question, and the degree to which the question measures the latent attitude. -->
+<!-- By incorporating country-specific characteristics that capture systematic differences in responses due to cultural factors or distinctive interpretations, DCPO ensures comparability of measured latent attitudes between countries. -->
+<!-- Furthermore, through a local random-walk prior, DCPO smooths the missing measures based on available data from previous years. -->
 
-*Expanding the survey source data.* 
+*Collecting the available survey data.* 
+To date, the project investigators have collected data on climate change opinion from over one hundred survey datasets.
+
+To date, the project investigators have gathered survey data from 85 countries, each with an average of 19 years of estimates.^[This is supported by a seed grant from the Center of Social Data Analytics (C-SODA) of the Penn State University, 2022-2023.]
+However, there is variation in the number of years of estimates across regions. European countries have the longest data spans; for instance, 12 countries (Belgium, Denmark, France, Germany, Greece, Ireland, Italy, Luxembourg, Netherlands, Portugal, Spain, and the United Kingdom) have 31 years of estimates.
+In contrast, Asian, Latin American, and African countries have fewer years of data, despite being more vulnerable to climate change due to their geographical location and state capacity in dealing with climate threats.
+For example, five countries (Uganda, Ghana, Tunisia, Senegal, and Vietnam) have less than 10 years of data.
+
 To measure public opinion toward climate change, by using DCPOtools in our initial efforts, we have identified `r n_items` such survey items that were asked in at least five country-years in countries surveyed more than three times from `r n_surveys` different survey datasets.
 These items have been asked in `r n_countries` different countries at least three times over the past `r n_years` years, `r year_range`.
 
@@ -619,7 +635,7 @@ dcpo_input_raw_cc %>%
 ```    
 
 These established worldwide surveys have advantages in standardized questions and thorough documentation, but they also have limitations in geographic and temporal coverage.
-For instance, the World Values Survey and Regional Barometer Survey are typically conducted every four years, while the International Social Survey Programme's topic modules are conducted approximately every five to ten years.
+For instance, the World Values Survey is typically conducted every four years, while each of the International Social Survey Programme's topic modules is conducted once every five to ten years.
 Relying solely on these publicly accessible cross-national surveys is insufficient.
 
 There are also public but non-accessible survey projects.
@@ -638,7 +654,7 @@ Additionally, the severe sparsity of identical questions across different survey
 We will also identify demographic and political information of respondents in survey datasets, including but not limited to gender, religion, residence location, and ideology.
 These demographics will allow us to estimate public opinion between subpopulations, which we will illustrate in the polarization estimates section. 
 
-*Generating estimates for public opinion on climate change.*
+*Generating mean estimates.*
 To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model.
 Other models usually require high quality data, either dense survey data or ancillary data on population characteristics [@mcgann2019parallel,@kolczynska2024modeling].
 The latest development in this stream is @Berwick2024's dynamic multidimensional group-level IRT model.
@@ -671,7 +687,7 @@ Their knowledge of climate change might not naturally translate into support for
 To address the sparsity of source data, which includes inconsistencies in the time series of each country due to unobserved country-years or limited observed items, DCPO uses local-level dynamic linear models.
 These models estimate public opinion by taking the previous year's estimate and adding a random shock.
 This approach smooths the estimates over time and allows for estimation even in years with little or no survey data, albeit at the expense of greater measurement uncertainty.[^
-Incorporating measurement uncertainty is crucial to arriving at well-grounded conclusions [see, e.g., @Tai2024], and it is especially easy to do so in a Bayesian context [see, e.g., @Hu20204].]
+Incorporating measurement uncertainty is crucial to arriving at well-grounded conclusions [see, e.g., @Tai2024], and it is especially easy to do so in a Bayesian context [see, e.g., @Hu2024].]
 
 To facilitate data collection, measurement, and broader open data science, DCPO has developed two open-source R packages: DCPO and DCPOtools.
 DCPOtools, designed by @SoltEtAl2019, automates the process of collecting the necessary survey items from datasets and performs data wrangling computationally.
@@ -680,7 +696,7 @@ DCPO is the package written in Stan for running DCPO models and estimating laten
 Together, these tools enable scholars to translate survey data into estimates of public opinion.
 
 
-*Developing and testing a range of methods for generating polarization estimates.*
+*Generating polarization estimates.*
 There are different ways to measure polarization.
 Indeed, scholars have been using various polarization measures, likely contributing to the disagreement regarding the identification and consequences of polarization, especially in a comparative context [@mehlhaff2022group].
 The most intuitive measures are distribution or distance measures; they capture the distance between the mean positions of groups: for example, the distance between the mean position of Republican voters and that of Democratic voters.
@@ -701,8 +717,7 @@ Secondly, we will develop the DCPO model and package to estimate public opinion 
 
 
 
-*Disseminating the resulting estimates.*
-
+*Disseminating the results.*
 We will achieve broad dissemination through conference presentations, scholarly publications, software, dataverse, and a user-friendly web interface.
 Over the two-year period, we will attend multiple conferences, including but not limited to the Annual Meetings of the American Political Science Association (APSA), the International Studies Association (ISA), and the Midwest Political Science Association (MPSA).
 In the first year, we will present our work in progress to attain scholarly suggestions and feedback to improve our model and substantive work.
@@ -711,7 +726,7 @@ In the second year, we will disseminate our estimates by introducing our package
 Specifically, during the first year, we will focus on the estimates of public opinion by extensively expanding raw source data and survey items, including environment-related questions and respondents' demographics.
 Our first scholarly article will focus on measures of public opinion on climate change and their validations through both convergent validation and construct validation.
 According to @adcock2001measurement, convergent validation compares a given indicator with another indicator of the same concept, while construct validation assesses whether a given indicator is empirically correlated with other indicators in a way that conforms to theoretical expectations.
-We will conduct an "internal" test [@Caughey2019,@woo2023measuring] comparing climate attitudes to responses to individual survey items.
+We will conduct an "internal" test [@Caughey2019, @woo2023measuring] comparing climate attitudes to responses to individual survey items.
 For example, we will look at the percentage of respondents who agree to some extent that climate change should precede economic growth and that climate change is a threat, or their public stance on supporting relevant policies and government efforts to mitigate climate change.
 For construct validation, we plan to test the relationship between climate attitude and exposure to disasters.
 
@@ -741,10 +756,7 @@ The user-friendly dashboard will be a valuable tool for the general public to ex
 
 ### Timeline and Project Implementation
 We propose a two-year project, estimated based on our initial efforts in collecting, cleaning, and measuring data.
-To this date, we have gathered survey data from 85 countries, each with an average of 19 years of estimates.^[This is supported by a seed grant from the Center of Social Data Analytics (C-SODA) of the Penn State University, 2022-2023.]
-However, there is variation in the number of years of estimates across regions. European countries have the longest data spans; for instance, 12 countries (Belgium, Denmark, France, Germany, Greece, Ireland, Italy, Luxembourg, Netherlands, Portugal, Spain, and the United Kingdom) have 31 years of estimates.
-In contrast, Asian, Latin American, and African countries have fewer years of data, despite being more vulnerable to climate change due to their geographical location and state capacity in dealing with climate threats.
-For example, five countries (Uganda, Ghana, Tunisia, Senegal, and Vietnam) have less than 10 years of data.
+
 
 During our two-year project, we will expand the coverage of our raw data in terms of country-year and country-year-items, measure public opinion, revise and improve DCPO models to measure polarization, write up three scholarly papers and disseminate our estimates. 
 Our plan for the project timeline is outlined as follows:
