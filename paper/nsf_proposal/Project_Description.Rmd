@@ -670,7 +670,10 @@ With the support of the NSF, this resource-intensive phase of data collection ca
 
 *Generating mean estimates.*
 To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model [@Solt2020c].^[
-Other, similar models of public opinion require either very dense survey data [@Mcgann2019; @Kolczynska2024] or ancillary data on population characteristics [@Berwick2024]. The available data on climate-change opinion, as on most topics, sparse rather than dense, and reliable ancillary data is not available for the broad sample of countries considered in this project.]
+Other, similar models of public opinion require either very dense survey data [@Mcgann2019; @Kolczynska2024] or ancillary data on population characteristics [@Berwick2024].
+The available data on climate-change opinion, as on most topics, sparse rather than dense, and reliable ancillary data is not available for the broad sample of countries considered in this project.
+We are aware of one working paper that anticipates the general approach of this project under this heading, @Bergquist2024.  
+This project will improve on that effort by employing a much larger set of survey data and using the more recently developed DCPO latent-variable model of public opinion.]
 The DCPO model is a population-level two-parameter ordinal logistic item response theory (IRT) model with country-specific item-bias terms.
 It accounts for the incomparability of different survey questions with two key parameters.
 First, it incorporates the _difficulty_ of each question's responses, that is, how much of the latent variable is indicated by a given response. 
@@ -687,41 +690,48 @@ This approach smooths the estimates over time and allows for estimation even in 
 Incorporating measurement uncertainty is crucial to arriving at well-grounded conclusions [see, e.g., @Tai2024], and it is especially easy to do so in a Bayesian context [see, e.g., @Hu2024].]
 
 To facilitate data collection, measurement, and open data science more broadly, the investigators have developed two open-source R packages: `DCPOtools` and `DCPO`.
-`DCPOtools` automates the process of collecting the necessary survey items from datasets and performs data wrangling computationally [@SoltEtAl2019].
-This increases the efficiency and transparency of data processing, avoids data entry errors, and facilitates reproducibility.
+`DCPOtools` provides standardized country and year information for each survey dataset and automates the process of collecting and wrangling the data on the needed survey items [@SoltEtAl2019].
+This increases the efficiency and transparency of data processing, avoids data entry errors, and facilitates reproducibility [see @Hu2022].
 `DCPO` is written in the probabilistic programming language Stan [@StanDevTeam2019b]; it uses the DCPO model to estimate latent public opinion from the survey data compiled using `DCPOtools` [@Solt2020a].
 Together, these two software packages enable the investigators and other researchers to translate survey data into estimates of public opinion.
 
 
 *Generating polarization estimates.*
 There are different ways to measure polarization.
-Indeed, scholars have been using various polarization measures, likely contributing to the disagreement regarding the identification and consequences of polarization, especially in a comparative context [@Mehlhaff2022].
-The most intuitive measures are distribution or distance measures; they capture the distance between the mean positions of groups: for example, the distance between the mean position of Republican voters and that of Democratic voters.
-This requires us to find/use social cleavages (e.g., left-right, gender, secular vs. religious, urban-rural, and center-periphery) and to identify major groups for a country.
-As intuitive as it is, a distance measure cannot capture the within-group distribution aspect of polarization: polarization is not only a function of the distance between the mean positions of two groups, but also of how concentrated/dispersed the attitudes are within each group – a system is not that polarized even with a large between-group distance as long as voters among each group are widely dispersed in the policy space (to the point of a great overlap between two groups).
-Second, there are variation measures that capture variance among individuals or parties; however, as @Mehlhaff2022 points out, high variance does not necessarily imply polarization or bimodality.
-Third, there are measures for bimodality; but there is no true test for bimodality; the most used Kurtosis measure has been shown to have no relationship with bimodality at all [@Westfall2014;@Mehlhaff2022].
-Finally, a much more recent and comprehensive measure is @Mehlhaff2022’s cluster-polarization coefficient (CPC): intuitively, this measure, bounded between 0 and 1, takes into account both dynamics of polarization – it increases when the distance between clusters increases or when clusters become more tightly concentrated around their centroid.^[This measure can also accommodate more than one dimension of social cleavages.]
+Indeed, scholars have been using various polarization measures, likely contributing to the disagreement regarding the identification and consequences of polarization, especially in a comparative context [@Mehlhaff2023].
+The most intuitive measures are distribution or distance measures.
+These measures capture the distance between the mean positions of groups: for example, the distance between the mean position of Republican voters and that of Democratic voters.
+As intuitive as it is, distance measures cannot capture the within-group distribution aspect of polarization: polarization is not only a function of the distance between the mean positions of two groups, but also of how dispersed the attitudes are within each group---a system is not that polarized even with a large between-group distance as long as voters with each group are sufficiently widely dispersed in the policy space that there is considerable overlap between the two groups [see @Mehlhaff2023].
+Second, there are variation measures that capture variance among individuals or parties; however, as @Mehlhaff2023 points out, high variance does not necessarily imply polarization or bimodality.
+Third, there are measures for bimodality; but there is no true test for bimodality; the most used kurtosis measure has been shown to have no relationship with bimodality at all [@Westfall2014; @Mehlhaff2023].
 
-To generate polarization estimates, we will revise and expand the DCPO model and relevant packages to identify and aggregate subpopulation opinions.
-Although existing studies usually focus on partisan polarization, polarization exists across different subgroups.
-We will estimate polarization between ideological left and ideological right, female and male, urban and rural, and religious and secular.
+A much more recent and comprehensive measure is the cluster-polarization coefficient (CPC) presented in @Mehlhaff2023.
+The CPC takes into account both the distance _between_ clusters and the concentration of attitudes _within_ clusters.
+That is, this measure takes into account both dynamics of polarization: it increases when the distance between clusters increases or when clusters become more tightly concentrated around their respective centroids.
+Intuitively, it is bounded between 0, no polarization, and 1, maximal polarization.
 
-To this end, we will first revise DCPOtools to automatically collect and process ancillary data on population characteristics based on our expanded source data.
-Secondly, we will develop the DCPO model and package to estimate public opinion within subpopulation groups and then the cleavage of opinion between subpopulation groups.
+In light of its advantages, this project will employ the CPC as its measure of polarization.
+This will involve three tasks.
+The first task is to identify the potentially politically relevant social cleavages about which climate-change opinion may be polarized and data on each.
+The classic formulation of social cleavages in @Lipset1967 suggests left and right, urban and rural, and religious and secular; differences in attitudes across female and male respondents can be added to this list.
+This project will identify the variables tapping these four potentially politically relevant social cleavages within each of the surveys containing questions on climate change attitudes and incorporate this information into the `DCPOtools` R package.
+This will allow the automatic collection and processing of climate-change opinion data for each of these groups within each country and year in a dataset.
 
-<!--Need more infor here.  maybe encounter more DN or missing data for certain groups.   -->
+The second task is to revise and expand the DCPO model to generate CPC estimates of polarization.
+This will involve generating estimates for multiple groups within each country-year and then calculating the distance between and concentration within each group.
+The flexibility of the Stan programming language will make this fairly straightforward.
+The revised model will then be incorporated into the `DCPO` R package.
 
+The third and final task under this heading is to use the data collected in the first task and the model revised in the second task to generate CPC estimates of the extent of polarization in each country-year along each of the four social cleavages: male-female, left-right, urban-rural, and religious-secular.
+These estimates will allow informative comparisons of the structure of polarization within single country-years, over time within countries, and across countries.
 
 
 *Disseminating the results.*
-We will achieve broad dissemination through conference presentations, scholarly publications, software, dataverse, and a user-friendly web interface.
-Over the two-year period, we will attend multiple conferences, including but not limited to the Annual Meetings of the American Political Science Association (APSA), the International Studies Association (ISA), and the Midwest Political Science Association (MPSA).
-In the first year, we will present our work in progress to attain scholarly suggestions and feedback to improve our model and substantive work.
-In the second year, we will disseminate our estimates by introducing our packages and dashboard as well as presenting our substantive results.
+We will achieve broad dissemination through conference presentations, three scholarly publications, open-source software, dataverse, and a user-friendly web interface.
+In each of the two years of the grant period, the investigators will present their findings at the annual meetings of the Midwest Political Science Association and other conferences.
 
-Specifically, during the first year, we will focus on the estimates of public opinion by extensively expanding raw source data and survey items, including environment-related questions and respondents' demographics.
-Our first scholarly article will focus on measures of public opinion on climate change and their validations through both convergent validation and construct validation.
+Specifically, during the first year, the focus will be collecting more survey data on climate-change opinion and then generating mean estimates.
+The first scholarly article will focus on these mean estimates of public opinion on climate change and their validations through both convergent validation and construct validation.
 
 According to @Adcock2001, convergent validation compares a given indicator with another indicator of the same concept, while construct validation assesses whether a given indicator is empirically correlated with other indicators in a way that conforms to theoretical expectations.
 
