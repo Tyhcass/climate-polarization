@@ -649,7 +649,7 @@ cby_map + (countries_plot/ ybc_plot) + plot_layout(widths = c(3.8, 1.2))
 <!--         axis.text.y  = element_text(size = 7))  -->
 <!-- ```     -->
 
-The data already collected are a start, but there is clearly room for improvement.
+The data already collected are a good start, but there is clearly room for improvement.
 This project will pursue two additional avenues of data collection: single-country surveys and surveys that are not publicly available.
 
 There are many single-country surveys that include questions tapping attitudes toward climate change.
@@ -661,7 +661,7 @@ As one of many examples, consider that the Finnish Social Science Data Archive c
 Even with the assistance of online translation, the process of identifying (and confirming) the relevant survey questions is more time-consuming in such circumstances.
 
 In addition to the single-country surveys, there is a substantial number of cross-national surveys that are not freely available.
-Most important of these is the Gallup World Poll, which has frequently included climate-change questions since its 'Health of the Planet' survey conducted in eleven countries in 1992.
+Most important of these is the Gallup World Poll, which has frequently included climate-change questions since its 'Health of the Planet' survey conducted in 1992.
 The Gallup World Poll is much employed in studies of climate-change opinion, but it is only available for download by paid subscription.
 Further, many other surveys conducted by researchers (and even international organizations, such as the full datasets of the 2020 and 2024 People's Climate Vote surveys conducted by the United Nations Development Programme) have been reported in the climate-change literature but are not housed in such commonly-employed data archives as the Harvard Dataverse or the Inter-university Consortium for Political and Social Research.
 Reaching out to the authors of these pieces is promising, given that norms on the free distribution of data have expanded rapidly in the past two decades, but it is nevertheless a time-consuming task.
@@ -669,25 +669,9 @@ With the support of the NSF, this resource-intensive phase of data collection ca
 
 
 *Generating mean estimates.*
-To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model.
-Other models usually require high quality data, either dense survey data or ancillary data on population characteristics [@Mcgann2019;@Kolczynska2024].
-The latest development in this stream is @Berwick2024's dynamic multidimensional group-level IRT model.
-By using an exploratory approach, their method can measure multidimensional opinions by poststratifying subpopulation opinion estimates. 
-The exploratory method can help understand complex opinion structures when scholars care about dimensions.
-For example, public support for democracy is a complex and multidimensional concept. 
-Unidimensional measures of public support cannot capture public support in different dimensions, such as supporting contestation and participation; civil liberties; and institutional constraints on executive power [@hu2024multi]. 
-In that case, their method can help scholars explore potential dimensions using a data-driven approach.
-However, our aim is not to explore and measure multidimensional public opinion on climate change.
-Even though there might be multiple dimensions, DCPO can detect items relevant to climate change that might measure different concepts and exclude these items from the latent variables.
-This ensures that these items do not influence our opinion or polarization measures.
-
-However, the practicality of poststratifying subpopulation estimates in scenarios involving numerous countries and extended time periods is questionable and may present challenges.
-This approach is practical for single-country studies or when the sample of countries is small and regular census data are available.
-However, collecting subgroup population proportions becomes an immense task when the sample size is large, especially when subgroups include factors like gender, religion, and ideology, as in our project.
-Moreover, some countries in a worldwide study may lack available or accessible census data, further complicating the process, as we have encountered in our project.
-Compared to these models, DCPO is specifically designed to address issues of incomparability and sparsity in comparative opinion data over time with fewer data requirements.
-
-DCPO handles incomparability with two key parameters: _difficulty_ and _dispersion_. 
+To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model [@Solt2020c].^[
+Other, similar models of public opinion require either very dense survey data [@Mcgann2019; @Kolczynska2024] or ancillary data on population characteristics [@Berwick2024]. The available data on climate-change opinion, as on most topics, sparse rather than dense, and reliable ancillary data is not available for the broad sample of countries considered in this project.]
+The DCPO model handles the incomparability of survey items with two key parameters: _difficulty_ and _dispersion_. 
 In our context of climate-related surveys, difficulty indicates the level of climate change attitude represented by a given response.
 For instance, answering "very concerned" to the question "To what extent are you concerned about climate change?" shows more supportive attitude than answering "somewhat concerned," "little concerned," or "not at all."
 Similarly, giving "very high priority" to the question "How high a priority do you think the government SHOULD place on addressing climate change?" indicates more support than merely expressing concern.
