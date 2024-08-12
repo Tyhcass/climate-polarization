@@ -671,27 +671,26 @@ With the support of the NSF, this resource-intensive phase of data collection ca
 *Generating mean estimates.*
 To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model [@Solt2020c].^[
 Other, similar models of public opinion require either very dense survey data [@Mcgann2019; @Kolczynska2024] or ancillary data on population characteristics [@Berwick2024]. The available data on climate-change opinion, as on most topics, sparse rather than dense, and reliable ancillary data is not available for the broad sample of countries considered in this project.]
-The DCPO model handles the incomparability of survey items with two key parameters: _difficulty_ and _dispersion_. 
-In our context of climate-related surveys, difficulty indicates the level of climate change attitude represented by a given response.
-For instance, answering "very concerned" to the question "To what extent are you concerned about climate change?" shows more supportive attitude than answering "somewhat concerned," "little concerned," or "not at all."
-Similarly, giving "very high priority" to the question "How high a priority do you think the government SHOULD place on addressing climate change?" indicates more support than merely expressing concern.
-
-Dispersion measures the degree to which a question can capture the latent attitude towards climate change.
-A smaller dispersion suggests that changes in question responses can better reflect changes in supportive attitudes.
-For example, compared to the question about the degree of agreement with "Climate change is caused by human behavior," the response to "Would you be willing to give part of your income or pay more taxes if you were sure that the extra money was used to handle climate change?" can better map onto the change in climate attitude.
-This is because people who acknowledge that climate change is caused by human behavior might not necessarily support any climate policies.
-Their knowledge of climate change might not naturally translate into support for climate policies, due to other considerations such as confidence in the government's capacity to address climate issues or personal interests, like those of coal workers.
+The DCPO model is a population-level two-parameter ordinal logistic item response theory (IRT) model with country-specific item-bias terms.
+It accounts for the incomparability of different survey questions with two key parameters.
+First, it incorporates the _difficulty_ of each question's responses, that is, how much of the latent variable is indicated by a given response. 
+That each response evinces more or less of our latent trait is most easily seen with regard to the ordinal responses to the same question: answering "extremely worried" to the question "How worried are you about climate change?" exhibits more concern than answering "very worried," "somewhat worried," "not very worried," or "not at all worried."
+But this is also true across questions.
+For example, responding "a great deal" to the question "how much do you think global warming will harm you personally" indicates a greater degree of concern than simply responding in the affirmative when asked "do you think that global warming is happening?"
+Second, the DCPO model accounts for each question's _dispersion_, its noisiness with regard to the latent trait.
+The lower a question's dispersion, the better that changes in responses to the question map onto changes in concern about climate change.
+Together, the model's difficulty and dispersion estimates work to generate comparable estimates of the latent variable from the available but incomparable source data.
 
 To address the sparsity of source data, which includes inconsistencies in the time series of each country due to unobserved country-years or limited observed items, DCPO uses local-level dynamic linear models.
 These models estimate public opinion by taking the previous year's estimate and adding a random shock.
 This approach smooths the estimates over time and allows for estimation even in years with little or no survey data, albeit at the expense of greater measurement uncertainty.^[
 Incorporating measurement uncertainty is crucial to arriving at well-grounded conclusions [see, e.g., @Tai2024], and it is especially easy to do so in a Bayesian context [see, e.g., @Hu2024].]
 
-To facilitate data collection, measurement, and broader open data science, DCPO has developed two open-source R packages: DCPO and DCPOtools.
-DCPOtools, designed by @SoltEtAl2019, automates the process of collecting the necessary survey items from datasets and performs data wrangling computationally.
+To facilitate data collection, measurement, and open data science more broadly, the investigators have developed two open-source R packages: `DCPOtools` and `DCPO`.
+`DCPOtools` automates the process of collecting the necessary survey items from datasets and performs data wrangling computationally [@SoltEtAl2019].
 This increases the efficiency and transparency of data processing, avoids data entry errors, and facilitates reproducibility.
-DCPO is the package written in Stan for running DCPO models and estimating latent public opinion from cross-national survey data collected through DCPOtools.
-Together, these tools enable scholars to translate survey data into estimates of public opinion.
+`DCPO` is written in the probabilistic programming language Stan [@StanDevTeam2019b]; it uses the DCPO model to estimate latent public opinion from the survey data compiled using `DCPOtools` [@Solt2020a].
+Together, these two software packages enable the investigators and other researchers to translate survey data into estimates of public opinion.
 
 
 *Generating polarization estimates.*
