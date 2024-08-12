@@ -671,7 +671,7 @@ With the support of the NSF, this resource-intensive phase of data collection ca
 To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model [@Solt2020c].^[
 Other, similar models of public opinion require either very dense survey data [@Mcgann2019; @Kolczynska2024] or ancillary data on population characteristics [@Berwick2024].
 The available data on climate-change opinion, as on most topics, sparse rather than dense, and reliable ancillary data is not available for the broad sample of countries considered in this project.
-We are aware of one working paper that anticipates the general approach of this project under this heading, @Bergquist2024.  
+We are aware of one working paper that anticipates the general approach of this project under this heading, @Bergquist2024.
 This project will improve on that effort by employing a much larger set of survey data and using the more recently developed DCPO latent-variable model of public opinion.]
 The DCPO model is a population-level two-parameter ordinal logistic item response theory (IRT) model with country-specific item-bias terms.
 It accounts for the incomparability of different survey questions with two key parameters.
@@ -700,7 +700,7 @@ There are different ways to measure polarization.
 Indeed, scholars have been using various polarization measures, likely contributing to the disagreement regarding the identification and consequences of polarization, especially in a comparative context [@Mehlhaff2023].
 The most intuitive measures are distribution or distance measures.
 These measures capture the distance between the mean positions of groups: for example, the distance between the mean position of Republican voters and that of Democratic voters.
-As intuitive as it is, distance measures cannot capture the within-group distribution aspect of polarization: polarization is not only a function of the distance between the mean positions of two groups, but also of how dispersed the attitudes are within each group---a system is not that polarized even with a large between-group distance as long as voters with each group are sufficiently widely dispersed in the policy space that there is considerable overlap between the two groups [see @Mehlhaff2023].
+As straightforward as they are, distance measures cannot capture the within-group distribution aspect of polarization: polarization is not only a function of the distance between the mean positions of two groups, but also of how dispersed the attitudes are within each group---a system is not that polarized even with a large between-group distance as long as voters with each group are sufficiently widely dispersed in the policy space that there is considerable overlap between the two groups [see @Mehlhaff2023].
 Second, there are variation measures that capture variance among individuals or parties; however, as @Mehlhaff2023 points out, high variance does not necessarily imply polarization or bimodality.
 Third, there are measures for bimodality; but there is no true test for bimodality; the most used kurtosis measure has been shown to have no relationship with bimodality at all [@Westfall2014; @Mehlhaff2023].
 
@@ -730,80 +730,66 @@ We will achieve broad dissemination through conference presentations, three scho
 In each of the two years of the grant period, the investigators will present their findings at the annual meetings of the Midwest Political Science Association and other conferences.
 
 Specifically, during the first year, the focus will be collecting more survey data on climate-change opinion and then generating mean estimates.
-The first scholarly article will focus on these mean estimates of public opinion on climate change and their validations through both convergent validation and construct validation.
-
+The first scholarly article will focus on these mean estimates of public opinion on climate change and validating them through both convergent validation and construct validation.
 According to @Adcock2001, convergent validation compares a given indicator with another indicator of the same concept, while construct validation assesses whether a given indicator is empirically correlated with other indicators in a way that conforms to theoretical expectations.
+The investigators will conduct "internal" tests [@Caughey2019; @Woo2024] comparing climate attitudes to responses to the individual survey items employed to generate the estimates as well as "external" tests on other closely related survey items, such as concern for the environment more generally.
+For construct validation, the investigators plan to test the relationship between climate attitude and exposure to disasters [see, e.g., @Sloggy2021].
 
-We will conduct an "internal" test [@Caughey2019; @Woo2024] comparing climate attitudes to responses to individual survey items.
+In the second year, the `DCPOtools` and `DCPO` packages will be updated to measure polarization in climate change attitudes across different subpopulation groups across countries over time.
+This work will be presented at the MPSA and form the basis of the second scholarly article.
 
-For example, we will look at the percentage of respondents who agree to some extent that climate change should precede economic growth and that climate change is a threat, or their public stance on supporting relevant policies and government efforts to mitigate climate change.
-For construct validation, we plan to test the relationship between climate attitude and exposure to disasters.
-
-In the second year, we will update the DCPO packages to measure polarization in climate change attitudes across different subpopulation groups across countries over time.
-The second scholarly article will focus on measures of polarization on public opinion on climate change.
-We will introduce our models to measure polarization.
-To validate our measures, we will compare them with measures from alternative polarization measuring approaches.
-For example, xxxxxxx
-
-Meanwhile, we will apply these estimates to study the dynamic relationship between climate change attitudes, polarization, and climate-policy adoption in cross-sectional time-series data.
+Meanwhile, the investigators will apply these estimates to study the dynamic relationship between climate change attitudes, polarization, and climate-policy adoption in cross-sectional time-series data.
 The third paper examines how public climate change concerns and policy preferences impact climate policy adoption. 
 Using our measures of public opinion and polarization, we will analyze the relationship between public opinion and climate policy adoption across countries over time.
 We will use data from the Climate Change Laws of the World [@Nachmany2017], which compiles laws and regulations aimed at reducing carbon emissions and promoting clean energy.
 The main outcome variable is the number of new climate policies adopted per country-year, with the previous year's cumulative climate policies as a control variable.
-This approach tests  how current levels of public concern about climate change contribute to the existing level of climate laws and regulations.^[
+This approach tests how current levels of public concern about climate change contribute to the existing level of climate laws and regulations.^[
 We will control for GDP per capita (log), oil rent (% of GDP), coal rent (% of GDP), and CO2 emissions per capita using World Development Indicators (WDI).
 Political regime effects will be controlled using the liberal democracy variable from the V-Dem Dataset.
 To account for the impact of climate-related natural disasters on policy adoption, we will use data from the Emergency Events Database (EM-DAT), which includes global natural disaster data.
 For empirical analysis, we will employ a two-way fixed effects model with robust standard errors at both time and entity levels to control for unobserved heterogeneity in panel data.]
 Additionally, the PIs will take advantage of conference time for in-person, in-depth project meetings to exchange ideas and set the agenda.
 
-Beyond conference presentations and three scholarly publications, we will disseminate our data through Dataverse, provide two updated DCPO packages, and develop a user-friendly dashboard.
-Climate scholars can download our estimates directly from Dataverse for use in downstream analyses.
+Beyond conference presentations and three scholarly publications, the investigators will disseminate the mean and polarization estimates through the Harvard Dataverse, provide two updated `DCPOtools` and `DCPO` packages, and develop a user-friendly dashboard for access on the web.
+Climate scholars can download the estimates directly from the Dataverse for use in downstream analyses.
 The updated DCPO packages will enable scholars to measure public opinion of their interests, from data collection and data wrangling to generating estimates.
 The user-friendly dashboard will be a valuable tool for the general public to explore temporal trends and compare spatial differences in public climate change attitudes, allowing users to visualize data based on their preferred time period, demographics, country, or region.
 
 
 ### Timeline and Project Implementation
-We propose a two-year project, estimated based on our initial efforts in collecting, cleaning, and measuring data.
-
-
-During our two-year project, we will expand the coverage of our raw data in terms of country-year and country-year-items, measure public opinion, revise and improve DCPO models to measure polarization, write up three scholarly papers and disseminate our estimates. 
-Our plan for the project timeline is outlined as follows:
+The proposed project will take two years, estimated based on initial efforts in collecting, cleaning, and examining survey data.
+During the two-year project, the investigators will expand the coverage of the survey data in terms of country-year and country-year-items, measure public opinion, revise and improve DCPO models to measure polarization, and write three scholarly papers and disseminate our estimates. 
+The plan for the project timeline is outlined as follows:
 
 Summer and Fall 2025: Raw data collection.
-
-In our first year, in addition to expand temporal coverage from latest released data, such as European Barometer and European Social Survey, we will focus on expanding our data to include single-country surveys, which are often conducted in their native languages, such as the Chinese General Social Survey (CGSS), Korean General Social Surveys, and single-country surveys not incorporated in the compiled data of the African Barometer and Latin American Public Opinion, both of which have recently released their latest 2023 survey data.
+In the first year, in addition to expand temporal coverage from recently released data, the investigators will focus on expanding the data to include single-country surveys, which as described above are often disseminated only in their original languages, and surveys that are not publicly available.
 Due to language and transcription challenges, these single-country surveys usually take longer to identify, collect, and clean.
 
-We also plan to expand our items to include both climate-relevant and environment-relevant questions.
 The project team will write a codebook for item selection, train research assistants to code items, conduct inter-coder reliability tests, and update the codebook to achieve a higher level of intercoder reliability.
 This process will involve several rounds of discussions and revisions, potentially extending the timeline.
 
 Spring 2026: Estimate climate change public opinion measures and write up the first scholarly paper on measures and validations.
-Once the public opinion measures are ready, as described above, we will draft our first paper on these measures and validate them.
-We will present our findings and introduce our opinion data at various conferences during Spring and Summer 2026, ensuring feedback from peers.
-We will publish our web interface, making the opinion data available for download and user interaction.
+Once the mean public opinion measures are ready, as described above, the investigators will draft the first paper on these measures and validate them.
+The mean opinion data will be presented at the MPSA conference in spring 2026, ensuring feedback from peers.
+As the paper moves into the publication process, the investigators will bring the web interface online, making the mean opinion data available for download and user interaction.
 
 Summer 2026: Revise DCPO models and packages for estimating polarization; collect demographic information from survey data for measuring polarization.
-During the summer, we will collect demographic information from surveys, including but not limited to gender, ideology, residence, and religion.
-This information will be essential for subgroup opinion measures.
-We will revise our DCPO models to measure climate change opinion within subpopulations and assess differences, such as comparing climate opinion between male and female. 
+During the summer, the project team will collect information on variables tapping the social cleavages and incorporate it into the `DCPOtools` R package.
+This information will be essential for generating the estimates of polarization in climate-change opinion.
+The investigators will revise the DCPO model to measure climate change opinion within subpopulations and generate the CPC measure of polarization. 
 
-Fall 2026:: Estimate climate change polarization through various approaches, compare polarization measures, and draft a paper on climate change polarization estimates and validations.
-Although existing methods of measuring polarization cannot address gaps in time-series data, we can use them when data is available and compare their results with our methods, which can smooth time-series data.
-Based on our findings, we will write up our second paper about polarization measures. 
+Fall 2026: Estimate climate change polarization, compare polarization across social cleavages, and draft a paper on climate change polarization estimates and validations.
+The second paper, focusing on polarization in climate-change opinion, will be written during this time. 
 
 Spring 2027: Finalize data collection for dynamic analysis up to recent years and conduct analysis on the relationship between public opinion, polarization, and policy outputs.
-We will finalize the data collection required for our dynamic analysis, ensuring it covers the most recent years.
-We will then analyze the relationships between public opinion, polarization, and policy outputs.
-We will present our polarization measures and preliminary analysis for the third paper at academic conferences.
-Our polarization measures will be added to our web interface. 
-We will enhance data visualization, online analysis, and provide customized functions for users at our web interface.
+The project team will finalize the collection of other data required for the third paper on dynamics between public opinion and policy and perform the analyses.
+The second paper, on polarization, and the third paper, on the dynamics of opinion and policy, will be presented at the MPSA conference this spring.
+The polarization measures will be added to the web interface. 
 
-Summer 2027: Write up the paper about dynamic relationship between climate public opinion and climate policies.
+Summer 2027: Finalize the paper about dynamic relationship between climate public opinion and climate policies and submit for publication.
 
 ### Broader Impacts
-The Climate Change Public Opinion Dataset (CCPOD) will serve as a crucial research infrastructure for researchers, educators, students, policymakers, non-governmental organizations, and news agencies worldwide, fostering both within and cross-national work on climate change, polarization, and broader public opinion.
+The resulting Climate Change Public Opinion Dataset (CCPOD) will serve as a crucial research infrastructure for researchers, educators, students, policymakers, non-governmental organizations, and news agencies worldwide, fostering both within and cross-national work on climate change, polarization, and broader public opinion.
 Through conference presentations, scholarly publications, and a user-friendly web interface, the dissemination of the resulting estimates will enhance the understanding of scholars, policymakers, NGOs, journalists, and the general public about the relationship between public opinion and climate policies, ultimately contributing to more informed and effective climate change action.
 In addition, two open-source R packages for automating data collection and measurement are made available so others can analyze similar data.
 This aligns with NSF's commitment to making knowledge accessible to policymakers, the public, and researchers.
