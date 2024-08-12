@@ -326,7 +326,8 @@ Since then, Americans’ climate attitudes have become more and more strongly as
 Many attribute this trend of polarization to the influence of conservative political elites’ climate denial campaigns upon Republican voters [@Tesler2018]. 
 Whether similar levels of climate polarization have occurred in other countries, however, remains an open question.
 It seems that climate attitude polarization (based on political party affiliations for example) does exist in other English-speaking countries including Australia, Canada, and the UK [@Lachapelle2012; @Tranter2013; @Kenny2024] as well as in some western European countries such as Switzerland [@Luth2022].
-Yet, there is no evidence that such polarization exists in Eastern European countries [@Fisher2022] and as far as we know, no study has looked at polarization in climate change public opinion beyond North American and European countries.   
+Yet, there is no evidence that such polarization exists in Eastern European countries [@Fisher2022].
+To our knowledge, no study has looked at polarization in climate change public opinion beyond North American and European countries. 
 
 There are at least three major obstacles that prevent the study of climate public opinion polarization in a cross-country setting.
 First, other than partisan polarization, other social divides such as gender, race, education, income, and socioeconomic status also influence public climate attitudes, as shown in various cross-national studies [@Lewis2019; @Pearson2017; @Hornsey2016; @Lee2015].
@@ -478,7 +479,7 @@ We searched `"public opinion" "climate change"` and identified the first fifty a
 Then we added the Web of Science records for the Google Scholar results (to ensure consistency of citation counts) to our original Web of Science sample and dropped all duplicates, yielding a total of `r nrow(pocc)` different articles.]
 These articles had publication dates as early as `r summary(pocc$year)[[1]]` and as late as `r summary(pocc$year)[[6]]` (median: `r summary(pocc$year)[[3]]`) and were cited in the Web of Science from `r summary(pocc$hits)[[1]]` to `r summary(pocc$hits)[[6]]` times (median: `r summary(pocc$hits)[[3]]`).
 We then examined these articles to find the number of countries and years investigated in each.
-As the zoomed portion of the plot pocc-plot emphasizes, many of these articles might be described as using case-study or small-_n_ research designs.
+As the zoomed portion of the Figure\nobreakspace{}\ref{pocc_plot} emphasizes, many of these articles might be described as using case-study or small-_n_ research designs.
 Just over a third consider only a single year in a single country; together with works that study four and fewer countries and years (inset) they comprise nearly half of this sample.
 
 <!-- reconsider this paragraph-->
