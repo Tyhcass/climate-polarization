@@ -49,8 +49,10 @@ knitr::opts_chunk$set(
 
 if (!require(pacman))
     renv::install("pacman")
+if (!require(DCPOtools))
+    p_install_gh(c("fsolt/DCPOtools"))
 library(pacman)
-p_install_gh(c("fsolt/DCPOtools"))
+library(DCPOtools)
 library(tidyverse)
 library(here)
 library(RColorBrewer)
@@ -59,13 +61,17 @@ library(DCPOtools)
 ```
 
 ```{r dcpo_input_raw_cc2, eval=FALSE}
+surveys2 <- read_csv(here::here("data-raw", "surveys_cc_add.csv"),
+                     col_types = "ccccccc")
+
 dcpo_input_raw_cc2 <- DCPOtools::dcpo_setup(surveys2,
                                             file = here::here(
-                                              "data-raw",                                                              "dcpo_input_raw_cc2.csv"))}
+                                              "data-raw",                                                              "dcpo_input_raw_cc2.csv"))
 ```
 
 ```{r cc_summary_stats}
-surveys2 <- bind_rows(read_csv(here::here("data-raw", "surveys_cc_add.csv")))
+surveys2 <- read_csv(here::here("data-raw", "surveys_cc_add.csv"),
+                     col_types = "ccccccc")
 
 surveys <-  read_csv(here::here("data-raw", "climate_index_cli.csv"),
                        col_types = "cccc")[c(1:26,29:141,145:455,458:480),] %>% 
@@ -208,14 +214,14 @@ y_cc_peak_year <- dcpo_input_raw_cc %>%
   distinct(country, year) %>%
   count(year, name = "nn") %>% 
   filter(nn == max(nn)) %>% 
-  pull(year) #2010
+  pull(year) #2019
 
 y_cc_peak_nn <- dcpo_input_raw_cc %>%
   distinct(country, year) %>%
   count(year, name = "nn") %>% 
   filter(nn == max(nn)) %>% 
   pull(nn) %>% 
-  first() #74 countries in 2010 and 2017
+  first() #116 countries in 2019
 
 data_cc_poorest <- dcpo_input_raw_cc %>%
   distinct(country, year, item) %>%
@@ -507,24 +513,22 @@ The proposed research comprises four principal activities: (1) _collecting the a
 
 *Collecting the available survey data.* 
 To date, the project investigators have collected data on climate change opinion from over 150 survey datasets.
-Nearly all of these datasets are regional (e.g., the Afrobarometer, Eurobarometer, and Latinobarometer surveys) or global (e.g., the International Social Survey Program's Environment module and the Pew Global Attitudes surveys).
-Together they provide information about `r n_countries` with an mean of `r round(back_to_numeric(n_cy)/n_countries)` years observed.^[
+Nearly all of these datasets are regional (e.g., the Afrobarometer, Eurobarometer, and Latinobarometer surveys) or global (e.g., the Pew Global Attitudes surveys, the International Social Survey Program's Environment module, and the Lloyd’s Register Foundation World Risk Poll) in scope.
+Together they provide information about `r n_countries` countries with an mean of `r round(back_to_numeric(n_cy)/n_countries)` years observed.^[
 This data collection was supported by a seed grant from the Center of Social Data Analytics (C-SODA) at Pennsylvania State University, 2022-2023.]
-This average is deceptive.
-The United States and sixteen European countries are observed in twenty or more years.
-In contrast, Asian, Latin American, and African countries have fewer years of data, despite being more vulnerable to climate change due to their geographical location and state capacity in dealing with climate threats: public opinion is observed in fewer than ten years in some `r dcpo_input_raw_cc %>% distinct(country, year) %>% count(country) %>% filter(n < 10) %>% nrow()` countries.
+From a somewhat optimistic standpoint, there are `r n_cy` country-years in which the data already collected provide at least _some_ information about attitudes toward climate change, that is, some `r round(covered_share_of_spanned)`% of the `r spanned_cy` country-years spanned by these data.
+On the other hand, observations for every year since 1982 in every country surveyed would number `r total_cy`; the already-collected data constitute just `r round({back_to_numeric(n_cy)/back_to_numeric(total_cy)} * 100)`% of those country-years.
 
-The current source data covers `r n_cy` country-years and includes a total of `r n_cyi` country-year-item observations, which represents `r covered_share_of_spanned`% of all of the country-years spanned by the data, but just `r round({back_to_numeric(n_cy)/back_to_numeric(total_cy)} * 100)`% of a complete set of country-year data.
+Moreover, the coverage of these data are decidedly unbalanced by geographical region.
+The United States and `r wordify_numeral(dcpo_input_raw_cc %>% distinct(country, year) %>% count(country) %>% filter(n >= 20) %>% nrow() - 1)` European countries are observed in twenty or more years.
+In contrast, Asian, Latin American, and African countries have fewer years of data, despite being more vulnerable to climate change due to their geographical location and state capacity in dealing with climate threats.
+Three years of observations are the minimum required for a country to remain in the dataset, and the data for some `r dcpo_input_raw_cc %>% distinct(country, year) %>% count(country) %>% filter(n == 3) %>% nrow() %>% wordify_numeral()` countries---all in Africa or Asia---just meet this requirement.
 
-The left panel of Figure \ref{item_country_plots} shows the years observed by country in current dataset.
-We have more year data in European countries and the United States but fewer data in African and Asian continents. 
+The left panel of Figure \ref{item_country_plots} shows the years observed by country in the data already collected.
 The upper right panel shows the top countries with the highest count of year-item observations.
 The `r top_country_cyi` has `r top_country_cyi_obs` observations, followed by `r others_cc`.
-The bottom right panel counts the countries observed in each year.
-
-The number of items observed in the source data for each country-year is plotted in Figure\ref{obs_by_cy} below.
-It demonstrates the potential for building a comprehensive cross-national time-series dataset on climate opinion while also highlighting the challenges in measuring comparative public climate data, including the variation in data availability geographically and temporally. 
-Our primary focus has been on well-known and publicly-accessible cross-national surveys, including the World Values Survey, Eurobarometer, European Social Survey, International Social Survey Programme, and Regional Barometer surveys, supplemented by a few country-specific surveys.
+The bottom right panel counts the countries observed in each year; it underscores that few observations antedate the past two decades.
+Together, they demonstrate the potential for building a comprehensive cross-national time-series dataset on climate opinion while also highlighting the challenges in measuring comparative public climate data, including the variation in data availability geographically and temporally. 
 
 ```{r itemcountry, fig.cap="Countries and Years with the Most Observations in the Source Data \\label{item_country_plots}", fig.height=3.5, fig.width=6, fig.pos='h', cache=FALSE}
 countries_plot <- dcpo_input_raw_cc %>%
@@ -572,7 +576,7 @@ ybc_plot <- dcpo_input_raw_cc %>%
   geom_bar(stat = "identity") +
    scale_x_continuous(
     minor_breaks = seq(1989, 2023, by = 1),
-    breaks = seq(1992, 2023, by = 2), limits = c(1991, 2023))  +
+    breaks = seq(1980, 2024, by = 4), limits = c(1980, 2024))  +
   theme_bw() +
   theme(axis.title.x = element_blank(),
         axis.text.x  = element_text(angle = 90, vjust = .45, hjust = .95, size = 6),
@@ -614,55 +618,55 @@ cby_map <- world_map %>%
         legend.direction = "vertical") +
   scale_y_continuous(expand=c(0,0)) +
 scale_x_continuous(expand=c(0,0))
+
 cby_map + (countries_plot/ ybc_plot) + plot_layout(widths = c(3.8, 1.2))
 ```
 
-```{r obs_by_cy, fig.height = 9, fig.width = 6.5, fig.cap = "Source Data Observations by Country and Year \\label{obs_by_cy}"}
-dcpo_input_raw_cc %>% 
-  mutate(country = str_replace(country, "'", "'")) %>% 
-  distinct(country, year, item, cc_rank) %>% 
-  group_by(country, year) %>% 
-  summarize(n = n(),
-            cc_rank = cc_rank) %>% 
-  ungroup() %>% 
-  distinct() %>% 
-  ggplot(aes(x = year, 
-             y = forcats::fct_reorder(country, cc_rank),
-             fill = n)) + 
-  geom_tile() +
-  scale_fill_stepsn(colors = rev(hcl.colors(5, "inferno")),
-                    n.breaks = 5,
-                    show.limits = TRUE,
-                    right = FALSE,
-                    name = "Observations") +
-  labs(x = NULL, y = NULL) +
-  scale_x_continuous(breaks=seq(1992, 2022, 4),
-                     sec.axis = dup_axis()) +
-  scale_y_discrete(position = "right") +
-  theme(legend.justification=c(0, 0), 
-        legend.position=c(0.01, 0.01),
-        axis.text.y  = element_text(size = 7)) 
-```    
+<!-- ```{r obs_by_cy, fig.height = 9, fig.width = 6.5, fig.cap = "Source Data Observations by Country and Year \\label{obs_by_cy}"} -->
+<!-- dcpo_input_raw_cc %>%  -->
+<!--   mutate(country = str_replace(country, "'", "'")) %>%  -->
+<!--   distinct(country, year, item, cc_rank) %>%  -->
+<!--   group_by(country, year) %>%  -->
+<!--   summarize(n = n(), -->
+<!--             cc_rank = cc_rank) %>%  -->
+<!--   ungroup() %>%  -->
+<!--   distinct() %>%  -->
+<!--   ggplot(aes(x = year,  -->
+<!--              y = forcats::fct_reorder(country, cc_rank), -->
+<!--              fill = n)) +  -->
+<!--   geom_tile() + -->
+<!--   scale_fill_stepsn(colors = rev(hcl.colors(5, "inferno")), -->
+<!--                     n.breaks = 5, -->
+<!--                     show.limits = TRUE, -->
+<!--                     right = FALSE, -->
+<!--                     name = "Observations") + -->
+<!--   labs(x = NULL, y = NULL) + -->
+<!--   scale_x_continuous(breaks=seq(1992, 2022, 4), -->
+<!--                      sec.axis = dup_axis()) + -->
+<!--   scale_y_discrete(position = "right") + -->
+<!--   theme(legend.justification=c(0, 0),  -->
+<!--         legend.position=c(0.01, 0.01), -->
+<!--         axis.text.y  = element_text(size = 7))  -->
+<!-- ```     -->
 
-These established worldwide surveys have advantages in standardized questions and thorough documentation, but they also have limitations in geographic and temporal coverage.
-For instance, the World Values Survey is typically conducted every four years, while each of the International Social Survey Programme's topic modules is conducted once every five to ten years.
-Relying solely on these publicly accessible cross-national surveys is insufficient.
+The data already collected are a start, but there is clearly room for improvement.
+This project will pursue two additional avenues of data collection: single-country surveys and surveys that are not publicly available.
 
-There are also public but non-accessible survey projects.
-For example, Gallup has included climate change questions in their surveys since 2005, providing a valuable dataset for climate change.
-However, this data is only available to subscribers, making it difficult to access without project funding. 
+There are many single-country surveys that include questions tapping attitudes toward climate change.
+Collecting these data is a labor-intensive process for two reasons.
+First, while some of these surveys, such as the U.S. General Social Survey, have been combined into time-series datasets including many years of surveys with standardized variable names, many of these surveys are scattered across datasets covering only a single year and, more often than not, inconsistent variable names.
+Retrieving each of these smaller datasets, identifying the relevant questions, recording this information, and double-checking it for errors simply takes more time---at least on a country-year basis---than for consolidated cross-national or time-series projects. 
+Second, most single-country surveys are housed in their respective national data archives, which naturally serve mainly researchers working in that country, with the consequence that the data, codebooks, and other supporting information are not translated into English.
+As one of many examples, consider that the Finnish Social Science Data Archive contains national surveys that include climate change questions, apparently on an annual basis, dating back at least to the start of this century; all of these surveys are available only in Finnish.
+Even with the assistance of online translation, the process of identifying (and confirming) the relevant survey questions is more time-consuming in such circumstances.
 
-Expanding the dataset to include more country-specific surveys will enhance the geographical and temporal scope of the raw data.
-However, this expansion will require a significant commitment of time and resources due to language barriers and other difficulties in accessing data.
-For instance, the Finnish Social Science Data Archive has surveys with climate or energy-relevant questions dating back to 2000.
-Most of these surveys are in Finnish, requiring research assistance to identify relevant questions and clean the raw data.
-Similarly, other non-English surveys necessitate research assistance, further emphasizing the need for funding to hire skilled research assistants.
+In addition to the single-country surveys, there is a substantial number of cross-national surveys that are not freely available.
+Most important of these is the Gallup World Poll, which has frequently included climate-change questions since its 'Health of the Planet' survey conducted in eleven countries in 1992.
+The Gallup World Poll is much employed in studies of climate-change opinion, but it is only available for download by paid subscription.
+Further, many other surveys conducted by researchers (and even international organizations, such as the full datasets of the 2020 and 2024 People's Climate Vote surveys conducted by the United Nations Development Programme) have been reported in the climate-change literature but are not housed in such commonly-employed data archives as the Harvard Dataverse or the Inter-university Consortium for Political and Social Research.
+Reaching out to the authors of these pieces is promising, given that norms on the free distribution of data have expanded rapidly in the past two decades, but it is nevertheless a time-consuming task.
+With the support of the NSF, this resource-intensive phase of data collection can go forward.
 
-In addition to expanding survey datasets, we will expand survey items to include both climate-related items and environment-related items.
-Both general questions about environmental concern and protection and specific questions about environmental policy preferences will be identified and incorporated into our source data.
-Additionally, the severe sparsity of identical questions across different survey projects necessitates further development of the DCPO model to address these inconsistencies.
-We will also identify demographic and political information of respondents in survey datasets, including but not limited to gender, religion, residence location, and ideology.
-These demographics will allow us to estimate public opinion between subpopulations, which we will illustrate in the polarization estimates section. 
 
 *Generating mean estimates.*
 To estimate public climate change attitudes across countries and over time, we employ the Dynamic Comparative Public Opinion (DCPO) model.
@@ -696,7 +700,7 @@ Their knowledge of climate change might not naturally translate into support for
 
 To address the sparsity of source data, which includes inconsistencies in the time series of each country due to unobserved country-years or limited observed items, DCPO uses local-level dynamic linear models.
 These models estimate public opinion by taking the previous year's estimate and adding a random shock.
-This approach smooths the estimates over time and allows for estimation even in years with little or no survey data, albeit at the expense of greater measurement uncertainty.[^
+This approach smooths the estimates over time and allows for estimation even in years with little or no survey data, albeit at the expense of greater measurement uncertainty.^[
 Incorporating measurement uncertainty is crucial to arriving at well-grounded conclusions [see, e.g., @Tai2024], and it is especially easy to do so in a Bayesian context [see, e.g., @Hu2024].]
 
 To facilitate data collection, measurement, and broader open data science, DCPO has developed two open-source R packages: DCPO and DCPOtools.
@@ -819,7 +823,7 @@ Co-PIs Cao and Tai have received no prior NSF support.
 
 PI Solt was PI of NSF Award Number 1533746, "Standardized World Income Inequality Database" (SWIID), in the amount of $228,809.00, which began on August 15, 2015 and was successfully completed on July 31, 2019.
 
-**Intellectual Merit.**
+_Intellectual Merit._
 Income inequality is an enduring focus of inquiry in the social sciences that has attracted renewed attention from policymakers and the public, but research has been hindered by a choice between data coverage and data comparability.
 The Standardized World Income Inequality Database (SWIID) overcomes this tradeoff by using a Bayesian latent-variable model on data drawn from regional collections, national statistical offices, and academic studies anchored by the high-quality but sparse Luxembourg Income Study dataset.
 The SWIID currently provides comparable estimates of market- and net-income inequality for 199 countries for as many years as possible from 1960 to the present.
@@ -831,7 +835,7 @@ The effects of income inequality on other forms of social inequality, such as he
 The reliability of the results of these investigations, and any policy interventions they suggest, depend crucially on the quality of the income-inequality data they employ.
 The expansion, improvement, and support of the SWIID database was (and remains) central to the promotion of scientific progress on these topics and matched NSF priorities outlined in the NSF Strategic Plan 2011-2016, most especially in transforming frontiers of knowledge by building research infrastructure and data access, facilitating international engagement in science, and emphasizing interdisciplinary research.
 
-**Broader Impacts.**
+_Broader Impacts._
 The project resulted in (1) the publication of @Solt2020, which is listed by the Web of Science _Essential Science Indicators_ as a Highly Cited Paper, among the top 1% most cited articles in the social sciences (excluding economics) for its year of publication; (2) biannual updates to the SWIID on the Harvard Dataverse each year since 2017 that collectively have been downloaded more than 150,000 times; and (3) the SWIID website, which provides a user-friendly interface to the dataset and receives in excess of 100 visitors daily.
 The SWIID has been used by thousands of researchers around the world who are working in academia, governments, non-governmental organizations, international organizations, and news agencies; the broad dissemination of expanded and improved versions of the SWIID therefore comports with NSF's longstanding commitment to making knowledge accessible to policymakers and the public as well as to researchers.
 Moreover, this project promoted teaching by improving the SWIID's web-based graphical interface to facilitate its use for teaching and learning; developing online training modules on the use of cross-national income-inequality data over time; and employing a graduate research assistant who is a member of an underrepresented group, finished her Ph.D. in 2021, and is now a tenure-track assistant professor, helping contribute to the development of a diverse, globally competitive STEM workforce.
