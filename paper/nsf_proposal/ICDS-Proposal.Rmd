@@ -1,0 +1,41 @@
+---
+title: "ICDS Proposal"
+date: "\\vspace{-5em}"
+output: 
+  pdf_document:
+   template: null
+   keep_tex: no
+   number_sections: false
+  word_document:
+   toc: false
+   number_sections: false
+documentclass: nsf2
+header-includes:
+      - \setlength{\parindent}{0cm}
+      - \geometry{margin=1in}
+      - \usepackage{times}
+      - \usepackage[fontsize=12pt]{scrextend}
+      - \usepackage{wrapfig}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<!--https://www.icds.psu.edu/news-events/icds-symposium/fall-2024-icds-symposium/whitepapers/-->
+
+Scholars across political science, economics, environmental engineering, and ecosystem science have long sought to address climate change due to its profound effects on economic development, human rights, social justice, and political behaviors.
+Effective climate change mitigation and adaptation requires understanding the interplay between policy, politics, and public opinion.
+Public opinion is crucial for the feasibility and sustainability of policy interventions.
+However, research in this area has been hindered by the lack of comparable public opinion data across countries and over time.
+
+Our collaborative proposal between Penn State University (Co-PI:Xun Cao and Yuehong Cassandra Tai) and the University of Iowa (PI:Frederick Solt) seeks two years of NSF funding and aligns with the NSF Strategic Plan 2022-2026 priorities by advancing research frontiers through enhanced infrastructure and interdisciplinary developments to combat global environmental change.
+The Climate Change Public Opinion Database (CCPOD) aims to address these data gaps by applying a Bayesian Item Response Theory latent-variable model to survey data from national, regional, and global projects, thereby generating a time-series cross-national dataset.
+
+To date, we have collected nearly two million individual responses from 118 survey projects spanning 1982 to 2022.
+Our research involves four main activities: (1) expanding the survey source data, especially non-English data, (2) generating public opinion estimates on climate change, (3) developing methods for measuring polarization, and (4) disseminating these estimates to researchers, educators, students, and policymakers worldwide through scholarly publications, open-source software, and a web interface.
+
+
+Building and maintaining the CCPOD database necessitates high-performance computing and robust infrastructure for data storage, retrieval, and management.
+The Institute for Computational and Data Sciences (ICDS) will provide essential support in these areas.
+By collaborating closely with RISE and Center for Big Data Analytics and Discovery Informatics, we will leverage their expertise in workflow automation, code optimization, and efficient data management.
+This partnership will enable us to scale the CCPOD effectively and ensure its accessibility to a wide range of users, thereby enhancing the database's impact on research and policy-making efforts addressing climate change.
